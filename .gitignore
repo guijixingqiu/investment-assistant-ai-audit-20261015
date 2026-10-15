@@ -1,0 +1,62 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*
+secrets*
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+dist/
+build/
+coverage/
+npm-debug.log*
+
+# Swift and Xcode
+.build/
+.swiftpm/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.xcodeproj/
+
+# IDE and OS
+.DS_Store
+.idea/
+.vscode/
+
+# Runtime and logs
+*.log
+tmp/
+temp/
+.cache/
+
+# Local databases and data
+*.db
+*.sqlite
+*.sqlite3
+data/raw/
+data/cache/
+data/snapshots/local/
+artifacts/
+artifacts/local/
+
+# Generated audit packages
+audit/**/*.zip
+audit/review-latest/
+audit/*/health-artifacts/
+audit/**/git-status-with-ignored.txt
+audit/**/ignored-files.txt

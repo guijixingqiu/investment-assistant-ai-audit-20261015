@@ -1,0 +1,922 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>投资研究助手</title>
+    <link rel="stylesheet" href="/apps/web/styles.css">
+  </head>
+  <body>
+    <main>
+      <header class="owner-heading">
+        <h1>投资研究助手</h1>
+        <p>先看当前标的、唯一下一步和当前报告；证据录入、身份与诊断留在后面。</p>
+      </header>
+      <section class="toolbar">
+        <label>标的 <input id="symbol-input" data-testid="symbol-input" autocomplete="off" value="HK.00175"></label>
+        <button id="load-action" data-testid="load-action" type="button">读取</button>
+        <details class="toolbar-details">
+          <summary>连接与鉴权</summary>
+          <div class="toolbar-details-grid">
+            <label>鉴权请求头 <input id="auth-header-name" data-testid="auth-header-name" autocomplete="off" value="x-research-write-token"></label>
+            <label>运行令牌 <input id="auth-token" data-testid="auth-token" autocomplete="off" type="password"></label>
+            <label>载入本机令牌文件 <input id="local-token-file" data-testid="local-token-file" type="file"></label>
+            <p id="local-token-file-status" data-testid="local-token-file-status" class="form-note" role="status" aria-live="polite">令牌文件仅在本机读取；内容只在本页内存中用于之后显式发起的请求，不会上传或记录，刷新页面即清空。</p>
+          </div>
+        </details>
+      </section>
+      <p id="safety-statement" data-testid="safety-statement" class="safety">仅提供研究辅助。本 Web 工作流不能创建订单、交易、成交、现金变动、费用、持仓变动或券商调用。</p>
+      <section class="statusbar">
+        <span id="current-symbol" data-testid="current-symbol"></span>
+        <span id="auth-mode" data-testid="auth-controls"></span>
+      </section>
+      <nav class="owner-domain-nav" aria-label="Owner 工作台">
+        <a href="#next-action-card">Today · 今日</a>
+        <a href="#market-context-console">Market · 市场</a>
+        <a href="#research-documents-console">Research · 研究</a>
+        <a href="#portfolio-decision-workspace">Assets · 资产</a>
+      </nav>
+      <section id="next-action-card" class="next-action" data-testid="core-next-action-card" aria-live="polite">
+        <span>下一步</span><strong>读取当前标的</strong><p>读取 HK.00175 的当前事实后，系统只显示一个可继续的 Owner 动作。</p>
+      </section>
+      <section class="owner-report-summary" aria-labelledby="deep-research-report-summary-title">
+        <h2 id="deep-research-report-summary-title">当前研究报告摘要</h2>
+        <div id="deep-research-report-summary" class="console-output" data-testid="deep-research-report-summary">尚无当前研究报告。</div>
+        <p class="form-note">先看结论、依据、反证与待核实；完整条件和版本身份默认折叠。摘要只读，不会自动确认报告或形成正式决定。</p>
+        <div id="deep-research-report-export" class="console-actions" data-testid="deep-research-report-export" data-state="unavailable"></div>
+      </section>
+      <ol id="stages" class="stages" data-testid="journey-stages"></ol>
+      <section id="review-feedback-card" class="review-feedback" data-testid="review-feedback-card" aria-live="polite"></section>
+      <section id="daily-research-cockpit" class="candidate-overview" data-testid="daily-research-cockpit">
+        <div class="section-heading">
+          <div>
+            <h2>今日研究</h2>
+            <p class="form-note">先处理首要事项，再核对当前市场事实。发现列表不排名；每次写入都需要 Owner 明确点击。</p>
+          </div>
+        </div>
+        <section id="today-action-inbox" class="console-tool" data-testid="today-action-inbox" data-state="unknown">
+          <div class="console-tool-heading">
+            <h3>今日首要事项</h3>
+            <button id="today-inbox-refresh" type="button">重新读取</button>
+          </div>
+          <p id="today-inbox-status" role="status" aria-live="polite"></p>
+          <ul id="today-inbox-list" class="candidate-list"></ul>
+        </section>
+        <section id="market-context-console" class="console-tool" data-testid="market-context-console" aria-live="polite">
+          <div class="console-tool-heading">
+            <div><h3>当前市场事实</h3><span>精确标的行情、完整日线技术和仅作行情参考的市场环境；不排名、不推荐。</span></div>
+          </div>
+          <div class="console-form-grid">
+            <label class="span-2">港股代码或公司名称<input id="market-context-search-input" type="search" maxlength="80" placeholder="HK.00175 或 吉利"></label>
+          </div>
+          <div class="console-actions"><button id="market-context-search" type="button">搜索港股</button></div>
+          <p id="market-context-status" role="status">请搜索并明确选择一只港股。</p>
+          <ul id="market-context-search-results" class="candidate-list"></ul>
+          <p id="market-context-selection">尚未明确选择标的。</p>
+          <div class="console-actions">
+            <button id="market-context-refresh" type="button" disabled>读取当前市场事实</button>
+            <button id="market-context-provider-refresh" type="button" disabled>刷新价格与日线技术</button>
+            <button id="market-context-open-research" type="button" disabled>等待精确新鲜 Market</button>
+          </div>
+          <div id="market-context-output" class="console-output" data-state="unknown">UNKNOWN · 尚未显示完整且精确绑定标的的 Market 事实。</div>
+          <p class="form-note">读取本身只使用 GET。刷新价格和日线技术必须明确点击，并在精确回读验证后才显示全部事实；进入 Research 仍需要第二次明确点击，不会自动加入研究、形成决定、生成报告或交易。</p>
+          <section class="console-tool" aria-labelledby="market-weinstein-title">
+            <div class="console-tool-heading">
+              <div><h4 id="market-weinstein-title">Weinstein 周线主分析</h4><span>市场、行业、个股阶段与 30 周均线；只读、非推荐。</span></div>
+              <button id="market-weinstein-refresh" type="button" disabled>读取周线主分析</button>
+            </div>
+            <p id="market-weinstein-status" role="status" aria-live="polite">请先读取一只股票的完整 Market 事实。</p>
+            <div id="market-weinstein-output" class="console-output" data-state="unknown">UNKNOWN · 尚未显示精确绑定的周线分析。</div>
+          </section>
+        </section>
+        <section class="console-tool" data-testid="market-discovery-workspace">
+          <div class="console-tool-heading">
+            <div><h3>市场发现与候选核查</h3><span>API 顺序不是排名、推荐或自动跟踪动作。</span></div>
+            <button id="market-discovery-refresh" type="button">重新发现</button>
+          </div>
+          <p id="market-discovery-status" role="status" aria-live="polite"></p>
+          <h4>候选标的</h4>
+          <ul id="market-discovery-list" class="candidate-list"></ul>
+          <h4>OpenD 公告/重大新闻线索（未核验）</h4>
+          <ul id="market-information-list" class="candidate-list"></ul>
+          <h4>发行人官方公告</h4>
+          <ul id="market-announcement-list" class="candidate-list"></ul>
+          <h4>显式候选核查</h4>
+          <p id="market-qualification-status" role="status" aria-live="polite"></p>
+          <div id="market-qualification-output" class="console-output"></div>
+        </section>
+      </section>
+      <section id="research-documents-console" class="candidate-memberships" data-testid="research-documents-console" data-state="blocked">
+        <div class="section-heading">
+          <div>
+            <h2>Exact-membership official sources</h2>
+            <p id="research-documents-membership"></p>
+          </div>
+          <button id="research-documents-refresh" type="button">Fresh list</button>
+        </div>
+        <p id="research-documents-status" role="status" aria-live="polite"></p>
+        <section class="console-tool">
+          <h3>Stored issuer HTML original</h3>
+          <p class="form-note">Capture a public issuer page, verify the saved original and text, select an exact passage, then explicitly confirm that passage as a research material. External links are reference only.</p>
+          <div class="console-form-grid">
+            <label class="span-2">Official HTTPS page URL<input id="research-source-url" type="url" maxlength="2000" placeholder="https://..."></label>
+            <label>Material valid until<input id="research-source-valid-until" type="datetime-local"></label>
+            <label class="console-check"><input id="research-source-confirm" type="checkbox"> I checked the stored original and selected passage</label>
+          </div>
+          <div class="console-actions"><button id="research-source-capture" type="button">Capture and verify saved original</button><button id="research-source-select" type="button">Use selected text</button><button id="research-source-confirm-material" type="button">Confirm selected material</button></div>
+          <ul id="research-source-list" class="membership-list"></ul>
+          <p id="research-source-identity" role="status"></p>
+          <pre id="research-source-text" class="console-output" style="white-space:pre-wrap;user-select:text"></pre>
+          <pre id="research-source-selected" class="console-output"></pre>
+        </section>
+        <section class="console-tool">
+          <h3>Explicit PDF import</h3>
+          <div class="console-form-grid">
+            <label class="span-2">PDF file<input id="research-document-file" type="file" accept="application/pdf,.pdf"></label>
+            <label>Title<input id="research-document-title" type="text" maxlength="500"></label>
+            <label>Published at<input id="research-document-published-at" type="datetime-local"></label>
+            <label>Source version<input id="research-document-source-version" type="text" maxlength="200" value="owner-upload-v1"></label>
+            <label class="console-check"><input id="research-document-rights" type="checkbox"> I confirm local processing rights</label>
+          </div>
+          <p id="research-document-announcement" hidden>Fresh-verified issuer announcement: <a id="research-document-announcement-link" target="_blank" rel="noopener noreferrer"></a>. Download it from the issuer, then choose the same local file below.</p>
+          <div class="console-actions"><button id="research-document-upload" type="button">Upload PDF and fresh-read</button></div>
+          <p class="form-note">Import never freezes an evidence pack, confirms a report, creates a formal decision, or mutates portfolio facts.</p>
+        </section>
+        <section class="console-tool">
+          <h3>Documents and page verification</h3>
+          <label>Page number<input id="research-document-page-number" type="number" min="1" step="1" value="1"></label>
+          <ul id="research-document-list" class="membership-list"></ul>
+          <pre id="research-document-page-output" class="console-output">No fresh verified PDF page is loaded.</pre>
+        </section>
+        <section id="research-document-search-panel" class="console-tool" data-testid="research-document-search-panel" aria-live="polite">
+          <h3>Stored document search</h3>
+          <div class="console-form-grid">
+            <label class="span-2">Search stored page text<input id="research-document-search-query" type="search" maxlength="80" placeholder="输入 1–80 个字符，例如 收入 或 毛利"></label>
+          </div>
+          <div class="console-actions"><button id="research-document-search" type="button">Search stored documents</button></div>
+          <p id="research-document-search-status" role="status">尚未搜索。搜索独立于估值、报告与持仓，只读取当前成员已存储的文档文本。</p>
+          <ul id="research-document-search-results" class="membership-list"></ul>
+          <p class="form-note">搜索结果只是可检索文本，不是已确认事实；点击任意结果都会重新读取该文档与页，并要求返回的页文本 SHA-256 与搜索身份一致，否则不会打开。</p>
+        </section>
+        <section class="console-tool">
+          <h3>Explicit confirmed fact</h3>
+          <div class="console-form-grid">
+            <label class="span-2">Exact page quote<textarea id="research-document-quote" rows="4" maxlength="100000"></textarea></label>
+            <label class="span-2">Fact statement<textarea id="research-document-statement" rows="3" maxlength="4000"></textarea></label>
+            <label>Valid until<input id="research-document-valid-until" type="datetime-local"></label>
+            <label>Replaces material ID (optional)<input id="research-document-replaces-id" type="text" inputmode="numeric" pattern="[1-9][0-9]*"></label>
+          </div>
+          <div class="console-actions"><button id="research-document-confirm-fact" type="button">Confirm exact page fact</button></div>
+          <h4>Confirmed PDF facts</h4>
+          <ul id="research-document-materials" class="membership-list"></ul>
+        </section>
+        <section class="console-tool">
+          <h3>Current report document citations</h3>
+          <p class="form-note">Reopen requires a fresh exact report, membership, document, page-text hash, and PDF hash match. No alternate source opens on drift.</p>
+          <ul id="research-report-citations" class="membership-list"></ul>
+        </section>
+      </section>
+      <section id="research-futu-financial-console" class="candidate-memberships" data-testid="research-futu-financial-console" data-state="blocked">
+        <div class="section-heading"><div><h2>富途财报</h2><p id="research-futu-membership">请选择当前研究公司。</p></div><button id="research-futu-refresh" type="button">读取最近捕获</button></div>
+        <p class="form-note">富途提供方数据，与发行人 PDF、官方网页及正式财务事实分开；这里不自动生成事实或覆盖结论。列表仅含最近 20 次捕获。</p>
+        <details><summary>获取范围</summary><div class="console-form-grid"><label>每页报告数<input id="research-futu-page-size" type="number" min="1" max="20" value="20"></label><label>每表最多页数<input id="research-futu-max-pages" type="number" min="1" max="4" value="4"></label></div></details>
+        <div class="console-actions"><button id="research-futu-capture" type="button">获取财报</button></div>
+        <p id="research-futu-status" role="status" aria-live="polite">尚未读取。</p>
+        <ul id="research-futu-captures" class="membership-list"></ul>
+        <div id="research-futu-detail" class="console-output"></div>
+        <details id="research-futu-original-panel"><summary>已核验原始 JSON</summary><pre id="research-futu-original" class="console-output"></pre></details>
+      </section>
+      <section id="candidate-overview" class="candidate-overview" data-testid="candidate-overview" aria-live="polite">
+        <div class="section-heading">
+          <h2>Tracked candidates</h2>
+          <button id="candidate-refresh" data-testid="candidate-refresh" type="button">Refresh</button>
+        </div>
+        <p id="candidate-status" data-testid="candidate-status"></p>
+        <ul id="candidate-list" class="candidate-list" data-testid="candidate-list"></ul>
+      </section>
+      <section id="candidate-memberships" class="candidate-memberships" data-testid="candidate-memberships" aria-live="polite">
+        <div class="section-heading">
+          <h2>Candidate memberships</h2>
+          <div class="inline-actions">
+            <label><input id="membership-include-archived" data-testid="membership-include-archived" type="checkbox"> Include archived</label>
+            <button id="membership-refresh" data-testid="membership-refresh" type="button">Refresh</button>
+          </div>
+        </div>
+        <div class="membership-auth-grid">
+          <label>Read header <input id="membership-read-header-name" data-testid="membership-read-header-name" autocomplete="off" value="x-research-read-token"></label>
+          <label>Read token <input id="membership-read-token" data-testid="membership-read-token" autocomplete="off" type="password"></label>
+          <label>Write header <input id="membership-write-header-name" data-testid="membership-write-header-name" autocomplete="off" value="x-research-write-token"></label>
+          <label>Write token <input id="membership-write-token" data-testid="membership-write-token" autocomplete="off" type="password"></label>
+        </div>
+        <div class="membership-create">
+          <label>Code <input id="membership-code" data-testid="membership-code" autocomplete="off" inputmode="numeric" value="09926"></label>
+          <label>Initial state
+            <select id="membership-initial-state" data-testid="membership-initial-state">
+              <option value="tracked">Tracked</option>
+              <option value="paused">Paused</option>
+            </select>
+          </label>
+          <label><input id="membership-restore-archived" data-testid="membership-restore-archived" type="checkbox"> Restore archived</label>
+          <button id="membership-create" data-testid="membership-create" type="button">Add</button>
+        </div>
+        <p id="membership-status" data-testid="membership-status"></p>
+        <p id="membership-action-status" data-testid="membership-action-status"></p>
+        <ul id="membership-list" class="membership-list" data-testid="membership-list"></ul>
+      </section>
+      <section id="portfolio-decision-workspace" class="portfolio-decision-workspace" data-testid="portfolio-decision-workspace" data-state="idle" aria-live="polite">
+        <div class="section-heading">
+          <h2>Current portfolio and risk</h2>
+          <button id="portfolio-refresh" data-testid="portfolio-refresh" type="button">Refresh</button>
+        </div>
+        <p id="portfolio-workspace-status" data-testid="portfolio-workspace-status"></p>
+        <dl class="portfolio-summary" data-testid="portfolio-summary">
+          <div><dt>Positions</dt><dd id="portfolio-position-count">unknown</dd></div>
+          <div><dt>Market value</dt><dd id="portfolio-market-value">unknown</dd></div>
+          <div><dt>Cash</dt><dd id="portfolio-cash">unknown</dd></div>
+          <div><dt>Concentration</dt><dd id="portfolio-concentration">unknown</dd></div>
+          <div><dt>Pingan snapshot</dt><dd id="portfolio-snapshot-time">unknown</dd></div>
+        </dl>
+        <div class="portfolio-table-wrap">
+          <table class="portfolio-table" data-testid="portfolio-position-table">
+            <thead><tr><th>Position</th><th>Quantity</th><th>Cost</th><th>Latest price</th><th>Market value</th><th>Weight</th><th>P/L</th><th>Futu quote</th></tr></thead>
+            <tbody id="portfolio-position-rows"></tbody>
+          </table>
+        </div>
+        <div class="portfolio-risk-controls">
+          <label>Hypothetical amount (HKD)<input id="portfolio-risk-amount" data-testid="portfolio-risk-amount" type="number" min="0" step="1000" value="0"></label>
+          <button id="portfolio-risk-run" data-testid="portfolio-risk-run" type="button" disabled>Calculate exposure</button>
+        </div>
+        <div id="portfolio-risk-result" class="portfolio-risk-result" data-testid="portfolio-risk-result" data-state="idle"></div>
+        <div class="portfolio-lab-controls">
+          <label>User scenario amounts (HKD, comma separated)<input id="portfolio-lab-amounts" data-testid="portfolio-lab-amounts" type="text" inputmode="decimal" value="10000,50000"></label>
+          <button id="portfolio-lab-run" data-testid="portfolio-lab-run" type="button">Compare account-bound scenarios</button>
+        </div>
+        <div id="portfolio-lab-result" class="portfolio-lab-result" data-testid="portfolio-lab-result" data-state="idle"></div>
+        <div class="portfolio-lab-controls">
+          <label>Compare tracked stock<select id="portfolio-lab-compare-membership" data-testid="portfolio-lab-compare-membership"><option value="">Select another tracked stock</option></select></label>
+          <button id="portfolio-lab-compare-run" data-testid="portfolio-lab-compare-run" type="button" disabled>Compare same amounts</button>
+        </div>
+        <p id="portfolio-lab-compare-status" role="status">Select another tracked membership to compare the same user amounts.</p>
+        <div id="portfolio-lab-compare-result" class="portfolio-lab-result" data-testid="portfolio-lab-compare-result" data-state="idle"></div>
+        <section id="portfolio-report-explanation" class="console-tool" data-testid="portfolio-report-explanation" data-state="idle" aria-live="polite">
+          <div class="console-tool-heading">
+            <div><h3>Current report portfolio explanation</h3><span>Exact current report, evidence pack, membership, Pingan portfolio and Futu quote only.</span></div>
+          </div>
+          <p id="assets-research-handoff-status" role="status">idle: Choose an explicit Assets action to open its exact symbol in Research.</p>
+          <div class="portfolio-lab-controls">
+            <label>Scenario amount (HKD)<input id="portfolio-report-scenario-amount" data-testid="portfolio-report-scenario-amount" type="number" min="0" max="1000000000000" step="1000" placeholder="Enter an amount"></label>
+            <button id="portfolio-report-explanation-read" data-testid="portfolio-report-explanation-read" type="button">Fresh-read explanation</button>
+          </div>
+          <p id="portfolio-report-explanation-status" role="status">idle: Select and load an exact membership, then enter one scenario amount for a fresh read.</p>
+          <div id="portfolio-report-explanation-output" class="portfolio-lab-result" data-testid="portfolio-report-explanation-output">No current report-bound portfolio explanation is displayed.</div>
+        </section>
+        <ul id="portfolio-gaps" class="portfolio-gaps" data-testid="portfolio-gaps"></ul>
+        <p class="form-note">Pingan supplies local-development position facts; Futu supplies market prices. The amount is user-provided and the result is not a direction, target weight, recommended amount, timing signal, return promise, or trade action.</p>
+      </section>
+      <section id="assets-alpha-console" class="candidate-memberships" data-testid="assets-alpha-console" data-state="idle" aria-live="polite">
+        <div class="section-heading">
+          <div>
+            <h2>Assets Alpha · Owner-entered unofficial local record</h2>
+            <p class="form-note">Completely separate from Pingan current portfolio, risk and scenario lab. It never becomes official portfolio, cash, fee, position or accounting authority.</p>
+          </div>
+          <button id="assets-alpha-refresh" type="button">Fresh-read latest + history</button>
+        </div>
+        <p id="assets-alpha-status" role="status">idle: Fresh-read the Owner-entered unofficial local Alpha before using it.</p>
+        <div class="console-split">
+          <section class="console-tool">
+            <h3>Append a new snapshot</h3>
+            <div class="console-form-grid">
+              <label>Snapshot asOf<input id="assets-alpha-as-of" type="datetime-local" step="1"></label>
+              <label>Cash HKD, optional<input id="assets-alpha-cash" type="number" min="0" step="0.01"></label>
+              <label class="span-2">Manual positions, one per line: symbol,quantity,marketValueHkd,unrealizedPnlHkd<textarea id="assets-alpha-positions" rows="7" maxlength="65536" placeholder="HK.00175,1000,18000,-500&#10;HK.00700,100,,"></textarea></label>
+              <label class="span-2">Or choose one local CSV<input id="assets-alpha-csv-file" type="file" accept=".csv,text/csv"></label>
+            </div>
+            <p class="form-note">CSV uses the existing iOS-compatible header <code>symbol,quantity,market_value_hkd,as_of</code>, at most 100 positions and 64 KB. Selecting or pasting CSV never submits automatically.</p>
+            <p>Draft source: <strong id="assets-alpha-draft-source">manual</strong></p>
+            <label class="console-check"><input id="assets-alpha-owner-confirmed" type="checkbox"> I explicitly confirm this unofficial local snapshot</label>
+            <div class="console-actions">
+              <button id="assets-alpha-save" type="button">Append snapshot and fresh-read</button>
+              <button id="assets-alpha-zero" type="button">Append explicit zero-position snapshot</button>
+            </div>
+          </section>
+          <section class="console-tool">
+            <div id="assets-alpha-latest">Latest unofficial Alpha is UNKNOWN.</div>
+            <div id="assets-alpha-history"></div>
+          </section>
+        </div>
+        <p class="form-note">Authority is fixed to owner_entered_unofficial_local_alpha with official=false, production=false and advisoryOnly=true. This workspace records snapshots only; it does not provide a trade journal, recommendation, order, broker call or official portfolio mutation.</p>
+      </section>
+      <section id="investment-control-console" class="investment-control-console" data-testid="investment-control-console" data-state="idle">
+        <div class="section-heading">
+          <div>
+            <h2>Investment control console</h2>
+            <p id="investment-console-source-status" class="console-status" data-testid="investment-console-source-status"></p>
+          </div>
+          <span id="investment-console-health" class="console-health" data-testid="investment-console-health">unavailable</span>
+        </div>
+        <nav class="console-tabs" role="tablist" aria-label="Investment control console views">
+          <button id="investment-console-tab-sources" data-control-tab="sources" role="tab" aria-controls="investment-console-panel-sources" type="button">Sources</button>
+          <button id="investment-console-tab-valuation" data-control-tab="valuation" role="tab" aria-controls="investment-console-panel-valuation" type="button">Valuation &amp; quant</button>
+          <button id="investment-console-tab-conditions" data-control-tab="conditions" role="tab" aria-controls="investment-console-panel-conditions" type="button">Conditions &amp; learning</button>
+          <button id="investment-console-tab-diagnostics" data-control-tab="diagnostics" role="tab" aria-controls="investment-console-panel-diagnostics" type="button">Diagnostics</button>
+        </nav>
+
+        <div id="investment-console-panel-sources" class="console-panel" role="tabpanel" aria-labelledby="investment-console-tab-sources">
+          <div class="console-table-wrap">
+            <table class="console-table" data-testid="investment-console-source-table">
+              <thead><tr><th>Lane</th><th>State</th><th>Source identity</th><th>Authority</th></tr></thead>
+              <tbody id="investment-console-source-rows"></tbody>
+            </table>
+          </div>
+          <div class="console-split">
+            <section id="research-profile-editor" class="console-tool" data-testid="research-profile-editor">
+              <div class="console-tool-heading"><h3>Research profile</h3><span id="research-editor-status" data-testid="research-editor-status"></span></div>
+              <div class="console-form-grid">
+                <label>Name<input id="research-editor-name" type="text" maxlength="500"></label>
+                <label>Next review<input id="research-editor-next-review" type="date"></label>
+                <label class="span-2">Current view<textarea id="research-editor-current-view" rows="3" maxlength="4000"></textarea></label>
+                <label class="span-2">Current thesis<textarea id="research-editor-current-thesis" rows="3" maxlength="4000"></textarea></label>
+                <label>Market disagreement<textarea id="research-editor-market-disagreement" rows="3" maxlength="4000"></textarea></label>
+                <label>Invalidation condition<textarea id="research-editor-invalidation" rows="3" maxlength="4000"></textarea></label>
+                <label>Key variables, one per line<textarea id="research-editor-key-variables" rows="4" maxlength="10000"></textarea></label>
+                <label>Catalysts, one per line<textarea id="research-editor-catalysts" rows="4" maxlength="10000"></textarea></label>
+                <label class="span-2">Evidence gaps, one per line<textarea id="research-editor-evidence-gaps" rows="3" maxlength="10000"></textarea></label>
+              </div>
+              <div class="console-actions"><button id="research-editor-save" data-control-action="save-profile" type="button">Save profile</button></div>
+            </section>
+            <section id="research-evidence-editor" class="console-tool" data-testid="research-evidence-editor">
+              <div class="console-tool-heading"><h3>Research evidence</h3><span id="research-evidence-status" data-testid="research-evidence-status"></span></div>
+              <div class="console-form-grid">
+                <label>Source type<input id="research-evidence-source-type" type="text" maxlength="200" value="filing"></label>
+                <label>Published on<input id="research-evidence-published-at" type="date"></label>
+                <label class="span-2">Source URL<input id="research-evidence-source-url" type="url" maxlength="2000"></label>
+                <label class="span-2">Summary<textarea id="research-evidence-summary" rows="4" maxlength="4000"></textarea></label>
+                <label>Kind<select id="research-evidence-fact-kind"><option value="fact">Fact</option><option value="inference">Inference</option></select></label>
+                <label>Stance<select id="research-evidence-stance"><option value="neutral">Neutral</option><option value="support">Support</option><option value="refute">Refute</option></select></label>
+                <label>Variable<input id="research-evidence-variable" type="text" maxlength="500"></label>
+                <label>Reliability<select id="research-evidence-reliability"><option value="">Not captured</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+                <label>Materiality<select id="research-evidence-materiality"><option value="">Not captured</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+                <label class="console-check"><input id="research-evidence-read" type="checkbox"> Read</label>
+              </div>
+              <div class="console-actions"><button id="research-evidence-add" data-control-action="add-evidence" type="button">Add evidence</button></div>
+            </section>
+          </div>
+          <section id="decision-brief-console" class="console-tool" data-testid="decision-brief-console" data-state="idle" aria-live="polite">
+            <div class="console-tool-heading">
+              <div><h3>Daily decision brief</h3><span>Exact membership · fresh read · advisory only</span></div>
+              <button id="decision-brief-refresh" type="button">Refresh brief</button>
+            </div>
+            <p id="decision-brief-status" role="status">Load one exact non-archived membership, then explicitly refresh the daily decision brief.</p>
+            <div class="console-actions">
+              <a href="#research-profile-editor">Edit research profile</a>
+              <a href="#research-evidence-editor">Add research evidence</a>
+            </div>
+            <div id="decision-brief-output" class="console-output">No current daily decision brief facts are displayed.</div>
+            <p class="console-note">Readiness means prepared for an Owner three-minute review. It is not a recommendation, ranking, formal decision, target, order, or trade.</p>
+          </section>
+          <section id="research-dossier-console" class="console-tool" data-testid="research-dossier-console" data-state="blocked" aria-live="polite">
+            <div class="console-tool-heading">
+              <div>
+                <h3>Structured Research dossier</h3>
+                <span id="research-dossier-membership">No exact non-archived membership selected</span>
+              </div>
+              <button id="research-dossier-refresh" type="button">Fresh-read dossier</button>
+            </div>
+            <p id="research-dossier-status" role="status">Open an exact membership in Research before using the structured dossier.</p>
+            <section class="console-tool">
+              <h4>1. Source-bound research context</h4>
+              <div class="console-form-grid">
+                <label>Industry<input id="research-dossier-context-industry" type="text" maxlength="200"></label>
+                <label>Entry type<select id="research-dossier-context-kind"><option value="selected_fact">Company numeric fact</option><option value="peer_fact">Comparable peer fact</option><option value="operating_kpi">Operating or price KPI</option><option value="macro">Macro driver</option><option value="industry">Industry driver</option></select></label>
+                <label>Exact PDF source<select id="research-dossier-context-material"><option value="">Fresh-read required</option></select></label>
+                <label data-research-dossier-context-entry="fact">Fact metric<input id="research-dossier-context-metric" type="text" maxlength="200" value="industry_context"></label>
+                <label data-research-dossier-context-entry="fact">Fact value or UNKNOWN<input id="research-dossier-context-value" type="text" inputmode="decimal"></label>
+                <label data-research-dossier-context-entry="fact">Unit<input id="research-dossier-context-unit" type="text" maxlength="100" value="UNKNOWN"></label>
+                <label data-research-dossier-context-entry="fact">Currency, optional<input id="research-dossier-context-currency" type="text" maxlength="3" pattern="[A-Z]{3}"></label>
+                <label data-research-dossier-context-entry="peer" hidden>Peer symbol<input id="research-dossier-context-peer-symbol" type="text" maxlength="8" placeholder="HK.00700"></label>
+                <label data-research-dossier-context-entry="peer" hidden>Peer name<input id="research-dossier-context-peer-name" type="text" maxlength="200"></label>
+                <label data-research-dossier-context-entry="peer" hidden>Peer decision<select id="research-dossier-context-peer-status"><option value="">Choose included or excluded</option><option value="included">Included as comparable</option><option value="excluded">Excluded from comparison</option></select></label>
+                <label class="span-2" data-research-dossier-context-entry="peer" hidden>Inclusion or exclusion reason<textarea id="research-dossier-context-peer-reason" rows="2" maxlength="1000"></textarea></label>
+                <label data-research-dossier-context-entry="kpi" hidden>KPI category<select id="research-dossier-context-kpi-category"><option value="operating">Operating</option><option value="price">Price</option></select></label>
+                <label data-research-dossier-context-entry="kpi" hidden>Period start<input id="research-dossier-context-kpi-period-start" type="date"></label>
+                <label data-research-dossier-context-entry="kpi" hidden>Period end<input id="research-dossier-context-kpi-period-end" type="date"></label>
+                <label data-research-dossier-context-entry="kpi" hidden>Value status<select id="research-dossier-context-kpi-value-status"><option value="reported">Reported</option><option value="explicit_unknown">Explicit UNKNOWN</option></select></label>
+                <label data-research-dossier-context-entry="kpi" hidden>Comparability<select id="research-dossier-context-kpi-comparability"><option value="comparable">Comparable</option><option value="not_comparable">Not comparable</option></select></label>
+                <label class="span-2" data-research-dossier-context-entry="kpi" hidden>Comparability reason, required when not comparable<input id="research-dossier-context-kpi-comparability-reason" type="text" maxlength="500"></label>
+                <label data-research-dossier-context-entry="driver" hidden>Driver dimension<select id="research-dossier-context-dimension"></select></label>
+                <label data-research-dossier-context-entry="driver" hidden>Impact<select id="research-dossier-context-impact"><option value="supportive">Supportive</option><option value="adverse">Adverse</option><option value="mixed">Mixed</option><option value="unknown">UNKNOWN</option></select></label>
+                <label class="span-2" data-research-dossier-context-entry="driver" hidden>Source statement<textarea id="research-dossier-context-statement" rows="3" maxlength="4000"></textarea></label>
+                <label class="span-2" data-research-dossier-context-entry="driver" hidden>Why it matters to the thesis<textarea id="research-dossier-context-thesis-relevance" rows="2" maxlength="1000"></textarea></label>
+                <label>As of<input id="research-dossier-context-as-of" type="datetime-local"></label>
+                <label>Cutoff<input id="research-dossier-context-cutoff" type="datetime-local"></label>
+                <label>Valid until<input id="research-dossier-context-valid-until" type="datetime-local"></label>
+                <label class="span-2">UNKNOWN items, one per line<textarea id="research-dossier-context-unknowns" rows="3" maxlength="50000"></textarea></label>
+              </div>
+              <div class="console-actions"><button id="research-dossier-context-save" type="button">Save context and fresh-read</button></div>
+            </section>
+            <section class="console-tool">
+              <h4>2. Owner transcription of issuer-reported fundamental</h4>
+              <div class="console-form-grid">
+                <label>Exact source material<select id="research-dossier-fundamental-material"><option value="">Fresh-read required</option></select></label>
+                <label>Metric<select id="research-dossier-fundamental-metric"><option value="revenue">Revenue</option><option value="profit_attributable_to_owners">Profit attributable to owners</option><option value="operating_cash_flow">Operating cash flow</option><option value="total_assets">Total assets</option><option value="total_liabilities">Total liabilities</option></select></label>
+                <label>Period kind<select id="research-dossier-fundamental-period-kind"><option value="duration">Duration</option><option value="instant">Instant</option></select></label>
+                <label>Period start<input id="research-dossier-fundamental-period-start" type="date"></label>
+                <label>Period end<input id="research-dossier-fundamental-period-end" type="date"></label>
+                <label>Currency<input id="research-dossier-fundamental-currency" type="text" maxlength="3" pattern="[A-Z]{3}" value="HKD"></label>
+                <label>Unit scale<select id="research-dossier-fundamental-unit-scale"><option value="1">1</option><option value="1000">1,000</option><option value="1000000">1,000,000</option><option value="1000000000">1,000,000,000</option></select></label>
+                <label>Scope<select id="research-dossier-fundamental-scope"><option value="consolidated">Consolidated</option><option value="parent_company">Parent company</option></select></label>
+                <label>Status<select id="research-dossier-fundamental-status"><option value="reported">Reported</option><option value="explicit_unknown">Explicit UNKNOWN</option></select></label>
+                <label>Reported value<input id="research-dossier-fundamental-value" type="text" inputmode="decimal"></label>
+                <label>Comparability<select id="research-dossier-fundamental-comparability"><option value="comparable">Comparable</option><option value="not_comparable">Not comparable</option></select></label>
+                <label>Comparability reason<input id="research-dossier-fundamental-comparability-reason" type="text" maxlength="500"></label>
+                <label>Exact source number<input id="research-dossier-fundamental-raw-value" type="text" maxlength="100"></label>
+                <label>Business scope<input id="research-dossier-fundamental-business-scope" type="text" maxlength="200"></label>
+                <label>Measurement basis<select id="research-dossier-fundamental-measurement-basis"><option value="financial_statement">Financial statement</option><option value="issuer_sales">Issuer sales</option><option value="issued_shares">Issued shares</option></select></label>
+                <label>Category<select id="research-dossier-fundamental-category"><option value="actual">Actual</option><option value="guidance">Guidance</option></select></label>
+                <label class="span-2">Limitation<textarea id="research-dossier-fundamental-limitation" rows="2" maxlength="2000"></textarea></label>
+              </div>
+              <p class="form-note">For stored HTML, check each interpreted field against the saved passage. PDF transcription keeps its existing path.</p>
+              <div class="console-form-grid">
+                <label class="console-check"><input type="checkbox" data-fundamental-confirm="rawValue"> Raw number</label>
+                <label class="console-check"><input type="checkbox" data-fundamental-confirm="metric"> Metric</label>
+                <label class="console-check"><input type="checkbox" data-fundamental-confirm="period"> Period</label>
+                <label class="console-check"><input type="checkbox" data-fundamental-confirm="currency"> Currency</label>
+                <label class="console-check"><input type="checkbox" data-fundamental-confirm="unitScale"> Unit scale</label>
+                <label class="console-check"><input type="checkbox" data-fundamental-confirm="scope"> Accounting scope</label>
+                <label class="console-check"><input type="checkbox" data-fundamental-confirm="businessScope"> Business scope</label>
+                <label class="console-check"><input type="checkbox" data-fundamental-confirm="measurementBasis"> Measurement basis</label>
+                <label class="console-check"><input type="checkbox" data-fundamental-confirm="category"> Category</label>
+                <label class="console-check"><input id="research-dossier-fundamental-source-checked" type="checkbox"> I checked the saved original and passage</label>
+              </div>
+              <div class="console-actions"><button id="research-dossier-fundamental-save" type="button">Save fundamental and fresh-read</button></div>
+              <p class="form-note">The value remains issuer-reported, Owner-manually transcribed, unverified, research-only, and bound to one exact saved source citation.</p>
+            </section>
+            <section class="console-tool" data-testid="research-financial-requirement">
+              <h4>财务资料期数核对</h4>
+              <p class="form-note">逐份打开已保存的官方原文，核对截至指定日期应有的年度和中期资料及下一次复核时间。这里的人工核对不会自动确认报告或生成决定。</p>
+              <p id="research-financial-requirement-source-status" role="status">请先读取当前公司的已保存原文。</p>
+              <ul id="research-financial-requirement-sources" class="membership-list"></ul>
+              <div class="console-form-grid">
+                <label>财政年结（月-日）<input id="research-financial-requirement-year-end" type="text" inputmode="numeric" maxlength="5" pattern="[0-9]{2}-[0-9]{2}" placeholder="12-31"></label>
+                <label>核对截至时间<input id="research-financial-requirement-as-of" type="datetime-local"></label>
+                <label>截至该日应有的最新年度结束<input id="research-financial-requirement-annual-end" type="date"></label>
+                <label>截至该日应有的最新中期开始<input id="research-financial-requirement-interim-start" type="date"></label>
+                <label>截至该日应有的最新中期结束<input id="research-financial-requirement-interim-end" type="date"></label>
+                <label>下一次复核时间<input id="research-financial-requirement-next-review" type="datetime-local"></label>
+              </div>
+              <label class="console-check"><input id="research-financial-requirement-confirm" type="checkbox">我已逐份核对所选原文，并确认上述应覆盖期间与复核时间</label>
+              <div class="console-actions"><button id="research-financial-requirement-save" type="button">保存期数核对并回读</button></div>
+              <div id="research-financial-requirement-output" class="console-output" role="status">当前核对结果尚未读取。</div>
+            </section>
+            <section class="console-tool">
+              <h4>3. Fundamental-anchored Owner valuation scenario</h4>
+              <div class="console-numeric-grid">
+                <label class="span-2">Valuation method<select id="research-dossier-valuation-method"><option value="discounted_forward_metric_multiple_user_scenario">Forward metric multiple</option><option value="adjusted_net_asset_value_user_scenario">Adjusted net asset value</option></select></label>
+                <label class="span-2">Current anchor<select id="research-dossier-valuation-anchor"><option value="">Fresh-read required</option></select></label>
+                <label>Metric currency<input id="research-dossier-valuation-currency" type="text" maxlength="3" pattern="[A-Z]{3}" value="HKD"></label>
+                <label>Base metric / share<input id="research-dossier-valuation-base" type="number" min="0.000001" value="2" step="0.01"></label>
+                <label>Annual growth<input id="research-dossier-valuation-growth" type="number" min="-0.95" max="3" value="0.15" step="0.01"></label>
+                <label>Horizon years<input id="research-dossier-valuation-years" type="number" min="1" max="20" value="3" step="1"></label>
+                <label>Terminal multiple<input id="research-dossier-valuation-multiple" type="number" min="0.1" max="200" value="18" step="0.1"></label>
+                <label>Annual discount<input id="research-dossier-valuation-discount" type="number" min="0" max="1" value="0.1" step="0.01"></label>
+                <label>Net cash / share<input id="research-dossier-valuation-net-cash" type="number" value="1" step="0.01"></label>
+                <label>Growth step<input id="research-dossier-valuation-growth-step" type="number" min="0.0001" max="1" value="0.05" step="0.01"></label>
+                <label>Multiple step<input id="research-dossier-valuation-multiple-step" type="number" min="0.01" max="100" value="2" step="0.1"></label>
+              </div>
+              <div class="console-actions">
+                <button id="research-dossier-valuation-save" type="button">Save valuation and fresh-read</button>
+                <button id="research-dossier-open-deep-research" type="button">Fresh-refresh Deep Research</button>
+              </div>
+            </section>
+            <section class="console-tool">
+              <h4>4. Research coverage and UNKNOWN gaps</h4>
+              <div class="console-actions"><button id="research-dossier-completeness-save" type="button">Record current coverage and fresh-read</button></div>
+              <p class="form-note">The server derives all nine domains from current exact sources. Recording coverage does not freeze a pack, confirm a report, or create a formal decision.</p>
+            </section>
+            <div id="research-dossier-output" class="console-output">Current dossier facts are UNKNOWN until a fresh exact read succeeds.</div>
+            <p class="form-note">Every write is explicit and idempotent. No automatic pack freeze, report save or confirmation, formal decision, recommendation, target, order, trade, broker call, or official portfolio mutation occurs.</p>
+          </section>
+          <section id="evidence-conflict-console" class="console-tool" data-testid="evidence-conflict-console" data-state="blocked" aria-live="polite">
+            <div class="console-tool-heading">
+              <div><h3>Evidence conflict resolution</h3><span>Current conflict/rejected revisions only; historical evidence is labelled and never treated as current.</span></div>
+              <button id="evidence-conflict-refresh" type="button">Fresh-read conflicts</button>
+            </div>
+            <p id="evidence-conflict-status" role="status">Open an exact membership in Research, then fresh-read current evidence conflicts.</p>
+            <ul id="evidence-conflict-list" class="membership-list"></ul>
+            <section id="evidence-conflict-editor" class="console-tool" hidden>
+              <h4>Explicit replacement evidence</h4>
+              <p id="evidence-conflict-selected">No replacement target selected.</p>
+              <div class="console-form-grid">
+                <label>Replacement title<input id="evidence-conflict-title" type="text" maxlength="500"></label>
+                <label>New source version<input id="evidence-conflict-source-version" type="text" maxlength="200"></label>
+                <label class="span-2">Replacement evidence text<textarea id="evidence-conflict-content" rows="6" maxlength="100000"></textarea></label>
+                <label>Published at<input id="evidence-conflict-published-at" type="datetime-local"></label>
+                <label>Valid until<input id="evidence-conflict-valid-until" type="datetime-local"></label>
+                <label>Explicit verification<select id="evidence-conflict-verification"><option value="">Select verification</option><option value="unverified">Unverified</option><option value="verified">Verified</option><option value="conflict">Conflict</option><option value="rejected">Rejected</option></select></label>
+                <label>Stance<select id="evidence-conflict-stance"><option value="neutral">Neutral</option><option value="support">Support</option><option value="refute">Refute</option></select></label>
+                <label class="span-2">Replacement summary<textarea id="evidence-conflict-summary-input" rows="3" maxlength="4000"></textarea></label>
+              </div>
+              <div class="console-actions"><button id="evidence-conflict-save" type="button">Write replacement and fresh-read</button><button id="evidence-conflict-cancel" type="button">Cancel</button></div>
+              <p class="form-note">Source type, exact URL, rights, claim class, variable, scores and read state remain bound to the selected revision. Verification is never automatic.</p>
+            </section>
+            <p class="form-note">No recommendation, ranking, score, target price, direction, order, trade, report confirmation, formal decision, or official portfolio write occurs.</p>
+          </section>
+          <section id="deep-research-console" class="console-tool" data-testid="deep-research-console" data-state="unavailable">
+            <div class="console-tool-heading">
+              <div><h3>Evidence-bound deep research</h3><span>Traceable materials, research events, frozen evidence, and explicit synthesis.</span></div>
+              <span id="deep-research-status" role="status" aria-live="polite">Load an exact source-bound candidate before using deep research.</span>
+            </div>
+            <p id="deep-source-health-recovery" class="form-note" hidden><span></span> <a href="#deep-research-console">去处理来源问题</a></p>
+            <div class="console-form-grid">
+              <label>Material title<input id="deep-material-title" type="text" maxlength="500"></label>
+              <label>Source type<input id="deep-material-source-type" type="text" maxlength="200" value="user_text" list="deep-material-source-types"></label>
+              <datalist id="deep-material-source-types"><option value="user_text"></option><option value="owner_verified_announcement"></option><option value="owner_verified_financial_report"></option><option value="owner_verified_corporate_action"></option><option value="owner_verified_major_news"></option><option value="owner_verified_news"></option><option value="owner_verified_holding_logic"></option><option value="issuer_disclosure"></option></datalist>
+              <label class="span-2">Material text<textarea id="deep-material-content" rows="6" maxlength="100000"></textarea></label>
+              <label class="span-2">Source URL (optional)<input id="deep-material-source-url" type="url" maxlength="2000"></label>
+              <label>Published at<input id="deep-material-published-at" type="datetime-local"></label>
+              <label>Valid until<input id="deep-material-valid-until" type="datetime-local"></label>
+              <label>Claim class<select id="deep-material-claim-type"><option value="">Select claim class</option><option value="verified_fact">Verified fact</option><option value="issuer_statement">Issuer statement</option><option value="third_party_statement">Third-party statement</option><option value="model_inference">Model inference</option></select></label>
+              <label>Verification<select id="deep-material-verification"><option value="">Select verification</option><option value="verified">Verified</option><option value="unverified">Unverified</option><option value="conflict">Conflict</option><option value="rejected">Rejected</option></select></label>
+              <label>Rights<select id="deep-material-rights"><option value="user_provided">User provided</option><option value="authorized_public">Authorized public</option><option value="unknown">Unknown</option><option value="restricted">Restricted</option></select></label>
+              <label>Source version<input id="deep-material-source-version" type="text" maxlength="200" value="user-submission-v1"></label>
+              <label>Replaces material ID (optional)<input id="deep-material-replaces-id" type="text" inputmode="numeric" pattern="[1-9][0-9]*"></label>
+              <label class="span-2">Evidence summary<textarea id="deep-material-summary" rows="3" maxlength="4000"></textarea></label>
+              <label>Variable<input id="deep-material-variable" type="text" maxlength="500"></label>
+              <label>Stance<select id="deep-material-stance"><option value="neutral">Neutral</option><option value="support">Support</option><option value="refute">Refute</option></select></label>
+              <label>Reliability<select id="deep-material-reliability"><option value="">Not captured</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+              <label>Materiality<select id="deep-material-materiality"><option value="">Not captured</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+              <label class="console-check"><input id="deep-material-read" type="checkbox"> Read</label>
+            </div>
+            <div class="console-actions">
+              <button id="deep-material-save" type="button">Save traceable material</button>
+              <button id="deep-research-refresh" type="button">Refresh workspace</button>
+              <button id="deep-pack-limited" type="button">用已有材料准备有限研究</button>
+              <p>无需先补齐估值和技术数据；至少一份有效材料。准备后在下方确认发送范围并发起研究，结果会列明依据、缺口和下一步核实动作。</p>
+              <button id="deep-pack-freeze" type="button">冻结完整研究证据</button>
+            </div>
+            <div class="console-form-grid">
+              <label>Saved verified material ID<input id="deep-event-material-id" type="text" inputmode="numeric" pattern="[1-9][0-9]*"></label>
+              <label>Research event kind<select id="deep-event-kind"><option value="announcement">Announcement</option><option value="financial_report">Financial report</option><option value="corporate_action">Corporate action</option><option value="major_news">Major news</option></select></label>
+              <label>Evidence scope<select id="deep-event-scope"><option value="research_stock">Research stock</option><option value="current_holding">Current Pingan holding</option></select></label>
+            </div>
+            <p id="deep-holding-context" class="form-note">Research-stock events do not use account holdings.</p>
+            <div class="console-actions"><button id="deep-event-save" type="button">Save research event or holding logic</button></div>
+            <p class="form-note">The selected material must be current, verified, authorized, and bound to a key variable. Current-holding logic additionally requires an HTTPS <code>owner_verified_holding_logic</code> source and the exact current Pingan position. Saving never freezes, synthesizes, confirms, decides, changes portfolio facts, or trades automatically.</p>
+            <div class="console-form-grid">
+              <label>监测月份<input id="deep-geely-period" type="month"></label>
+            </div>
+            <datalist id="deep-geely-events"></datalist>
+            <div id="deep-geely-observations" aria-label="吉利销量监测观察值"></div>
+            <template id="deep-geely-observation-template">
+              <fieldset class="console-form-grid console-condition-fieldset" data-geely-observation>
+                <legend class="span-2">一条来源绑定观察值</legend>
+                <label>来源事件编号<input data-geely-field="eventId" type="text" inputmode="numeric" pattern="[1-9][0-9]*" list="deep-geely-events"></label>
+                <label>主体角色<select data-geely-field="entityRole"><option value="target">吉利目标主体</option><option value="peer">同业</option><option value="industry">行业</option></select></label>
+                <label>主体名称<input data-geely-field="entityName" type="text" maxlength="200"></label>
+                <label>主体 ID<input data-geely-field="entityId" type="text" maxlength="100"></label>
+                <label>主体层级<select data-geely-field="entityLevel"><option value="issuer">发行人</option><option value="brand">品牌</option><option value="model">车型</option><option value="industry">行业</option></select></label>
+                <label>发行人 ID<input data-geely-field="issuerId" type="text" maxlength="100"></label>
+                <label>期间类型<select data-geely-field="periodKind"><option value="month">单月</option><option value="year_to_date">年初至今</option></select></label>
+                <label>数据期间<input data-geely-field="period" type="month"></label>
+                <label>指标<select data-geely-field="metric"><option value="sales_volume">销量（辆）</option><option value="average_transaction_price">平均成交价（元/辆）</option></select></label>
+                <label>动力类型<select data-geely-field="propulsion"><option value="all">全部</option><option value="new_energy">新能源</option></select></label>
+                <label>地区<select data-geely-field="geography"><option value="global">全球</option><option value="china">中国</option><option value="export">出口</option></select></label>
+                <label>口径<select data-geely-field="channel"><option value="wholesale">批发</option><option value="retail">零售</option><option value="deliveries">交付</option><option value="registrations">上牌</option></select></label>
+                <label>定义键<input data-geely-field="definitionKey" type="text" maxlength="200"></label>
+                <label>数值<input data-geely-field="value" type="number" min="0" step="any"></label>
+                <div class="console-actions span-2">
+                  <button type="button" data-geely-action="duplicate">复制此行</button>
+                  <button type="button" data-geely-action="remove">删除此行</button>
+                </div>
+              </fieldset>
+            </template>
+            <div class="console-actions">
+              <button id="deep-geely-add-target" type="button">添加吉利观察值</button>
+              <button id="deep-geely-add-peer" type="button">添加同业观察值</button>
+              <button id="deep-geely-save" type="button">保存吉利销量监测</button>
+            </div>
+            <p class="form-note">仅限 HK.00175。每行都必须绑定已核验的新能源销量研究事件；当前标的事件可从列表选择，同业事件填写对应已跟踪研究事件编号。不完整数据保持 UNKNOWN。保存不会自动冻结证据、确认报告、形成正式决定或交易。</p>
+            <h4>协鑫科技光伏价值链监测</h4>
+            <div class="console-form-grid">
+              <label>当前期间<input id="deep-gcl-period" type="date"></label>
+              <label>参照期间<input id="deep-gcl-reference-period" type="date"></label>
+            </div>
+            <datalist id="deep-gcl-events"></datalist>
+            <div id="deep-gcl-prices" aria-label="协鑫光伏价格观察值"></div>
+            <template id="deep-gcl-price-template">
+              <fieldset class="console-form-grid console-condition-fieldset" data-gcl-price>
+                <legend class="span-2">一条价格来源绑定观察值</legend>
+                <label>来源事件编号<input data-gcl-field="eventId" type="text" inputmode="numeric" pattern="[1-9][0-9]*" list="deep-gcl-events"></label>
+                <label>价值链环节<select data-gcl-field="stage"><option value="polysilicon">多晶硅</option><option value="wafer">硅片</option><option value="cell">电池片</option><option value="module">组件</option></select></label>
+                <label>数据期间<input data-gcl-field="period" type="date"></label>
+                <label>产品规格<input data-gcl-field="productSpecification" type="text" maxlength="300"></label>
+                <label>原始单位<select data-gcl-field="unit"><option value="CNY_per_kg">元/公斤</option><option value="CNY_per_piece">元/片</option><option value="CNY_per_watt">元/瓦</option></select></label>
+                <label>原始数值<input data-gcl-field="value" type="number" min="0" step="any"></label>
+                <label>折算为元/瓦的系数<input data-gcl-field="conversionFactorToCnyPerWatt" type="number" min="0" step="any"></label>
+                <label>统一口径键<input data-gcl-field="normalizationBasisKey" type="text" maxlength="200"></label>
+                <label class="span-2">折算规则<input data-gcl-field="normalizationRule" type="text" maxlength="500"></label>
+                <label>定义键<input data-gcl-field="definitionKey" type="text" maxlength="200"></label>
+                <div class="console-actions span-2">
+                  <button type="button" data-gcl-action="duplicate">复制此行</button>
+                  <button type="button" data-gcl-action="remove">删除此行</button>
+                </div>
+              </fieldset>
+            </template>
+            <div id="deep-gcl-contexts" aria-label="协鑫光伏经营上下文观察值"></div>
+            <template id="deep-gcl-context-template">
+              <fieldset class="console-form-grid console-condition-fieldset" data-gcl-context>
+                <legend class="span-2">一条经营上下文来源绑定观察值</legend>
+                <label>来源事件编号<input data-gcl-field="eventId" type="text" inputmode="numeric" pattern="[1-9][0-9]*" list="deep-gcl-events"></label>
+                <label>上下文指标<select data-gcl-field="metric"><option value="inventory">库存</option><option value="utilization">开工率</option><option value="capacity">产能</option><option value="company_cost">公司成本</option><option value="impairment">减值</option></select></label>
+                <label>数据期间<input data-gcl-field="period" type="date"></label>
+                <label>产品规格<input data-gcl-field="productSpecification" type="text" maxlength="300"></label>
+                <label>单位<select data-gcl-field="unit"><option value="metric_tonnes">公吨</option><option value="percent">百分比</option><option value="metric_tonnes_per_year">公吨/年</option><option value="CNY_per_kg">元/公斤</option><option value="CNY">元</option></select></label>
+                <label>币种<select data-gcl-field="currency"><option value="">不适用</option><option value="CNY">人民币</option></select></label>
+                <label>数值<input data-gcl-field="value" type="number" min="0" step="any"></label>
+                <label>定义键<input data-gcl-field="definitionKey" type="text" maxlength="200"></label>
+                <div class="console-actions span-2">
+                  <button type="button" data-gcl-action="duplicate">复制此行</button>
+                  <button type="button" data-gcl-action="remove">删除此行</button>
+                </div>
+              </fieldset>
+            </template>
+            <div class="console-actions">
+              <button id="deep-gcl-add-price" type="button">添加价格观察值</button>
+              <button id="deep-gcl-add-context" type="button">添加经营上下文</button>
+              <button id="deep-gcl-save" type="button">保存协鑫光伏监测</button>
+            </div>
+            <p class="form-note">仅限 HK.03800。每行必须绑定同一当前平安持仓快照下已核验的对应价格或经营事件；原始规格、单位、币种、期间和折算规则会原样保留。缺失或不可比较数据保持 UNKNOWN。保存不会改变持仓、现金、费用、报告、决定或交易。</p>
+            <div class="console-actions" aria-label="Deep Research task controls">
+              <button id="deep-task-start" type="button">Start Deep Research</button>
+              <button id="deep-task-refresh" type="button">Refresh saved task</button>
+              <button id="deep-task-retry" type="button">Explicitly retry same task</button>
+              <button id="deep-task-absorb" type="button">Explicitly absorb into report</button>
+              <button id="deep-task-defer" type="button">Handle later</button>
+              <button id="deep-task-cancel" type="button">Cancel running task</button>
+              <button id="deep-task-reject" type="button">Do not adopt ready result</button>
+            </div>
+            <fieldset id="deep-task-intent" class="console-form-grid console-condition-fieldset" disabled>
+              <legend class="span-2">本次 Deep Research 发送范围</legend>
+              <label class="span-2">研究问题<textarea id="deep-task-question" rows="3" maxlength="4000"></textarea></label>
+              <label>研究期限<select id="deep-task-horizon"><option value="long_term">长期</option><option value="medium_term">中期</option><option value="event_driven">事件驱动</option></select></label>
+              <label>输出语言<select id="deep-task-language"><option value="zh-Hans">简体中文</option><option value="en">English</option></select></label>
+              <label>最大输出 token<select id="deep-task-max-tokens"><option value="1000">1000</option><option value="2000">2000</option><option value="4000">4000</option><option value="8000">8000</option></select></label>
+              <label>最长等待<select id="deep-task-max-duration"><option value="15">15 秒</option><option value="30">30 秒</option><option value="60">60 秒</option></select></label>
+              <p id="deep-task-budget-preview" class="span-2 form-note">选择输出 token 后显示本次输出成本上限；精确发送清单会记录输入与总成本的保守上界。</p>
+              <fieldset class="span-2 console-condition-fieldset">
+                <legend>结构化事实</legend>
+                <label><input type="checkbox" data-deep-section="fundamentals" checked>基本面</label>
+                <label><input type="checkbox" data-deep-section="research_context" checked>行业/同业/宏观</label>
+                <label><input type="checkbox" data-deep-section="events" checked>事件</label>
+                <label><input type="checkbox" data-deep-section="operating_monitor" checked>经营监测</label>
+              </fieldset>
+              <fieldset class="span-2 console-condition-fieldset">
+                <legend>冻结材料摘要</legend>
+                <div id="deep-task-materials">Fresh-read 当前 evidence pack 后显示。</div>
+              </fieldset>
+              <p id="deep-task-prior-report" class="span-2 form-note">前一报告：未绑定。</p>
+            </fieldset>
+            <label class="span-2"><input id="deep-provider-confirm" type="checkbox"> I confirm sending the selected material summaries and structured facts to DeepSeek for this task.</label>
+            <label class="span-2"><input id="deep-cloud-ai-no-backup" type="checkbox"> 我选择初版不使用备用 AI 提供方；DeepSeek 不可用时保持失败，不静默切换。</label>
+            <div class="console-actions" aria-label="Cloud AI Owner controls">
+              <button id="deep-cloud-ai-enable" type="button">确认并启用 Cloud AI</button>
+              <button id="deep-cloud-ai-disable" type="button">停用新的 Cloud AI 调用</button>
+              <button id="deep-cloud-ai-delete" type="button">记录提供方删除请求</button>
+            </div>
+            <p id="deep-cloud-ai-status" class="form-note" role="status">尚未读取当前 Owner 的 Cloud AI 策略。</p>
+            <p class="form-note">DeepSeek V4.1 Flash / deepseek-flash · 数据在中国处理 · 保留期限不固定 · 输入可能用于改进模型，当前账号 opt-out 状态未核验，因此不承诺 no-training · 不发送整份 PDF、凭证、账户或官方资产事实 · 无备份提供方或静默切换 · 删除请求仅记录为待提供方确认，联系 redacted@example.invalid。</p>
+            <p class="form-note">A running task is saved and can be refreshed without creating a duplicate. A completed synthesis remains pending until you explicitly absorb it; absorption does not confirm the report or create a formal decision.</p>
+            <div class="console-form-grid">
+              <label class="span-2">Structured deep-research report JSON<textarea id="deep-report-payload" rows="18" spellcheck="false"></textarea></label>
+              <label class="span-2">User decision note<input id="deep-report-decision-note" type="text" maxlength="4000"></label>
+            </div>
+            <div class="console-actions">
+              <button id="deep-report-save" type="button">Save report version</button>
+              <button id="deep-report-confirm" type="button">Confirm as user</button>
+              <button id="deep-report-reject" type="button">Reject as user</button>
+            </div>
+            <div id="deep-research-output" class="console-output" data-testid="deep-research-output">No current deep-research workspace is loaded.</div>
+            <p class="form-note">Facts, issuer/third-party statements, model inference, and the user decision remain separately identified. This workflow cannot place orders or change official portfolio facts.</p>
+          </section>
+          <section id="deep-research-comparison-console" class="console-tool" data-testid="deep-research-comparison-console" data-state="idle">
+            <div class="console-tool-heading">
+              <div><h3>多股票研究、决定与复盘比较</h3><span>只读比较两个当前 membership；可从任一侧进入其现有单股 Deep Research 操作区，继续显式启动、重试、吸收或确认。</span></div>
+              <button id="deep-compare-load" type="button">读取并比较</button>
+            </div>
+            <p id="deep-compare-status" role="status" aria-live="polite">选择两个不同的当前 membership 后读取精确报告版本。</p>
+            <div class="console-form-grid">
+              <label>左侧股票<select id="deep-compare-left-membership"></select></label>
+              <label>右侧股票<select id="deep-compare-right-membership"></select></label>
+              <label>左侧报告版本<select id="deep-compare-left-report"></select></label>
+              <label>右侧报告版本<select id="deep-compare-right-report"></select></label>
+            </div>
+            <div class="console-form-grid">
+              <section id="deep-compare-left-output" class="console-output" aria-label="左侧精确报告">尚未读取报告。</section>
+              <section id="deep-compare-right-output" class="console-output" aria-label="右侧精确报告">尚未读取报告。</section>
+            </div>
+            <section id="deep-compare-diff-output" class="console-output" aria-label="跨股票结构化差异">明确选择两侧报告后显示结构化差异。</section>
+            <p class="form-note">比较与跳转本身不会创建任务、报告、决定、复盘或资产事实；所有写动作仍在单股工作区由 Owner 明确点击。PDF 来源只在 fresh-read 同一 membership、report、pack、page hash 后重开。</p>
+          </section>
+          <section id="report-assistant-console" class="console-tool" data-testid="report-assistant-console" data-state="unavailable">
+            <div class="console-tool-heading">
+              <div><h3>Current report assistant</h3><span>Evidence-bound, advisory-only answers from one exact current report and pack.</span></div>
+              <button id="report-assistant-refresh" type="button">Refresh exact report</button>
+            </div>
+            <p id="report-assistant-status" role="status" aria-live="polite">Load a current exact report and evidence pack before asking a question.</p>
+            <p id="report-assistant-binding">No fresh current report/pack binding.</p>
+            <div id="report-assistant-editor" hidden>
+              <section aria-labelledby="report-assistant-review-learning-title">
+                <h4 id="report-assistant-review-learning-title">Saved review learning</h4>
+                <div id="report-assistant-review-learning" class="console-output">Refresh a current exact report to load saved review questions.</div>
+                <p class="form-note">默认只带入下一问题；你可以另外选择判断修正或流程教训。带入后仍可编辑，明确提问才会发送；旧复盘不会成为当前报告的新事实。</p>
+              </section>
+              <div class="console-form-grid">
+                <label class="span-2">Question about this exact report<textarea id="report-assistant-question" rows="3" maxlength="1000"></textarea></label>
+              </div>
+              <p id="report-assistant-cloud-ai-policy" class="form-note" role="status">尚未为当前 Owner fresh-read Cloud AI 策略；不会发送问题。请先刷新精确报告。</p>
+              <p class="form-note"><a id="report-assistant-cloud-ai-controls" href="#deep-research-console">管理 Cloud AI 授权、撤权与删除请求</a></p>
+              <p class="form-note">单次追问输出上限 800 tokens；输入上界和预计成本会在发送清单中逐次记录。</p>
+              <div class="console-actions">
+                <button id="report-assistant-ask" type="button">Ask explicitly</button>
+                <button id="report-assistant-counter-review" type="button">反方复核（同模型）</button>
+                <button id="report-assistant-clear-session" type="button">清空临时对话</button>
+              </div>
+              <p class="form-note">点击后，将当前报告的判断、假设与已绑定证据发送给 DeepSeek，用已有证据质疑判断，不携带草稿或此前对话。这是同模型复核，不代表独立来源或其他提供方的意见；明确保存修正后才会写入研究材料。</p>
+              <div id="report-assistant-answer" class="console-output" data-testid="report-assistant-answer">No fresh evidence-bound answer.</div>
+              <div class="console-actions">
+                <button id="report-assistant-create-correction" type="button">Create editable report correction draft</button>
+                <button id="report-assistant-add-todo" type="button">Add to session research follow-up</button>
+              </div>
+              <div id="report-assistant-correction-editor" hidden>
+                <div id="report-assistant-generic-correction">
+                  <label>可编辑助手修正<textarea id="report-assistant-correction" rows="6" maxlength="4000"></textarea></label>
+                </div>
+                <section id="report-assistant-daily-correction" aria-labelledby="report-assistant-daily-correction-title" hidden>
+                  <h4 id="report-assistant-daily-correction-title">每日跟踪复盘修正</h4>
+                  <p id="report-assistant-daily-correction-binding"></p>
+                  <div class="console-form-grid">
+                    <label class="span-2">判断修正（必填）<textarea id="report-assistant-daily-judgment" rows="3" maxlength="1000"></textarea></label>
+                    <label class="span-2">下一验证问题（必填）<textarea id="report-assistant-daily-question" rows="3" maxlength="1000"></textarea></label>
+                    <label class="span-2">反证 / 未知（可选，空白按“未填写/UNKNOWN”保存）<textarea id="report-assistant-daily-counterevidence" rows="3" maxlength="1000"></textarea></label>
+                  </div>
+                  <p class="form-note">这里只创建会话内可编辑草稿；不会自动询问、保存、重新冻结、运行 Deep Research、确认报告、修改正式决定或交易。</p>
+                </section>
+                <div class="console-actions"><button id="report-assistant-save-correction" type="button">将修正保存为未验证材料</button></div>
+              </div>
+              <pre id="report-assistant-citation" class="console-output">No citation has been reopened.</pre>
+            </div>
+            <p class="form-note">Questions never confirm a report. Citation clicks fresh-read exact identities and never substitute a source. Corrections require a second explicit save; follow-up drafts stay in browser memory and are not sent or persisted.</p>
+            <p id="report-assistant-retention" class="form-note">临时对话保留在本次网页会话中，刷新或关闭即清除。明确导出才会保存副本；其中临时对话的 7 天有效期在恢复时校验。清空会话不会删除已保存资料或导出文件。</p>
+          </section>
+        </div>
+
+        <div id="investment-console-panel-valuation" class="console-panel" role="tabpanel" aria-labelledby="investment-console-tab-valuation" hidden>
+          <section class="console-tool">
+            <div class="console-tool-heading"><h3>User-input valuation and quant filter</h3><span id="annual-valuation-status" data-testid="annual-valuation-status"></span></div>
+            <div class="console-numeric-grid">
+              <label>Metric currency<input id="annual-metric-currency" type="text" pattern="[A-Z]{3}" maxlength="3" value="HKD"></label>
+              <label>Base metric / share<input id="annual-base-metric" type="number" min="0.000001" step="0.01" value="2"></label>
+              <label>Annual growth<input id="annual-growth-rate" type="number" min="-0.95" max="3" step="0.01" value="0.15"></label>
+              <label>Horizon years<input id="annual-horizon-years" type="number" min="1" max="20" step="1" value="3"></label>
+              <label>Terminal multiple<input id="annual-terminal-multiple" type="number" min="0.1" max="200" step="0.1" value="18"></label>
+              <label>Annual discount<input id="annual-discount-rate" type="number" min="0" max="1" step="0.01" value="0.1"></label>
+              <label>Net cash / share<input id="annual-net-cash" type="number" step="0.01" value="1"></label>
+              <label>Growth step<input id="annual-growth-step" type="number" min="0.0001" max="1" step="0.01" value="0.05"></label>
+              <label>Multiple step<input id="annual-multiple-step" type="number" min="0.01" max="100" step="0.1" value="2"></label>
+              <label>Max drawdown magnitude<input id="annual-max-drawdown" type="number" min="0" max="1" step="0.01" value="0.5"></label>
+              <label>Max one-way turnover<input id="annual-max-turnover" type="number" min="0" step="0.1" value="10"></label>
+              <label>Minimum trades<input id="annual-min-trades" type="number" min="0" step="1" value="1"></label>
+            </div>
+            <div class="console-actions"><button id="annual-valuation-run" data-control-action="run-valuation" type="button">Run inspection</button><button id="annual-valuation-registered-run" data-control-action="run-registered-research" type="button">Run registered research</button></div>
+          </section>
+          <div id="annual-valuation-output" class="console-output" data-testid="annual-valuation-output" data-state="idle"></div>
+          <div class="console-table-wrap"><table class="console-table" data-testid="annual-sensitivity-table"><thead><tr><th>Growth</th><th>Multiple</th><th>Scenario present value / share</th></tr></thead><tbody id="annual-sensitivity-rows"></tbody></table></div>
+          <div class="console-table-wrap"><table class="console-table" data-testid="annual-quant-filter-table"><thead><tr><th>Sample</th><th>Drawdown</th><th>Turnover</th><th>Trades</th><th>All criteria</th></tr></thead><tbody id="annual-quant-filter-rows"></tbody></table></div>
+          <ul id="annual-valuation-limitations" class="console-limitations" data-testid="annual-valuation-limitations"></ul>
+        </div>
+
+        <div id="investment-console-panel-conditions" class="console-panel" role="tabpanel" aria-labelledby="investment-console-tab-conditions" hidden>
+          <section class="console-tool">
+            <div class="console-tool-heading"><h3>Conditional human judgment</h3><span id="annual-conditional-status" data-testid="annual-conditional-status"></span></div>
+            <div class="console-numeric-grid">
+              <label class="span-2">Scenario amounts (HKD)<input id="annual-scenario-amounts" type="text" inputmode="decimal" value="25000,5000"></label>
+              <label>Selected scenario index<input id="annual-selected-scenario" type="number" min="0" max="3" step="1" value="0"></label>
+              <label>Confidence<select id="annual-condition-confidence"><option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option></select></label>
+              <label>Observation starts<input id="annual-observation-start" type="date" value="2026-07-18"></label>
+              <label>Observation ends<input id="annual-observation-end" type="date" value="2026-08-18"></label>
+              <label>Review on<input id="annual-review-on" type="date" value="2026-08-01"></label>
+              <label>Workflow state<select id="annual-condition-workflow-state"><option value="continue_research">Continue research</option><option value="await_condition" selected>Await condition</option><option value="judgment_formed">Judgment formed</option><option value="stop_following">Stop following</option></select></label>
+              <label class="span-2">Assumptions, one per line<textarea id="annual-condition-assumptions" rows="3">Disclosure remains comparable.</textarea></label>
+              <label class="span-2">Invalidation conditions, one per line<textarea id="annual-condition-invalidations" rows="3">Bound evidence changes.</textarea></label>
+            </div>
+            <fieldset class="console-condition-fieldset">
+              <legend><label class="console-check"><input id="annual-portfolio-condition-enabled" type="checkbox" checked> Portfolio observation trigger</label></legend>
+              <div class="console-numeric-grid">
+                <label>Metric<select id="annual-portfolio-condition-metric"><option value="scenario_candidate_weight">Candidate weight</option><option value="scenario_largest_position_weight">Largest position weight</option><option value="scenario_hhi">HHI</option></select></label>
+                <label>Comparison<select id="annual-portfolio-condition-comparison"><option value="at_or_above">At or above</option><option value="at_or_below">At or below</option></select></label>
+                <label>Threshold<input id="annual-portfolio-condition-threshold" type="number" step="0.01" value="0.15"></label>
+                <label class="span-2">Rationale<input id="annual-portfolio-condition-rationale" type="text" maxlength="4000" value="Request human review when the user-defined scenario crosses this observation threshold."></label>
+              </div>
+            </fieldset>
+            <div class="console-actions">
+              <button id="annual-conditional-run" data-control-action="run-conditional" type="button">Load preview</button>
+              <label class="console-check"><input id="annual-conditional-bind" type="checkbox"> Bind to next human check</label>
+            </div>
+          </section>
+          <div id="annual-conditional-output" class="console-output" data-testid="annual-conditional-output" data-state="idle"></div>
+          <section class="console-learning" data-testid="annual-review-learning-summary">
+            <div class="console-tool-heading"><h3>Personal review learning</h3><span id="annual-learning-status"></span></div>
+            <div id="annual-learning-counts" class="console-metrics"></div>
+            <div id="annual-learning-details" class="console-output"></div>
+          </section>
+          <section id="decision-review-case-file" class="console-tool" data-state="idle" aria-labelledby="decision-review-case-title">
+            <div class="console-tool-heading">
+              <div><h3 id="decision-review-case-title">Decision and review case file</h3><span>Append-only checks, frozen snapshots, reviews, learning, and exact historical report identity.</span></div>
+              <button id="decision-review-case-refresh" type="button">Refresh case file</button>
+            </div>
+            <p id="decision-review-case-status" role="status" aria-live="polite">Load a Hong Kong stock to read its append-only case file.</p>
+            <div id="decision-review-case-output" class="console-output">No fresh decision/review case file is displayed.</div>
+          </section>
+        </div>
+
+        <div id="investment-console-panel-diagnostics" class="console-panel" role="tabpanel" aria-labelledby="investment-console-tab-diagnostics" hidden>
+          <section class="console-tool">
+            <h3>Failure matrix</h3>
+            <div class="console-table-wrap"><table class="console-table" data-testid="investment-console-failure-matrix"><thead><tr><th>State</th><th>Last observed lane</th><th>Display policy</th></tr></thead><tbody id="investment-console-failure-rows"></tbody></table></div>
+          </section>
+          <section class="console-tool">
+            <h3>Migration and release boundaries</h3>
+            <div class="console-table-wrap"><table class="console-table" data-testid="investment-console-release-diagnostics"><thead><tr><th>Boundary</th><th>Status</th><th>Evidence / restriction</th></tr></thead><tbody id="investment-console-release-rows"></tbody></table></div>
+          </section>
+        </div>
+      </section>
+      <section class="forms">
+        <div>
+          <h2>Human decision check</h2>
+          <input id="decision-action" data-testid="decision-action" type="hidden" value="watch">
+          <p class="form-note" data-testid="decision-action-neutral-mode">Local research check mode records a neutral compatibility value only; this UI does not expose directional trade intents.</p>
+          <fieldset id="formal-decision-fields" hidden disabled>
+            <legend>Confirmed-report formal decision</legend>
+            <p class="form-note">Used only when Today has loaded an exact confirmed report. Research-only; never submits an order or changes assets.</p>
+            <label>Owner direction<select id="formal-decision-action">
+              <option value="buy">Buy</option><option value="watch" selected>Watch</option>
+              <option value="add">Add</option><option value="hold">Hold</option>
+              <option value="reduce">Reduce</option><option value="sell">Sell</option>
+              <option value="abandon">Abandon</option><option value="wait_for_evidence">Wait for evidence</option>
+            </select></label>
+            <label>Reason<textarea id="formal-decision-reason" rows="3" maxlength="4000"></textarea></label>
+            <label>Horizon<input id="formal-decision-horizon" type="text" maxlength="4000"></label>
+            <label>Price conditions<textarea id="formal-decision-price-conditions" rows="2" maxlength="4000"></textarea></label>
+            <label>Research position range<input id="formal-decision-position-range" type="text" maxlength="4000"></label>
+            <label>Main risks<textarea id="formal-decision-risks" rows="2" maxlength="4000"></textarea></label>
+            <label>Invalidation conditions<textarea id="formal-decision-invalidations" rows="2" maxlength="4000"></textarea></label>
+            <label>Review on<input id="formal-decision-review-on" type="date"></label>
+            <label>Divergence reason<textarea id="formal-decision-divergence" rows="2" maxlength="4000"></textarea></label>
+            <label>Candidate weight limit (%)<input id="formal-risk-candidate-weight" type="number" min="0" max="100" step="0.01"></label>
+            <label>Largest position limit (%)<input id="formal-risk-largest-weight" type="number" min="0" max="100" step="0.01"></label>
+            <label>Portfolio HHI limit<input id="formal-risk-hhi" type="number" min="0" max="1" step="0.0001"></label>
+            <label>Unrealized loss budget (HKD)<input id="formal-risk-loss-budget" type="number" min="0" step="100"></label>
+            <label>Risk override reason<textarea id="formal-risk-override-reason" rows="2" maxlength="4000"></textarea></label>
+            <p class="form-note">Personal limits are checked against the exact current portfolio/risk snapshot. A warning requires a separate browser confirmation and permanently records the override reason; no trade or asset mutation occurs.</p>
+          </fieldset>
+          <select id="decision-result" data-testid="decision-result">
+            <option value="needs_more_evidence">Needs more evidence</option>
+            <option value="ready_to_consider">Ready to consider</option>
+            <option value="blocked">Blocked</option>
+          </select>
+          <textarea id="decision-note" data-testid="decision-note" rows="3"></textarea>
+          <button id="decision-submit" data-testid="decision-submit" type="button">Submit check</button>
+        </div>
+        <div>
+          <h2>Post-decision review</h2>
+          <select id="review-outcome" data-testid="review-outcome">
+            <option value="insufficient_evidence">Insufficient evidence</option>
+            <option value="thesis_confirmed">Thesis confirmed</option>
+            <option value="thesis_weakened">Thesis weakened</option>
+            <option value="thesis_invalidated">Thesis invalidated</option>
+          </select>
+          <textarea id="review-evidence" data-testid="review-evidence" rows="3"></textarea>
+          <textarea id="review-note" data-testid="review-note" rows="3"></textarea>
+          <fieldset id="annual-review-learning-fields" class="review-learning-fields" disabled>
+            <legend>Review learning</legend>
+            <label>Judgment correction<textarea id="annual-review-judgment-correction" rows="2" maxlength="4000"></textarea></label>
+            <label>Process lesson<textarea id="annual-review-process-lesson" rows="2" maxlength="4000"></textarea></label>
+            <label>Next research question<textarea id="annual-review-next-question" rows="2" maxlength="4000"></textarea></label>
+          </fieldset>
+          <button id="review-submit" data-testid="review-submit" type="button">Submit review</button>
+        </div>
+      </section>
+      <section>
+        <h2>Detailed evidence</h2>
+        <ul id="details" data-testid="detailed-evidence"></ul>
+      </section>
+      <details id="operator-diagnostics" class="operator-diagnostics" data-testid="operator-diagnostics">
+        <summary>Operator diagnostics</summary>
+        <div id="operator-diagnostics-content" class="operator-diagnostics-content"></div>
+      </details>
+    </main>
+    <script type="module" src="/dist/apps/web/src/app.js"></script>
+    <script type="module" src="/dist/apps/web/src/portfolioReportExplanationCard.js"></script>
+    <script type="module" src="/dist/apps/web/src/assetsAlphaConsole.js"></script>
+  </body>
+</html>

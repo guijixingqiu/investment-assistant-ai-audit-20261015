@@ -1,0 +1,247 @@
+schema_version: 1
+project: investment-assistant-system
+updated_at: 2026-10-14
+
+pull_request:
+  requirements:
+    - one scoped task per branch and pull request
+    - no unrelated generated artifacts or local workspace changes
+    - acceptance criteria stated in the pull request body
+    - material fact permission data accounting client or safety changes require negative-path verification through existing checks or the actual path; new or modified test code and cases require explicit Owner permission
+    - remote CI must pass before merge
+    - independent review of the remote head commit
+  observed_github_checks_on_exact_head:
+    - Node checks
+    - Risk scan
+    - Exact head
+  server_enforced_branch_protection:
+    status: not_reverified
+    note: last recorded hosting was a private GitHub Free repository; verify server protection before relying on it, otherwise use compensating controls
+  exact_head_trust_requirements:
+    - Exact head runs from the trusted base-branch pull_request_target workflow
+    - Exact head is metadata-only and read-only
+    - Exact head runs without checkout and without executing PR code
+    - Exact head uses only the automatic GITHUB_TOKEN GitHub API read path and no repository secrets
+    - pull requests must not control required-check execution logic
+  compensating_control_mode:
+    active: true
+    requirements:
+      - treat Node checks Risk scan and Exact head as observed exact-head checks rather than GitHub-enforced required checks
+      - require local exact-head Codex source and necessary risk review before merge; independent ChatGPT review only for a genuine major-version product direction governance or architecture checkpoint or explicit Owner request
+      - require clear Owner merge intent normalized to the exact active PR reviewed head and squash method after all checks pass
+      - allow the Goal Pursuit central controller to execute that one bound squash merge without a repeated fixed phrase
+      - forbid auto-merge
+      - forbid direct pushes to main
+    future_branch_protection_target_if_available:
+      - require a pull request before merging
+      - require status checks to pass before merging
+      - require Node checks Risk scan and Exact head
+      - require branches to be up to date before merging
+      - forbid auto-merge
+      - forbid bypassing required checks
+  manual_governance:
+    - explicit Owner scope permits local work without Stage mode or repeated routine permission
+    - local-only delivery prohibits push Issue PR or external message writes until authorized
+    - Codex reviews concrete source and necessary risks at complete repaired checkpoints; independent ChatGPT review occurs only for a genuine major-version product direction governance or architecture checkpoint or explicit Owner request, not for ordinary fixes or integration
+    - P1/P2 findings isolate affected behavior and require repair rather than repeated approval
+    - shared lock serializes integration and competing writes but never read-only diagnosis
+    - source version scope runtime evidence and Owner acceptance remain separate
+    - acceptance and waived waiting periods apply only to their documented object and scope
+    - historical bootstrap exceptions are not executable
+    - Stage Runner executes only its validated envelope and never merges
+    - no automatic merge or direct main push
+
+validation_policy:
+  authority: AGENTS.md section 个人自用快速迭代的测试约定 governs local personal iteration across all chats and context resumes
+  test_authoring: 'Owner: 没有我的允许不要写测试代码和测试用例。 Ordinary development authority does not permit new or modified test code or cases for executors reviewers or subagents across chat handoffs; existing checks still run in the smallest sufficient scope.'
+  during_implementation: implementation-required reading and minimal focused checks only; no layered controller or independent code audits for each ordinary feature or repair
+  checkpoint: verify the complete affected user journey once with the smallest sufficient checks selected by change and risk
+  baseline_applicability: full baseline only for demonstrated broad impact major complete delivery applicable publication or merge requirements or explicit Owner request; record the concrete trigger in existing progress notes
+  slice_applicability: command groups below are selection references for local iteration; matching a module name does not automatically require every listed suite pipeline or build
+  repeat_checks: only after relevant code or dependency changes new failures concrete unresolved risks or explicit Owner request; changing chat context metadata or commit alone is not a trigger
+  independent_review: reduced total code-checking cadence in AGENTS.md; review formed core functionality or a complete product stage, and concrete material risks only in the affected scope; ordinary local installation does not require independent source PASS and the controller must not replace it with repeated self-audits
+  simulator_scope: one iPhone 17 Pro Max using the exact identity in PROJECT_STATE.yaml; no multi-device adaptation unless Owner changes scope
+  documentation_only: project-state-verify and diff check; no unrelated runtime mutation
+  architecture_line_budgets: advisory maintenance signals, never substitutes for semantic checks
+  blocking_architecture: actual forbidden dependency and unsafe fact access
+  unavailable_external_lane: NOT_RUN with reason; continue independent authorized local work
+  waiver: Owner waiting waiver is recorded separately and never changes an unrun result to PASS
+  stale_driver: repair stale assumptions and preserve meaningful negatives without silently skipping a required driver; new or modified test drivers require explicit Owner permission
+  unit_of_acceptance: complete affected Owner journey with exact version and evidence
+
+required_commands:
+  baseline:
+    - npm run project-state-verify
+    - npm run architecture-baseline-verify
+    - npm run architecture-check
+    - npm run contract-schema-check
+    - npm run typecheck
+    - npm run lint
+    - npm run test
+    - npm run contract-test
+  research_document_slice:
+    - npm run research-document-verify
+    - node --test tests/unit/research-document.test.mjs tests/unit/mobile-research-document-route.test.mjs
+    - swift test --package-path apps/ios/AnnualRingsGateA
+    - note: synthetic PDFs PostgreSQL fixture verification Swift tests and SDK compilation are not real runtime real Owner PDF or user acceptance
+  research_fundamental_slice:
+    - npm run research-fundamentals-verify
+    - node --test tests/unit/research-fundamentals.test.mjs
+    - swift test --package-path apps/ios/AnnualRingsGateA
+    - make ios-build
+    - note: synthetic PDFs PostgreSQL fixtures Swift tests and generic Simulator SDK compilation prove implementation only and are not real Owner values real runtime or user acceptance
+  research_valuation_scenario_slice:
+    - npm run research-valuation-scenarios-verify
+    - node --test tests/unit/research-valuation-scenarios.test.mjs
+    - swift test --package-path apps/ios/AnnualRingsGateA
+    - make ios-build
+    - note: synthetic PDFs PostgreSQL fixtures Swift tests and generic Simulator SDK compilation prove implementation only and are not real Owner assumptions real runtime or user acceptance
+  research_frozen_technical_evidence_slice:
+    - npm run research-document-verify
+    - node --test tests/unit/research-frozen-technical-evidence.test.mjs tests/unit/market-daily-persistence.test.mjs tests/unit/mobile-market-daily-route.test.mjs
+    - swift test --package-path apps/ios/AnnualRingsGateA --filter F1BMarketDailyTests
+    - swift test --package-path apps/ios/AnnualRingsGateA
+    - make ios-build
+    - note: synthetic PDFs PostgreSQL and technical fixtures Swift tests and generic Simulator SDK compilation prove implementation only and are not real provider data real Owner assumptions real runtime or user acceptance
+  research_evidence_bound_two_layer_report_slice:
+    - npm run research-document-verify
+    - node --test tests/unit/deep-research-gate.test.mjs tests/unit/today-research-contract.test.mjs tests/unit/research-frozen-technical-evidence.test.mjs
+    - swift test --package-path apps/ios/AnnualRingsGateA --filter F1BMarketDailyTests
+    - swift test --package-path apps/ios/AnnualRingsGateA
+    - make ios-build
+    - note: PostgreSQL and technical fixtures Swift tests and generic Simulator SDK compilation prove local implementation only and are not real Owner assumptions real provider data real PostgreSQL raw-store or iOS API runtime user acceptance or a first real stock
+  confirmed_report_today_action_slice:
+    - node --test tests/unit/today-review-due-contract.test.mjs tests/unit/today-review-due-repository.test.mjs tests/unit/mobile-research-today-review-due-route.test.mjs tests/unit/ios-s1h-confirmed-report-today-action.test.mjs
+    - swift test --package-path apps/ios/AnnualRingsGateA
+    - make ios-build
+    - note: Node fixtures Swift package tests and generic Simulator SDK compilation prove local implementation only and are not real provider PostgreSQL iOS API runtime a first real stock or user acceptance
+  adopted_report_daily_tracking_slice:
+    - node --test tests/unit/today-review-due-contract.test.mjs tests/unit/today-review-due-repository.test.mjs tests/unit/mobile-research-today-review-due-route.test.mjs tests/unit/ios-s1h-confirmed-report-today-action.test.mjs tests/unit/ios-s1i-adopted-report-daily-tracking.test.mjs
+    - swift test --package-path apps/ios/AnnualRingsGateA
+    - make ios-build
+    - note: Node fixtures Swift package tests and generic Simulator SDK compilation prove local implementation only and are not real provider PostgreSQL iOS API runtime a first real stock or user acceptance
+  daily_tracking_review_resolution_slice:
+    - node --test tests/unit/decision-review-repository.test.mjs tests/unit/ios-s1i-adopted-report-daily-tracking.test.mjs tests/unit/ios-s1j-daily-tracking-review-resolution.test.mjs
+    - swift test --package-path apps/ios/AnnualRingsGateA --filter DecisionCheckSubmissionTests
+    - make ios-build
+    - note: Node fixtures Swift package tests and generic Simulator SDK compilation prove local implementation only and are not real provider PostgreSQL raw-store iOS API runtime a first real stock or user acceptance
+  daily_tracking_decision_reconsideration_slice:
+    - node --test tests/unit/ios-s1k-daily-tracking-decision-reconsideration.test.mjs tests/unit/ios-s1l-review-bound-correction-draft.test.mjs
+    - swift test --package-path apps/ios/AnnualRingsGateA --filter TodayReviewDueTests
+    - swift test --package-path apps/ios/AnnualRingsGateA --filter DecisionCheckSubmissionTests
+    - make ios-build
+    - note: Node source checks Swift package tests and generic Simulator SDK compilation prove local implementation only and are not real provider PostgreSQL raw-store iOS API runtime a first real stock or user acceptance
+  mainline_or_platform_change:
+    - npm run mainline-health-check
+  quant_change:
+    - npm run quant-loop-readiness
+    - npm run quant-pipeline
+    - npm run quant-portfolio-pipeline
+  local_beta_uat:
+    - npm run today-local-beta-14-day-verify
+    - npm run web-core-journey-ui-smoke
+    - IOS_GATE_B_SIMULATOR_UDID=<exact-project-iphone-udid> npm run ios-gate-b-ui-smoke
+    - LOCAL_BETA_UAT_SIMULATOR_UDID=<same-exact-project-iphone-udid> npm run investment-decision-local-beta-uat-evidence
+    - note: the Web browser UAT uses the loopback-only serve mode to capture current portfolio quant decision snapshot review and representative fail-closed screenshots before writing a redacted method/path ledger
+    - note: never enumerate operate or shut down another development task Simulator; stop below 12 GiB free disk and remove DerivedData result bundles and attachment exports after the exact target shuts down
+    - note: UAT evidence is valid only for a clean exact local HEAD and never changes production NO_GO advisory-only broker trading accounting or official portfolio authority
+  stage_13_20_goal:
+    - npm run stage-13-20-evidence-verify
+    - npm run stage-13-20-local-validation-registry -- verify --registry <content-addressed-local-registry>
+    - npm run controlled-persistence-verify
+    - npm run real-data-quant-verify
+    - npm run async-capacity-decision-verify
+    - note: these replay verifiers require explicit content-addressed evidence manifests and must fail closed when evidence is absent or invalid
+    - note: current Stage 19 evidence requires canonical raw run-witness bytes, exact source-commit build-input hashes, complete frozen OHLCV identity, independent accounting/sample/experiment reproduction, and Stage 19-local leaf paths; PASS booleans alone are invalid
+    - note: the local-validation registry may truthfully compose the historical exact-commit 6/8 replay with whichever strict current standalone Stage 18 or Stage 19 sections exist; registryValid never means historical aggregate complete all stages current or production ready
+  external_evidence_collection:
+    - command: npm run sync-capacity-probe
+      applicability: only with an explicitly approved safe GET-only target authorization exact commit and SYNC_CAPACITY configuration
+      missing_configuration: exit 2 before HTTP is fail-closed NOT_RUN and is not a PASS or a failed local replay verifier
+      evidence_boundary: never infer a new live capacity result from inherited artifacts or from a configuration-free invocation
+  full_local_when_applicable:
+    - npm run verify:local
+
+product_gates:
+  - the affected user journey and expected value are explicit
+  - authoritative read and write facts are identified
+  - loading empty stale error and permission states are handled where applicable
+  - user-visible claims are supported by current evidence
+  - human decisions remain distinguishable from generated suggestions
+  - rollback or feature-disable behavior is defined for material changes
+  - daily technical facts are usable only when both daily bars and backend indicators are available and complete; HTTP 200 alone is never success
+  - completed daily bars require confirmed rights retention and derived use exact symbol timeframe QFQ calendar cutoff pagination and content hashes at a minimum of 80 bars with a target of 120
+  - MA20 MA60 SMA-seeded MACD 12-26-9 Bollinger20 population variance and Wilder RSI14 are deterministic versioned backend-only calculations over one snapshot
+
+platform_gates:
+  - database migrations are forward and rollback reviewed
+  - synchronization retry and idempotency behavior are tested
+  - permissions and write boundaries are explicit
+  - data freshness provenance and failure states are observable
+  - staging production backup recovery and rollback impact are documented where applicable
+  - no duplicate infrastructure is introduced without measured need
+
+client_gates:
+  - API contract compatibility is verified
+  - web and iOS behavior is aligned for shared critical journeys
+  - loading empty stale error offline and permission states are tested where applicable
+  - simulator device or production URL smoke is run when the change requires it
+  - no client silently fabricates success or freshness
+
+data_gates:
+  - authoritative source ownership is explicit
+  - immutable snapshot identity is used for formal research
+  - canonical payload hash is independently recomputed when snapshots are involved
+  - valid source and fetchedAt provenance are recorded
+  - dataCutoff and adjustment mode are explicit where applicable
+  - duplicate missing invalid stale and zero-volume records are reported
+  - suspension and corporate-action handling is documented for quantitative research
+
+execution_gates:
+  - day t close quantitative signals execute no earlier than day t plus 1
+  - no same-bar quantitative fills
+  - Hong Kong board-lot rules are enforced for Hong Kong simulations
+  - no fills on missing invalid suspended or zero-volume bars
+  - non-zero transaction costs are included in formal simulations
+  - cash cannot become negative without an explicitly approved financing model
+  - target exposure and position limits are enforced
+
+accounting_gates:
+  - cash and holdings are reconstructed independently from simulated trades
+  - ledger positions and NAV reconcile
+  - fees and gross amounts recompute from trade facts
+  - turnover definitions are explicit and numerically tested
+  - coordinated artifact tampering is rejected
+
+research_gates:
+  - research output is identified as evidence rather than an automatic decision
+  - data code configuration and experiment identities are reproducible
+  - failed and abandoned experiments remain registered
+  - validation and final test periods are separated
+  - benefits are not claimed from fixture smoke or engineering tests
+  - concentration by security trade month or event is reported when applicable
+
+safety_gates:
+  - preserve the current human-decision and execution boundary
+  - preserve explicit authorization audit and rollback for existing product writes
+  - research modules cannot modify official transaction position or review facts
+  - failed tests incidents audits experiments and health checks remain visible
+
+merge_policy:
+  allowed_when:
+    - all applicable gates pass
+    - pull request is mergeable
+    - reviewed head SHA matches the merged head SHA
+    - Node checks Risk scan and Exact head pass for the current pull-request head
+    - Exact head runs from the trusted base-branch pull_request_target workflow and does not execute PR code
+    - local Codex Desktop review covers the exact head and current main; independent ChatGPT review applies only at a genuine major-version product stage, material direction, governance, or architecture change, or an explicit Owner request, never for each routine merge or small fix
+    - clear Owner natural-language merge intent is normalized to the unique active PR exact reviewed head and squash method after all checks pass
+    - the Goal Pursuit central controller executes at most the one squash merge covered by that exact binding
+  forbidden_when:
+    - CI is pending failed or missing
+    - evidence was generated from a different commit runtime or data snapshot
+    - scope priority product or safety boundaries changed without explicit approval
+    - auto-merge is enabled
+    - if future server-enforced branch protection becomes available, it must not permit bypassing required checks or merging an out-of-date branch
+    - a pull request controls the logic of its own required Exact head check
+    - merge depends on an OpenAI Platform API key API billing API quota or another third-party review service

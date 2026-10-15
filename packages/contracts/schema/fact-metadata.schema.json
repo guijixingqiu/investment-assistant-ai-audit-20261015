@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://investment-assistant.local/schemas/fact-metadata.schema.json",
+  "title": "FactMetadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source",
+    "asOf",
+    "fetchedAt",
+    "freshness",
+    "provenance",
+    "authority",
+    "stale",
+    "missing",
+    "conflict",
+    "fixture",
+    "correctionOf",
+    "replaces",
+    "message"
+  ],
+  "properties": {
+    "source": { "type": "string", "minLength": 1, "pattern": "\\S" },
+    "asOf": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])[Tt](?:[01][0-9]|2[0-3]):[0-5][0-9](?::(?:[0-5][0-9]|60)(?:\\.[0-9]+)?)(?:[Zz]|[+-](?:[01][0-9]|2[0-3]):[0-5][0-9])$"
+    },
+    "fetchedAt": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "pattern": "^[0-9]{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])[Tt](?:[01][0-9]|2[0-3]):[0-5][0-9](?::(?:[0-5][0-9]|60)(?:\\.[0-9]+)?)(?:[Zz]|[+-](?:[01][0-9]|2[0-3]):[0-5][0-9])$"
+    },
+    "freshness": {
+      "enum": ["fresh", "stale", "historical", "missing", "unavailable", "conflict", "unknown"]
+    },
+    "provenance": {
+      "enum": ["real", "fixture", "cache", "historical", "research_only", "quant_evidence", "local_only", "staging", "production", "omitted", "unavailable"]
+    },
+    "authority": {
+      "enum": ["market_data", "research_evidence", "candidate_membership", "decision_context", "portfolio_omitted", "historical_only", "local_only", "quant_evidence", "release_status", "unavailable"]
+    },
+    "stale": { "type": "boolean" },
+    "missing": { "type": "boolean" },
+    "conflict": { "type": "boolean" },
+    "fixture": { "type": "boolean" },
+    "correctionOf": { "type": ["string", "null"], "minLength": 1, "pattern": "\\S" },
+    "replaces": { "type": ["string", "null"], "minLength": 1, "pattern": "\\S" },
+    "message": { "type": "string", "minLength": 1, "pattern": "\\S" }
+  }
+}

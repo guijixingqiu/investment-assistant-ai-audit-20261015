@@ -1,0 +1,15 @@
+node_modules
+dist
+artifacts
+.git
+.env
+.DS_Store
+npm-debug.log*
+.build
+.swiftpm
+DerivedData
+**/.build
+**/.swiftpm
+**/DerivedData
+*.xcodeproj
+xcuserdata

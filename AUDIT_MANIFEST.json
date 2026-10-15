@@ -1,0 +1,5148 @@
+{
+  "audit_only": true,
+  "source_commit": "8f3245c07ed1fd2506e1079f531db15009f26ce5",
+  "source_date": "2026-10-15",
+  "scan": "Gitleaks 8.30.1; no unresolved findings after six exact noncredential identifier false positives",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "sha256": "e75a68212282b17d574e25b9d1e06fc15fc7dd7d241454bd5d4c44e8a70f881b",
+      "bytes": 151
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "f6f3cd5bf9e3e35baac916358f8bf7840006d119dd8c84c47fe155d09445f52a",
+      "bytes": 681
+    },
+    {
+      "path": ".nvmrc",
+      "sha256": "68ca3fba3b7e864770cb61aeb306d4bd4354b68ab4dd38450860c5d823e42a53",
+      "bytes": 3
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "410c2be6418a7ec46957d21a6c6259e6a178697266a9c4e1e325093355063911",
+      "bytes": 19464
+    },
+    {
+      "path": "ARCHITECTURE_BASELINE.yaml",
+      "sha256": "fa03338e64905e57e9f0014e15382a0888df5ee89afe2c2826fb609076b2951a",
+      "bytes": 6898
+    },
+    {
+      "path": "AUDIT_BRIEF.md",
+      "sha256": "8126b7bda583a17a7ba13e86290fc26dec89a43849ce07595f0357e150af17e8",
+      "bytes": 4837
+    },
+    {
+      "path": "Makefile",
+      "sha256": "d28de6f42cfd2dbbb63e06695b624bf6991a1191fca7174b697e449bed8f78e7",
+      "bytes": 6092
+    },
+    {
+      "path": "PROJECT_CHARTER.md",
+      "sha256": "6cba19741dfade69b1c6d7f5213db0e5f59e735f12c093c79427b694761da8d5",
+      "bytes": 5068
+    },
+    {
+      "path": "QUALITY_GATES.yaml",
+      "sha256": "c97ce0931b7314cee07e5595cbd56969a752adb4224cff57f86b3d1e56e49c7e",
+      "bytes": 18744
+    },
+    {
+      "path": "README.md",
+      "sha256": "244007ac378058efc326f4a254056a4eef6d97c28c11049b87b3c2e7fffdfd49",
+      "bytes": 1859
+    },
+    {
+      "path": "ROADMAP.yaml",
+      "sha256": "e837569e674ba5799327eb835afb5784f36992f9616bff0b30f0ecfb46cfc87b",
+      "bytes": 17196
+    },
+    {
+      "path": "SANITIZATION.md",
+      "sha256": "44e8138784a611617789f9c2dcdf4885e4bf6ed7ac673856680f37d70c8d1548",
+      "bytes": 1688
+    },
+    {
+      "path": "apps/api/src/assetsAlphaRepository.ts",
+      "sha256": "ad6331e1264bddb37422c573ad7432e232713aba9b55d5b61fe9bcc6abb7a2dc",
+      "bytes": 14066
+    },
+    {
+      "path": "apps/api/src/config.ts",
+      "sha256": "c768f67f4e14d8ace0f59606b2ddfa90b23f5396c4c4b261a08f070870ad890c",
+      "bytes": 15987
+    },
+    {
+      "path": "apps/api/src/db.ts",
+      "sha256": "c87a6a952fe50e53615c47d48e2070c678ca3642333525f514bffcf8793c3ea3",
+      "bytes": 188
+    },
+    {
+      "path": "apps/api/src/health.ts",
+      "sha256": "d4311d67e116835b890bb0766ba7be7e7c3d45d00dd41c81641966ca96734fad",
+      "bytes": 2458
+    },
+    {
+      "path": "apps/api/src/market/dailyBarsProvider.ts",
+      "sha256": "d8d47d12969163319e54204d67f6b688d4b895874399d8d97fe541dc7f80e9fb",
+      "bytes": 13907
+    },
+    {
+      "path": "apps/api/src/market/dailyBarsRepository.ts",
+      "sha256": "7da049f90fa18dcc71f44ca746e9ebf9e5d6d91acda377c7296bfff00fe8c9ca",
+      "bytes": 9567
+    },
+    {
+      "path": "apps/api/src/market/dailyBarsService.ts",
+      "sha256": "bacc24bbd88a4deb1c7ff25fbe7b6729d9700d060a508092d7549ea3788c91d3",
+      "bytes": 9913
+    },
+    {
+      "path": "apps/api/src/market/discovery.ts",
+      "sha256": "462c64a585b6ed63088e86b8d50a799896fb32a3d53fd839ff92dab500e9aa40",
+      "bytes": 25574
+    },
+    {
+      "path": "apps/api/src/market/environmentProvider.ts",
+      "sha256": "bfc931ec689afc55df60112e498fd835519e19084e9de3aa75d8d837c3ed02e9",
+      "bytes": 5120
+    },
+    {
+      "path": "apps/api/src/market/freshness.ts",
+      "sha256": "0ba890169be3c2d310f71409d213d12b5b46674ad979d118d4143f2384b5de55",
+      "bytes": 1452
+    },
+    {
+      "path": "apps/api/src/market/futuFinancialStatementsProvider.ts",
+      "sha256": "bb85aab8c965fd503beeda650351ac3e33701e75a13a4cf58a0199fc8690d06d",
+      "bytes": 7523
+    },
+    {
+      "path": "apps/api/src/market/futuValuationProvider.ts",
+      "sha256": "c40a821d220ee8852ea5b5133a02f0910d785a5c50ecb98161f54c1a7143b905",
+      "bytes": 3008
+    },
+    {
+      "path": "apps/api/src/market/hkConnectUniverse.ts",
+      "sha256": "400604c46784d0810aafd3fb0397bdfcf0152500c68ed3de1f6105d62da02088",
+      "bytes": 5639
+    },
+    {
+      "path": "apps/api/src/market/hkexCompletedSessions.ts",
+      "sha256": "08fbf6647d066bedbc6dcbdbff04ca2612ba0542bd733b9a559946782eb99c15",
+      "bytes": 5677
+    },
+    {
+      "path": "apps/api/src/market/providers.ts",
+      "sha256": "65068851d216fa8ec0ca0fdba9b31d216dbc2e7c213eb7805b23030189ace9d9",
+      "bytes": 14370
+    },
+    {
+      "path": "apps/api/src/market/repository.ts",
+      "sha256": "6abcc7cd641594363a6aef49642358ea89c40b819cc01c7f5c48ce8cc98f6ad6",
+      "bytes": 12144
+    },
+    {
+      "path": "apps/api/src/market/technicalIndicators.ts",
+      "sha256": "a539f261675ba5c6d4b12fa932a006247b8407d74e46749807bf15f44c77d68d",
+      "bytes": 7019
+    },
+    {
+      "path": "apps/api/src/market/weinsteinTechnicalAnalysis.ts",
+      "sha256": "addd6bea2667d65ca04999ca29f510eead07c6f327f2f0e9287722f41efae955",
+      "bytes": 37090
+    },
+    {
+      "path": "apps/api/src/market/weinsteinTechnicalSnapshotRepository.ts",
+      "sha256": "6532f8bd802dc318b5138c510690c157d6659ce659c3a629d0e2be95cb8ecc0d",
+      "bytes": 7450
+    },
+    {
+      "path": "apps/api/src/observability.ts",
+      "sha256": "4cd9f8e70d232c0c21231859f99bc6f07533805e64750133eb821c2c8b1437f2",
+      "bytes": 2538
+    },
+    {
+      "path": "apps/api/src/portfolio/decisionContext.ts",
+      "sha256": "28d37956d1407fba9842e7043a616836ad3ff5d17cb092545ddf97ba666d36ec",
+      "bytes": 18456
+    },
+    {
+      "path": "apps/api/src/portfolio/pinganCurrentPortfolioEnvelope.ts",
+      "sha256": "2aa93cc2e5919ad7ce437369f81e3bc8cad17a9e154a1297ce1c4a5c3d9975d3",
+      "bytes": 1937
+    },
+    {
+      "path": "apps/api/src/portfolio/pinganCurrentPortfolioQuery.ts",
+      "sha256": "3076c36cb1e26fc896cd1c2134cc751eb92e768a1d03a8e0978313c38842a3b2",
+      "bytes": 3749
+    },
+    {
+      "path": "apps/api/src/portfolio/pinganCurrentPortfolioRepository.ts",
+      "sha256": "631c2cc910ff8141fb16ea1096a205673e8869db37afb5029ac7f8da7326f334",
+      "bytes": 11866
+    },
+    {
+      "path": "apps/api/src/portfolio/pinganFreshness.ts",
+      "sha256": "5ea96d4918a75512ffb866a7340703ca00bd69bda3ad9ace334f97e82e2b6032",
+      "bytes": 280
+    },
+    {
+      "path": "apps/api/src/portfolio/pinganHistoricalSnapshotEnvelope.ts",
+      "sha256": "628e55a759626cd67c38b6ea824c3d8e4f237b01c618590d6b45012ddaad70fa",
+      "bytes": 1790
+    },
+    {
+      "path": "apps/api/src/portfolio/pinganHistoricalSnapshotRepository.ts",
+      "sha256": "410fb351ec47deb1e750f0354997b0a7cce055a00b9f8028afe080e2e734ef7e",
+      "bytes": 10207
+    },
+    {
+      "path": "apps/api/src/portfolio/pinganPortfolioRowValidation.ts",
+      "sha256": "b1d1de9eff10b2fbf6096bd73a404bd0b72120bd0c16c1e2dace5b411af74ea7",
+      "bytes": 531
+    },
+    {
+      "path": "apps/api/src/portfolio/portfolioResearchContext.ts",
+      "sha256": "f3ae720d8d89f8099de1c590d67ba32ecc23d6c08f2299939686703e5aa043c3",
+      "bytes": 3217
+    },
+    {
+      "path": "apps/api/src/portfolio/repository.ts",
+      "sha256": "7a07093487545f0b08ea6c0783568511b9c16ef86cc7378ab18e70151251394c",
+      "bytes": 258
+    },
+    {
+      "path": "apps/api/src/research/aiSuggestionDecisionRepository.ts",
+      "sha256": "0c78cc3396d13141190d21f00922cc3c6254dd33ef56093e914cadeb6c08c149",
+      "bytes": 8235
+    },
+    {
+      "path": "apps/api/src/research/annualConditionalDecisionService.ts",
+      "sha256": "0ce12444bc55b28a62e67c4fd5c13ad9f36af0ffa719ad8549c75b32b13d8241",
+      "bytes": 19112
+    },
+    {
+      "path": "apps/api/src/research/annualDecisionBriefService.ts",
+      "sha256": "4926cc3ea509c7e53b046050e0bf6ddd7b29d3c1378d3aa7e6c9623fcb8e8c0b",
+      "bytes": 12462
+    },
+    {
+      "path": "apps/api/src/research/annualPortfolioLabQuantEvidence.ts",
+      "sha256": "61656cf716b5883b59167dafe822bda08d7d64464f32ef6509274773b7b47b44",
+      "bytes": 4152
+    },
+    {
+      "path": "apps/api/src/research/annualPortfolioLabService.ts",
+      "sha256": "faafe65b9fe879c76dcfb14bb41613780bc1717d49814418b90de69b5fa1a216",
+      "bytes": 19379
+    },
+    {
+      "path": "apps/api/src/research/annualValuationQuantWorkbenchService.ts",
+      "sha256": "15b509e148cc3bfaf0e6113f5924c847186e0c80c6b571be93a2baebb78364db",
+      "bytes": 20319
+    },
+    {
+      "path": "apps/api/src/research/assistAdvisoryScopeService.ts",
+      "sha256": "01230f4155cd387547703a3cf4420045207133e99bbeb74e8ce4576484a6ea90",
+      "bytes": 11032
+    },
+    {
+      "path": "apps/api/src/research/assistDecisionNoteWorkflowService.ts",
+      "sha256": "5aa6290f8976d1cc5605144b639d57fd47d17d70858c42d7d21cef5460456ed1",
+      "bytes": 12111
+    },
+    {
+      "path": "apps/api/src/research/assistHumanReviewWorkspaceService.ts",
+      "sha256": "9ebb600f33d25f45aba5eb405ee14ab72a69f666ab8bef08b8e7a465c180d47a",
+      "bytes": 24787
+    },
+    {
+      "path": "apps/api/src/research/assistReviewFollowUpWorkflowService.ts",
+      "sha256": "c6be7ec69ed368a469bd9c8d1139e9469bc7e691b62f96d92774a6cb5ee649a9",
+      "bytes": 11502
+    },
+    {
+      "path": "apps/api/src/research/authorizedPortfolioDecisionContext.ts",
+      "sha256": "dbc956d615c355ec9534014fbf7a92d54d1f4e1a6054d02b2c5a6404c44fb1e0",
+      "bytes": 3707
+    },
+    {
+      "path": "apps/api/src/research/candidateDecisionIntakeRepository.ts",
+      "sha256": "665ca916ac79a450ea61cf068db5e8de6cea1acda9c089187e08c088286ce78f",
+      "bytes": 9462
+    },
+    {
+      "path": "apps/api/src/research/candidateMembershipMappers.ts",
+      "sha256": "c01c4020b30dbc8e4925d4631b49766df07d0ac908e0c28b846a64f5d4eb3721",
+      "bytes": 3331
+    },
+    {
+      "path": "apps/api/src/research/candidateMembershipPersistence.ts",
+      "sha256": "b9e944d8d8cfaf49a48fc5df99135f0e573d1ba7d9445ca54cc31966e2e7eb62",
+      "bytes": 8957
+    },
+    {
+      "path": "apps/api/src/research/candidateMembershipReadRepository.ts",
+      "sha256": "6f8c39ead5ea7637a3e997a71595342b38605e943f4e12dc4798af0aef68ebe4",
+      "bytes": 5547
+    },
+    {
+      "path": "apps/api/src/research/candidateMembershipWriteRepository.ts",
+      "sha256": "6d1bbc0c940d04baa4dc168b48aa215991c3f88599f3af333bc25c0aedc88762",
+      "bytes": 11822
+    },
+    {
+      "path": "apps/api/src/research/candidateOverviewRepository.ts",
+      "sha256": "193deb2c5f0ebb629d479c2984427826f860fc873ac0553a00f511c48807b4f3",
+      "bytes": 10419
+    },
+    {
+      "path": "apps/api/src/research/cloudAiPolicyRepository.ts",
+      "sha256": "817754a07f3705cee122ce324803fe540ae709d628f449e553510b1724ac4c97",
+      "bytes": 7665
+    },
+    {
+      "path": "apps/api/src/research/currentBaseFormationRepository.ts",
+      "sha256": "ce1f5b9ba11ce76dbed4948c31cca7262283e608970b6c2ec8604125c3d6d89a",
+      "bytes": 4962
+    },
+    {
+      "path": "apps/api/src/research/currentHoldingResearchBinding.ts",
+      "sha256": "4984f2506236051f006fe53c8128736de893ede5af7304b1ef6c5e227711b1b1",
+      "bytes": 4801
+    },
+    {
+      "path": "apps/api/src/research/decisionCheckPersistence.ts",
+      "sha256": "028ca52432d039005ba2fa816801d109199aa8bafafa3ae0ad09d62b8852c4b1",
+      "bytes": 18533
+    },
+    {
+      "path": "apps/api/src/research/decisionCheckWriteRepository.ts",
+      "sha256": "72d5cc04ad6d5fe2023d8eee9ffa327a03e7bcdfdd3c4806fe7527823d88e4e6",
+      "bytes": 31939
+    },
+    {
+      "path": "apps/api/src/research/decisionContextFixtureGuard.ts",
+      "sha256": "50d682c0e0fa4f25f8b4f60495916c01fe8f1f6098f89d048a5d8d2ec160c684",
+      "bytes": 706
+    },
+    {
+      "path": "apps/api/src/research/decisionContextMappers.ts",
+      "sha256": "8ea08a387a63c736264c45a5dae10f1bf48d30cb4b329be9ac884b7cb35d48d4",
+      "bytes": 5729
+    },
+    {
+      "path": "apps/api/src/research/decisionContextReadService.ts",
+      "sha256": "b6548fed286b916bc7f329fb93c841897358788478221c5b878170f1a56ffb0b",
+      "bytes": 4603
+    },
+    {
+      "path": "apps/api/src/research/decisionContextRepository.ts",
+      "sha256": "0ae9d943efd2d5b101be1f27b28d7d2aade04e8bebd3dae53ba241994f0dd765",
+      "bytes": 1003
+    },
+    {
+      "path": "apps/api/src/research/decisionQuantEvidenceAdapter.ts",
+      "sha256": "2364c29e0fb085fb7352f832fa9211762c3c455bb80affe44fc3d4fa863a7848",
+      "bytes": 18970
+    },
+    {
+      "path": "apps/api/src/research/decisionReviewDeletionRepository.ts",
+      "sha256": "ef301c642afcbd3cf84a9644e74ed1fa32c39290fc2d0ffbae1d1e58dbdcfa8e",
+      "bytes": 16519
+    },
+    {
+      "path": "apps/api/src/research/decisionReviewMappers.ts",
+      "sha256": "9ea9d03d4e1fa5efc409702f9d36dcbb8b791f39b09e76f5f15d42d449af219b",
+      "bytes": 15311
+    },
+    {
+      "path": "apps/api/src/research/decisionReviewPersistence.ts",
+      "sha256": "9c6707aa014abec568a8920f443bbe622a2304d5ed3ed5534124a86bde451d42",
+      "bytes": 11380
+    },
+    {
+      "path": "apps/api/src/research/decisionReviewReadRepository.ts",
+      "sha256": "b9412054f11ccab419bd3a4a91c9c135871d7afb8d2971af676509146d78d11d",
+      "bytes": 7548
+    },
+    {
+      "path": "apps/api/src/research/decisionReviewWriteRepository.ts",
+      "sha256": "e945ca9148f4b68b2921ef52c1e06a8d148161e6f215d61dea59cf53433b062f",
+      "bytes": 18345
+    },
+    {
+      "path": "apps/api/src/research/decisionSnapshotBinding.ts",
+      "sha256": "6878af43da36af0a3f2a05ac8b97f6a1d78f7d9fed80b07fd317e9607d123b51",
+      "bytes": 6356
+    },
+    {
+      "path": "apps/api/src/research/deepResearchEventBinding.ts",
+      "sha256": "86ed76a0118eede8bba657986d76766d839d7bc1d6c22b902b7c7879bb7f18c9",
+      "bytes": 7138
+    },
+    {
+      "path": "apps/api/src/research/deepResearchGate.ts",
+      "sha256": "e65385d5b40c9f658f24b7c4422fc56758fa6e1d5c6c2d1c7ac2b6a2189952d6",
+      "bytes": 74099
+    },
+    {
+      "path": "apps/api/src/research/deepResearchMappers.ts",
+      "sha256": "1803827c95aae6c9ee62441d90769a4ac8934a76e13ee5b6d7cea16452534d4a",
+      "bytes": 11363
+    },
+    {
+      "path": "apps/api/src/research/deepResearchMaterialOriginals.ts",
+      "sha256": "d62ed7450d040c2969ae401beebeb3b4b01e44c2c17192bf216a753bf872fe8e",
+      "bytes": 5112
+    },
+    {
+      "path": "apps/api/src/research/deepResearchMaterialRepository.ts",
+      "sha256": "18e613bf848ab9500041dfb82897b9ff027bd3f6747fbb30ff89fbe5224d1317",
+      "bytes": 31132
+    },
+    {
+      "path": "apps/api/src/research/deepResearchPackRepository.ts",
+      "sha256": "b7280550cb3a1ff1bba27f0bb895386b40be7113f3c835140ead5233583951ed",
+      "bytes": 30573
+    },
+    {
+      "path": "apps/api/src/research/deepResearchPersistence.ts",
+      "sha256": "c24dd88fe4a2d70580a2b425a2446f501d995172c76f1aeb51b3dc2ad3583256",
+      "bytes": 21721
+    },
+    {
+      "path": "apps/api/src/research/deepResearchReadRepository.ts",
+      "sha256": "7e91492ac79eb85814f0daff4f80f8ece8484dc99c954ef2f1d9c89fc99f44d3",
+      "bytes": 33297
+    },
+    {
+      "path": "apps/api/src/research/deepResearchReportRepository.ts",
+      "sha256": "b6397da05d409915a053091823ed1251b2e5a1bdb018d5c3837b1c66162a0d76",
+      "bytes": 30334
+    },
+    {
+      "path": "apps/api/src/research/deepResearchSnapshotAssembler.ts",
+      "sha256": "09aa342b28515a2674eb2a2d65f0169b08ad5cd1ccd0fce8925454875336d72a",
+      "bytes": 18943
+    },
+    {
+      "path": "apps/api/src/research/deepResearchSynthesisAi.ts",
+      "sha256": "1e9ba513cd45324fa9ed7ebe8048b0b8f8b5e955e29a9aba338e223acf078d81",
+      "bytes": 31443
+    },
+    {
+      "path": "apps/api/src/research/deepResearchTaskActionService.ts",
+      "sha256": "48745e4ce394f9ebb5fb357b54a23ef0261a2f3d0c757c645c71cdd3e77b58dd",
+      "bytes": 9881
+    },
+    {
+      "path": "apps/api/src/research/deepResearchTaskMappers.ts",
+      "sha256": "b892c605b30593ff82773e0d2703924ecb5eb5ea0e93b563b1bac33a58c2af9d",
+      "bytes": 8933
+    },
+    {
+      "path": "apps/api/src/research/deepResearchTaskRepository.ts",
+      "sha256": "616f971ec87403184caa5886b32905c368a8294f0e4fd606e03363870d5bf9b1",
+      "bytes": 31838
+    },
+    {
+      "path": "apps/api/src/research/deepResearchTaskRunner.ts",
+      "sha256": "ec039f763d0caa68619f194dc01134407690c6eb3ee99d28537092dd92ecc3b6",
+      "bytes": 12266
+    },
+    {
+      "path": "apps/api/src/research/deepResearchTechnicalIdentity.ts",
+      "sha256": "d42c149646a8f33ada13219bcfca5923bfd281f8b2e5d565e552b4871d592912",
+      "bytes": 2308
+    },
+    {
+      "path": "apps/api/src/research/domain.ts",
+      "sha256": "709472cf7128bf62e8420dfa484ae0efec6f5af0e60b83fe348a435b4caecb70",
+      "bytes": 6180
+    },
+    {
+      "path": "apps/api/src/research/gclPvPriceMonitorRepository.ts",
+      "sha256": "d256184f8f92255b9974a30fe3d668759607df596b395d42df4c4b14ac09918a",
+      "bytes": 17048
+    },
+    {
+      "path": "apps/api/src/research/geelySalesMonitorRepository.ts",
+      "sha256": "9f5d7bff39cc3ddf2cbe57096cc04598e60641e235d6b2ba5457f5abdb71b269",
+      "bytes": 16965
+    },
+    {
+      "path": "apps/api/src/research/monitorSourceEvents.ts",
+      "sha256": "55e8c1da3b8d5fad7e91c01143926e8b119f77e4d9b414653fcf6da2f26142c3",
+      "bytes": 1957
+    },
+    {
+      "path": "apps/api/src/research/personalInvestigationCorrectness.ts",
+      "sha256": "fa3aaeac5df20f762812e80c80e6fb0388c20bce7919ec298cff8c073ab150fe",
+      "bytes": 27079
+    },
+    {
+      "path": "apps/api/src/research/personalInvestigationFinance.ts",
+      "sha256": "3e7f2a44942bc70a59920fbf5becbbe18332b3f803dc4fc7e518767fe825a961",
+      "bytes": 104487
+    },
+    {
+      "path": "apps/api/src/research/personalInvestigationLoop.ts",
+      "sha256": "401deed6e6d264a3bbb1d185c3092ce2f351be7152f8b1275a86a8f4bcd5ae57",
+      "bytes": 40762
+    },
+    {
+      "path": "apps/api/src/research/personalInvestigationProviderFinance.ts",
+      "sha256": "7df59f556e27c633e2c32317411cd4bbc1d39afce99eb346a02216a11b0f27e1",
+      "bytes": 6060
+    },
+    {
+      "path": "apps/api/src/research/personalInvestigationSources.ts",
+      "sha256": "0e75f9e0cc029b10fb328587aa14461464d6525f59ef99313348dd8ca003b295",
+      "bytes": 22168
+    },
+    {
+      "path": "apps/api/src/research/personalInvestigationTiming.ts",
+      "sha256": "636d1f8da97a31f29f20a97c4761997cc22a7ca6fc98d65f17199d1649b82026",
+      "bytes": 2889
+    },
+    {
+      "path": "apps/api/src/research/personalMarketAnomaly.ts",
+      "sha256": "14de7050d8fd12893d071db34fee8c1024ae643860f4613c54b8b4abe9153d86",
+      "bytes": 26594
+    },
+    {
+      "path": "apps/api/src/research/personalMarketAnomalyJournal.ts",
+      "sha256": "6ddd91c08bc0b622be72a5801150849c6978acc10ca821ec5de8c8556bca7b0b",
+      "bytes": 5557
+    },
+    {
+      "path": "apps/api/src/research/personalResearchReasoning.ts",
+      "sha256": "542ea25e0b81570109ab5f6ea3016ef442beb6cd1d516613ccc498dd34aa8780",
+      "bytes": 96220
+    },
+    {
+      "path": "apps/api/src/research/portfolioReportExplanationService.ts",
+      "sha256": "5b751e7f809d4f114fe5080c7a86fa098f8cbcc3d794653a3cee5b7cc04e70ed",
+      "bytes": 13086
+    },
+    {
+      "path": "apps/api/src/research/postDecisionPortfolioReviewBinding.ts",
+      "sha256": "aaf54059f0df7b907ab9c2e68867d4ff02b9dec64bec7bc1b88bcf8ed885eae1",
+      "bytes": 3804
+    },
+    {
+      "path": "apps/api/src/research/quantDecisionEvidenceRefinement.ts",
+      "sha256": "346977762b7baacbe60d71ae6a8cd990c79fcdef321f22f28fa5dfd5699ee888",
+      "bytes": 26333
+    },
+    {
+      "path": "apps/api/src/research/quantEvidenceManifest.ts",
+      "sha256": "e29ee065955156adf8beb5f175649b15943023a507c142f94dded09b2f7500d4",
+      "bytes": 4000
+    },
+    {
+      "path": "apps/api/src/research/quantEvidenceSource.ts",
+      "sha256": "c3ea15b1d1c3ed9066dccdba0d1de9d5d4052b1c5df91a961c0e683c8e893a17",
+      "bytes": 1884
+    },
+    {
+      "path": "apps/api/src/research/quantEvidenceTrustedReference.ts",
+      "sha256": "7e982aed6e746b6cbd958e39f2ae1c8de268a8aa576f999504537d0a7dd6464e",
+      "bytes": 3388
+    },
+    {
+      "path": "apps/api/src/research/registeredQuantResearchRun.ts",
+      "sha256": "7d83a61a38e6ebd6fac1c48a3703fa1add07a3db7fc6e2baf0a075db12c88861",
+      "bytes": 19447
+    },
+    {
+      "path": "apps/api/src/research/reportNarrativeBlocks.ts",
+      "sha256": "ffd806ed0500c8807f2445b7a91cf3b3198e50a41c69139be1c29caeea2da8be",
+      "bytes": 5011
+    },
+    {
+      "path": "apps/api/src/research/repository.ts",
+      "sha256": "8cbca24d1b1729a05b0720745dbd87ad2713bbe60448a70b65325032452f7478",
+      "bytes": 2070
+    },
+    {
+      "path": "apps/api/src/research/repositoryLocalQuantEvidenceSource.ts",
+      "sha256": "05c7f35ce5cc5c3537c7b919b3de297c9af158a9dd08fc647c9c8ad9c432a657",
+      "bytes": 4530
+    },
+    {
+      "path": "apps/api/src/research/researchAssertionLifecycle.ts",
+      "sha256": "1d7e0cf138f96288c0cabc39a249c2c850c7cef44def1c5829150ec4a14ecf5a",
+      "bytes": 3038
+    },
+    {
+      "path": "apps/api/src/research/researchAssertionVerification.ts",
+      "sha256": "fc29e7c3dc54872f42f45e6453e362288dae5ab8f0e6cd8dd6380bbb48d31469",
+      "bytes": 12117
+    },
+    {
+      "path": "apps/api/src/research/researchBaselineConfirmationRepository.ts",
+      "sha256": "94d0c6878007c1b9dd3f31fc18bd134bf9dcb0fb63f18b70a34f097f02918881",
+      "bytes": 4912
+    },
+    {
+      "path": "apps/api/src/research/researchChangeProjection.ts",
+      "sha256": "f66f17eb4435514caca189d746771e9440329ee44aebc34d9442a6113188188c",
+      "bytes": 7987
+    },
+    {
+      "path": "apps/api/src/research/researchCompletenessRepository.ts",
+      "sha256": "9b3c02a6caff2d862530c1b2e911c02b2b567a806a9ca89e30c2e96903cd9986",
+      "bytes": 36958
+    },
+    {
+      "path": "apps/api/src/research/researchContextRepository.ts",
+      "sha256": "5eabe2b06eaed4edae955faacb829e23a0869c43e535e7ea6f05b023e42dd249",
+      "bytes": 40764
+    },
+    {
+      "path": "apps/api/src/research/researchDocumentCas.ts",
+      "sha256": "c0de7ede0b18578d9e3cd2bb884736baf4c341b8d4a93ad5b93fca03cb5dd792",
+      "bytes": 6849
+    },
+    {
+      "path": "apps/api/src/research/researchDocumentOcr.ts",
+      "sha256": "40b22982c005cd33775249f634d32360b513429e34a60ba68892f853476987a7",
+      "bytes": 6337
+    },
+    {
+      "path": "apps/api/src/research/researchDocumentPdf.ts",
+      "sha256": "3fa3de53ee18b75fa5b1b137189893e993c543a18ce3ee80f461787ff2823938",
+      "bytes": 9550
+    },
+    {
+      "path": "apps/api/src/research/researchDocumentRepository.ts",
+      "sha256": "03a35c9130c2d21a5afb070785872a209aa33a687f45fdc61e85880f5b17fba1",
+      "bytes": 28260
+    },
+    {
+      "path": "apps/api/src/research/researchDocumentSearchText.ts",
+      "sha256": "fb5eeda8b9c5ab034ce7561569cc2e6aab126ac5a6e0c861ca1dfdf75e36eab8",
+      "bytes": 5133
+    },
+    {
+      "path": "apps/api/src/research/researchDocumentWriteRepository.ts",
+      "sha256": "62ff8119ad65bc9f813ef19e66b9d7c0daebe74a6a609a9389aaa746ea884d8c",
+      "bytes": 22433
+    },
+    {
+      "path": "apps/api/src/research/researchEventRepository.ts",
+      "sha256": "7cc71a0fdf3231ac886efa4f3ac3d37208e86b4c85038adf355dd95f62210180",
+      "bytes": 18653
+    },
+    {
+      "path": "apps/api/src/research/researchEvidenceQuestionAi.ts",
+      "sha256": "66bb7532874487e90c988b214a7f4e00689d353485f99aa6015d8af8cd79bde2",
+      "bytes": 16679
+    },
+    {
+      "path": "apps/api/src/research/researchEvidenceQuestionRepository.ts",
+      "sha256": "189618810a7cdb95942efe6b4ea2dceabc17479cbe9356d3ae9a9523881c8a2b",
+      "bytes": 8485
+    },
+    {
+      "path": "apps/api/src/research/researchEvidenceQuestionService.ts",
+      "sha256": "9bf317bbcb7f206dfbe9b1713ec27daf522d5c9723ccc00e2f7423dae73d526c",
+      "bytes": 15163
+    },
+    {
+      "path": "apps/api/src/research/researchEvidenceValidity.ts",
+      "sha256": "c750fae0f85c1fc4e87453c827177ac366766a5ba59c4a3bca6bf44df15dea7c",
+      "bytes": 193
+    },
+    {
+      "path": "apps/api/src/research/researchFactCandidateRepository.ts",
+      "sha256": "7043866d5e84b48b19718f80d570197a5e5ae897dc0255c3fd40ca2ca956a659",
+      "bytes": 8794
+    },
+    {
+      "path": "apps/api/src/research/researchFactCandidateWrite.ts",
+      "sha256": "25a7fb38ae36635ef31f0e40095c1099c524713534aa2e4e5d27b99e2333e835",
+      "bytes": 8175
+    },
+    {
+      "path": "apps/api/src/research/researchFinancialRequirementRepository.ts",
+      "sha256": "8924db14d4e7ff9149f6639245c43a51ce9d981277c17aa76b1db2ff4457482d",
+      "bytes": 17583
+    },
+    {
+      "path": "apps/api/src/research/researchFixtureEvidenceRepository.ts",
+      "sha256": "62313ddf512311824aed915d7d063fc9f54f12c1df5cc2e784a3e1fe126aabdb",
+      "bytes": 1008
+    },
+    {
+      "path": "apps/api/src/research/researchFixtureSeedRepository.ts",
+      "sha256": "0d4bc3886f2c44f106b75e29515aff5bc18bd10fd2c37a1d243859cfa81bcedd",
+      "bytes": 12854
+    },
+    {
+      "path": "apps/api/src/research/researchFundamentalDerivations.ts",
+      "sha256": "ff9286f4cff6646120d131497899b6d85d7533055e0ddac358187e7dbbd0714e",
+      "bytes": 15035
+    },
+    {
+      "path": "apps/api/src/research/researchFundamentalRepository.ts",
+      "sha256": "0c079f430999dd6f4b558bd84a6aa9bd4eafc8c49d886c2af36e81b19779f5e5",
+      "bytes": 20115
+    },
+    {
+      "path": "apps/api/src/research/researchFundamentalWriteRepository.ts",
+      "sha256": "5110c204398b0fede3167131804ecaea12d2f90795bbbd62a866e30632f3babc",
+      "bytes": 9991
+    },
+    {
+      "path": "apps/api/src/research/researchFutuFinancialStatementRepository.ts",
+      "sha256": "229e9d07e4ed45b2f0b0df316e89b641855844d59160f7e6b91ed8c939e79019",
+      "bytes": 34765
+    },
+    {
+      "path": "apps/api/src/research/researchHistoricalReasoning.ts",
+      "sha256": "2ef67555e0f0a7b5ef74680c98fdf1d0a49801c51674cd62c213a70accfad122",
+      "bytes": 5190
+    },
+    {
+      "path": "apps/api/src/research/researchInbox.ts",
+      "sha256": "f42fa52041430ff5a1770d9dd688a13d70400ef1c865db777b697713cde43612",
+      "bytes": 12910
+    },
+    {
+      "path": "apps/api/src/research/researchLoopReadinessRepository.ts",
+      "sha256": "a23b86755e2e1fbee5933e7fbc0373d14b3d573fecae8c7c066217c9631d9b17",
+      "bytes": 10113
+    },
+    {
+      "path": "apps/api/src/research/researchMappers.ts",
+      "sha256": "1b320086983852c84ec2597a8355ad9b52d58be2633a88e47e51b3fb64c99b31",
+      "bytes": 4192
+    },
+    {
+      "path": "apps/api/src/research/researchMaterialChangeEvents.ts",
+      "sha256": "383b79afea2c2131f4d4717a269f12aa0e4c1daada3b1f09a8748e8c367fe50e",
+      "bytes": 5600
+    },
+    {
+      "path": "apps/api/src/research/researchMaterialDeletionRepository.ts",
+      "sha256": "cb1646958f7ab50b8e19edde7b9961e63da740f81a09dd4284f12a5a464cf372",
+      "bytes": 14538
+    },
+    {
+      "path": "apps/api/src/research/researchOperatingModelRepository.ts",
+      "sha256": "af7d116cff6caa7d220d061ff451e5f64799c71b2215ebe80d812706f4cfe3c1",
+      "bytes": 13711
+    },
+    {
+      "path": "apps/api/src/research/researchOperatingReasoning.ts",
+      "sha256": "653ef13c35e3d0aaa4d9dc8385b5575ed3579108ccf0f4e46cadcc53002f8aa7",
+      "bytes": 19467
+    },
+    {
+      "path": "apps/api/src/research/researchProfileReadRepository.ts",
+      "sha256": "4b76b0da30c14d0f61411705861512c5b7dbcb1b92986a350ed234578fe6f240",
+      "bytes": 6338
+    },
+    {
+      "path": "apps/api/src/research/researchProfileWriteRepository.ts",
+      "sha256": "e6e874d0bdb455c0725f47b88cd081a40453338a0c1446ac4c32fc341d0a8c75",
+      "bytes": 15448
+    },
+    {
+      "path": "apps/api/src/research/researchProviderOperatingReference.ts",
+      "sha256": "f8e7b38cd49311455d2cf894f10c57827c8f96791559a80de2d1666704111b6d",
+      "bytes": 10037
+    },
+    {
+      "path": "apps/api/src/research/researchQuestionHistory.ts",
+      "sha256": "5bc833f53c5afdfe984d102618ab5b9671ad0242ca2545c8451a327d0a6c4efe",
+      "bytes": 2916
+    },
+    {
+      "path": "apps/api/src/research/researchQuestionRepository.ts",
+      "sha256": "5a4436f7fc9ce87c82199a1f47b1eab5cdcbb1a6b6c760c20109490dd4e3ab06",
+      "bytes": 3668
+    },
+    {
+      "path": "apps/api/src/research/researchReportDecisionBinding.ts",
+      "sha256": "d66162fcc544de88d4fb80db45ab76942d8f620b5cf87f73c29194917d65bbb4",
+      "bytes": 13736
+    },
+    {
+      "path": "apps/api/src/research/researchReportReadiness.ts",
+      "sha256": "775d1b35c11363557cbbcd1c1b109a69105294446c4c149998a0a6be6a01cbf6",
+      "bytes": 1861
+    },
+    {
+      "path": "apps/api/src/research/researchReviewRepository.ts",
+      "sha256": "4cfa5a354a89a992c5227f8bf7ff3a3c1d0ccde9569817f26b48a3b49ebbad4e",
+      "bytes": 29725
+    },
+    {
+      "path": "apps/api/src/research/researchSavedSourceSearch.ts",
+      "sha256": "f80aefacbcfdf503110270dd0abea7827af326c718c32127f6a6c90075eb7ba0",
+      "bytes": 11947
+    },
+    {
+      "path": "apps/api/src/research/researchSecondOpinionAi.ts",
+      "sha256": "55866cd7bbcc040716dd4a73b8ef3c0ed6bde7e1cb9318ed4d8bbb2d34292752",
+      "bytes": 8968
+    },
+    {
+      "path": "apps/api/src/research/researchSecondOpinionRepository.ts",
+      "sha256": "be9f0b75a706f3b35b5d94f679cb3d1c70d4450ad6954113b2869f749eb5dc94",
+      "bytes": 9083
+    },
+    {
+      "path": "apps/api/src/research/researchSecondOpinionService.ts",
+      "sha256": "72b835b86bc1a0801338bbccda831bb5af9a4aed03714096b790322efedcba9d",
+      "bytes": 7401
+    },
+    {
+      "path": "apps/api/src/research/researchSourceIntake.ts",
+      "sha256": "922c83a88206521763809f89dbece268594e8c20d14989d0b14319df7fba9a38",
+      "bytes": 32554
+    },
+    {
+      "path": "apps/api/src/research/researchSourceIntakeRepository.ts",
+      "sha256": "493305df787879711a3c87345bd800811f80fa50b801e3a28c8f1f4e29176cde",
+      "bytes": 24846
+    },
+    {
+      "path": "apps/api/src/research/researchSourceSnapshot.ts",
+      "sha256": "aba46718811edab3f2fdc6c2390c8423b7f294ece6b0712e6dd266a3823bb92a",
+      "bytes": 3071
+    },
+    {
+      "path": "apps/api/src/research/researchSourceSnapshotHtml.ts",
+      "sha256": "cb84817dd334889e6fa2672faf26961b8af976f3ac8fbc84ef3c8c26aacf2efc",
+      "bytes": 2752
+    },
+    {
+      "path": "apps/api/src/research/researchSourceSnapshotRepository.ts",
+      "sha256": "6a17834f51cd730e0702f8e09febd0fd8641b52f2371e43de2647d3f7a3bb09b",
+      "bytes": 17783
+    },
+    {
+      "path": "apps/api/src/research/researchUnderwritingRepository.ts",
+      "sha256": "b8e1529152a618c60fe63cd798ff967746a52622a5ebe6cc57e3fed4eea68def",
+      "bytes": 33440
+    },
+    {
+      "path": "apps/api/src/research/researchValuationFcff.ts",
+      "sha256": "6f6b24c6d93e249bb1508b670fe375f9f022197393753148e029110da61eb20f",
+      "bytes": 13681
+    },
+    {
+      "path": "apps/api/src/research/researchValuationFcffProviderReference.ts",
+      "sha256": "8b6ea873588ace96ff0eab81d58299746c3c1744a58608002c026f3c3b667145",
+      "bytes": 8543
+    },
+    {
+      "path": "apps/api/src/research/researchValuationFcffScenarioRepository.ts",
+      "sha256": "6fad223fc3ce1fa320264f27de35b5f3bd732b0302787f7be9a56d4d93592cf8",
+      "bytes": 25674
+    },
+    {
+      "path": "apps/api/src/research/researchValuationIssuerBasis.ts",
+      "sha256": "38b4c806679b5014e20e85f2fe22d988638bd4ced852ec8ecdfaf2128be21c20",
+      "bytes": 14376
+    },
+    {
+      "path": "apps/api/src/research/researchValuationProviderBasis.ts",
+      "sha256": "95dab7fe59e2e8b99ff4574c47e7a7d0f4bbb5e0322d8389a2802d49e5fb53eb",
+      "bytes": 11571
+    },
+    {
+      "path": "apps/api/src/research/researchValuationProviderRepository.ts",
+      "sha256": "71a12d5baf4dd77acce7de1ef4c974355c054c1a1f644448db2997d06fb65949",
+      "bytes": 8880
+    },
+    {
+      "path": "apps/api/src/research/researchValuationProviderScenarioRepository.ts",
+      "sha256": "12a7711c95be4d5040e0e46ec56e62027cbdeb3e3ea7516432c2eb57a180f67a",
+      "bytes": 11631
+    },
+    {
+      "path": "apps/api/src/research/researchValuationScenarioRepository.ts",
+      "sha256": "b2e5dee20b88c65454c61e9ca29d8cb805d62ee6a6e71bacc5e1d5b9f3793967",
+      "bytes": 26740
+    },
+    {
+      "path": "apps/api/src/research/researchValuationScenarioWriteRepository.ts",
+      "sha256": "b25c2c86c8d5c7753bc396e0ce3772755ec158c668752e6fe5e45c5a1b90c86b",
+      "bytes": 12251
+    },
+    {
+      "path": "apps/api/src/research/researchWriteBinding.ts",
+      "sha256": "7d02d4bb2fa8f725be0124c7f1b4e9f0dfdb94378b752e8da34886982ce584b7",
+      "bytes": 4354
+    },
+    {
+      "path": "apps/api/src/research/thesisFormationRepository.ts",
+      "sha256": "c1e147c62d5ef7f20130dbd9d6f53da3b9af27ed48211fd2ff214383a794db40",
+      "bytes": 7440
+    },
+    {
+      "path": "apps/api/src/research/todayActionDispositionProjection.ts",
+      "sha256": "168a17012e1ad29710e9eae6a42bf53e3ebfc2bc82cefb1a303037f6f32b6602",
+      "bytes": 2963
+    },
+    {
+      "path": "apps/api/src/research/todayActionInboxProfileReviewProjection.ts",
+      "sha256": "23af45191e2f70b001422b07ec31155d50ae96eff1e5ee40b5649f18b0039d46",
+      "bytes": 1901
+    },
+    {
+      "path": "apps/api/src/research/todayActionInboxResearchProjection.ts",
+      "sha256": "d3e5361be421072040c09c333f64eae81ce2a8e58172568dd85234abfb98c7c8",
+      "bytes": 12386
+    },
+    {
+      "path": "apps/api/src/research/todayActionInboxService.ts",
+      "sha256": "63eb3edbe686c2f30a84cc279d79c20e281adf0a43950c9fa919a355a7e6663b",
+      "bytes": 28509
+    },
+    {
+      "path": "apps/api/src/research/todayDecisionProjection.ts",
+      "sha256": "07176f986b83884b3fd7912a64dcf585d0ddc58575f214340359956303e10fca",
+      "bytes": 5688
+    },
+    {
+      "path": "apps/api/src/research/todayFormalDecisionDueRepository.ts",
+      "sha256": "23d765b7f655259ae0281034d96ad8de6651ce3f796c6402500ef6974dd2720d",
+      "bytes": 14080
+    },
+    {
+      "path": "apps/api/src/research/todayMaterialChangeDispositionRepository.ts",
+      "sha256": "f49aeb2493c2f580d1e752259b2069c1d13c1db149ca8f53c0743d701160edc9",
+      "bytes": 6749
+    },
+    {
+      "path": "apps/api/src/research/todayOperatingUpdate.ts",
+      "sha256": "5fd723c7503c7b1459b57141230239f6b3cbf84929de38279d3e19d95c008d82",
+      "bytes": 6242
+    },
+    {
+      "path": "apps/api/src/research/todayResearchService.ts",
+      "sha256": "fa3ab0749fb93581a81f7567221effe6fa192d90b456bbc182ce5f2b961c22ac",
+      "bytes": 15824
+    },
+    {
+      "path": "apps/api/src/research/todayReviewDueDecisionEvidence.ts",
+      "sha256": "7d2b5e37116a97f96e9a1057ae9612c4faf3320ba983a129cbf90ffd3b0d7fd5",
+      "bytes": 8706
+    },
+    {
+      "path": "apps/api/src/research/todayReviewDueReportSnapshot.ts",
+      "sha256": "3b8b4995df08b8060ace9b29757234b1ddae9a118ae35e3a7664cad7e750a278",
+      "bytes": 17895
+    },
+    {
+      "path": "apps/api/src/research/todayReviewDueRepository.ts",
+      "sha256": "07ff163b2fda3f97c3c995a4fba5287c7395d0b31211bafedaa9cdd680653e42",
+      "bytes": 20557
+    },
+    {
+      "path": "apps/api/src/research/writePersistence.ts",
+      "sha256": "2b4044b2ae8fbe586fb786e9e44c9eb33e09d0d84388f29b1c50bfb9d5a66e14",
+      "bytes": 8554
+    },
+    {
+      "path": "apps/api/src/routes/annualConditionalDecisionRoutes.ts",
+      "sha256": "4620bf7ce0e51d63c33f439e42ea1ea86b8a5a7f16a6f3f5db385274d57a0cfe",
+      "bytes": 3223
+    },
+    {
+      "path": "apps/api/src/routes/annualPortfolioLabRoutes.ts",
+      "sha256": "1ccf71773537476951891114932f54829061cf35dae0f19a8f427595c81d5219",
+      "bytes": 4511
+    },
+    {
+      "path": "apps/api/src/routes/annualValuationQuantWorkbenchRoutes.ts",
+      "sha256": "b113a2abf7d996d33a8aec6d3ac6f625d466e261196bb76656e998b68cc46695",
+      "bytes": 10169
+    },
+    {
+      "path": "apps/api/src/routes/assetsAlphaRoutes.ts",
+      "sha256": "db6beff23f288112de30a2844633b823be68e53454b138b672739a4d6aed1919",
+      "bytes": 5579
+    },
+    {
+      "path": "apps/api/src/routes/assistWorkflowRoutes.ts",
+      "sha256": "ab70c4e6f7427fbcfdf662b52993e03541c0a8d6641a326b8d0496af548c618c",
+      "bytes": 12584
+    },
+    {
+      "path": "apps/api/src/routes/candidateMembershipRoutes.ts",
+      "sha256": "782d3b5411e7133773a41d48d1570afa87df705a8da0d779270546bff18e4ca7",
+      "bytes": 9705
+    },
+    {
+      "path": "apps/api/src/routes/cloudAiPolicyRoutes.ts",
+      "sha256": "56f18e8a4082ba4b5d9231111f6cf699511d7d3bdebb6f1fcd1484f5092b9cb2",
+      "bytes": 3034
+    },
+    {
+      "path": "apps/api/src/routes/decisionContextRoutes.ts",
+      "sha256": "972b25bf26f0da424237e32f693ba5989ef847b79a92e7957d18bc01f7c7f955",
+      "bytes": 6442
+    },
+    {
+      "path": "apps/api/src/routes/decisionReviewRoutes.ts",
+      "sha256": "195eb387a2b2edc5b09b6410026a0f40d31ede4a94576a60ef8751b61571106a",
+      "bytes": 18184
+    },
+    {
+      "path": "apps/api/src/routes/deepResearchRoutes.ts",
+      "sha256": "37ebd0fce81e4a083cd2ff4c32037577e98f398a0df52ecbef4b04a4547d7b00",
+      "bytes": 35689
+    },
+    {
+      "path": "apps/api/src/routes/deepResearchTaskRouteHandlers.ts",
+      "sha256": "799bf3d48d9e69007db933429bddaf7bcf000ea345f36e695072c41a8feb5765",
+      "bytes": 10820
+    },
+    {
+      "path": "apps/api/src/routes/formalResearchBackup.ts",
+      "sha256": "be707f8b79a9924df58e0fe922683e6704da169dc304f4c7bc925ace0e270874",
+      "bytes": 17355
+    },
+    {
+      "path": "apps/api/src/routes/formalResearchRestore.ts",
+      "sha256": "b1b3e4206c59e1e8fed4d68545cf544fa945a4927678e529c9dc5e5b2ea42078",
+      "bytes": 31728
+    },
+    {
+      "path": "apps/api/src/routes/internalResearchRoutes.ts",
+      "sha256": "562811caaecdae68a94e3eac787fd1c3f2f4b30c0e9c3b11a6519e547eb7b395",
+      "bytes": 4447
+    },
+    {
+      "path": "apps/api/src/routes/mobileMarket.ts",
+      "sha256": "569fd649ea508f4e148e970e82a2dd4aa8d87668718e4b777dfea71b8a7608a2",
+      "bytes": 16097
+    },
+    {
+      "path": "apps/api/src/routes/mobileMarketDaily.ts",
+      "sha256": "7fca8df1fcaa78794436db892c902194a2d2e6ea81679de643d2099e60da7c97",
+      "bytes": 12354
+    },
+    {
+      "path": "apps/api/src/routes/mobileResearch.ts",
+      "sha256": "7be3c11f4481433651c904ca2a7d6d519ab6e8d2d8b88e0bf05681302c48fbde",
+      "bytes": 5578
+    },
+    {
+      "path": "apps/api/src/routes/personalInvestigationRoutes.ts",
+      "sha256": "31dd6f16de6492e2e8e0f804ca80271cfd447ca5e07589ee843f8b1b902532af",
+      "bytes": 128706
+    },
+    {
+      "path": "apps/api/src/routes/personalMarketAnomalyRoutes.ts",
+      "sha256": "9942e3c12bdbd7a7b60f37c138be283c7989407495c2cbbe05a7a6c24cf695f6",
+      "bytes": 13977
+    },
+    {
+      "path": "apps/api/src/routes/personalResearchRoutes.ts",
+      "sha256": "ebf1b543fbe48447782d26bea4820824da51701dd3a857da262651b0a897325c",
+      "bytes": 36985
+    },
+    {
+      "path": "apps/api/src/routes/pinganCurrentPortfolioRoutes.ts",
+      "sha256": "d42f1f3866480f3d1e74c91dfbddab6012e663fdec044bf1c598e2d3db1b100f",
+      "bytes": 10448
+    },
+    {
+      "path": "apps/api/src/routes/pinganHistoricalRoutes.ts",
+      "sha256": "5ac79b24c7bad8c6a83c378b362eb6a4751352c3470b061a1ddd7e661e333fdb",
+      "bytes": 3436
+    },
+    {
+      "path": "apps/api/src/routes/portfolioReportExplanationRoutes.ts",
+      "sha256": "7214aac2eeaff4f321786b7e60978d563c0ba7c0bb5f1b064a0b55d29166a990",
+      "bytes": 4822
+    },
+    {
+      "path": "apps/api/src/routes/portfolioResearchContextRoutes.ts",
+      "sha256": "862c36eb26c8ebe15e4576cf45c0369090f742ca4ec4bd95409b6a3c80acfde9",
+      "bytes": 1878
+    },
+    {
+      "path": "apps/api/src/routes/researchAuth.ts",
+      "sha256": "7dac55d5fb2d2dd31fe848a8d3dd418695988b63293d0051fa956329b3cf3182",
+      "bytes": 6820
+    },
+    {
+      "path": "apps/api/src/routes/researchCompletenessRoutes.ts",
+      "sha256": "c02ecf963b0d318f1bee4f3d656cdd781d827f69722acf19eada62b1b61f381e",
+      "bytes": 5009
+    },
+    {
+      "path": "apps/api/src/routes/researchContextRoutes.ts",
+      "sha256": "eb3ce0b106be5419b57bfd86bcf376ef25467db63b8576a2ca9909cdf8e0d870",
+      "bytes": 16074
+    },
+    {
+      "path": "apps/api/src/routes/researchDocumentRoutes.ts",
+      "sha256": "9d00b6ce447444958f358fc31d35ba7dee0e2786997caa601b1a4918f2516194",
+      "bytes": 19331
+    },
+    {
+      "path": "apps/api/src/routes/researchEvidenceQuestionRoute.ts",
+      "sha256": "204d96d32a93c0dd6db7a7daa8b910d8bd66349c84fa70ea9377be2923cb155a",
+      "bytes": 10174
+    },
+    {
+      "path": "apps/api/src/routes/researchFinancialRequirementRoutes.ts",
+      "sha256": "e82687cfe92b065978ef32ce070b402f2113c7fbb3b29a77cab568269b306e24",
+      "bytes": 3983
+    },
+    {
+      "path": "apps/api/src/routes/researchFundamentalRoutes.ts",
+      "sha256": "4bb2db1f452b811678e6551156710c72cccfdfee84137ecccbda715d017c123a",
+      "bytes": 5610
+    },
+    {
+      "path": "apps/api/src/routes/researchFutuFinancialStatementRoutes.ts",
+      "sha256": "f650a28fd107c2268c0821fc1cdc60afd263b5ab47d469800a5899cbbd0cde7a",
+      "bytes": 8382
+    },
+    {
+      "path": "apps/api/src/routes/researchLoopReadinessRoutes.ts",
+      "sha256": "e877952ec9c8684def4469e3efb935ec0331a765d599ab9697656d8d72533d8f",
+      "bytes": 2124
+    },
+    {
+      "path": "apps/api/src/routes/researchProfileRoutes.ts",
+      "sha256": "c68762b8a918382a8b3b915fc587a42100c4ec624beed15403ad869d6ec68f5a",
+      "bytes": 7220
+    },
+    {
+      "path": "apps/api/src/routes/researchRouteSupport.ts",
+      "sha256": "316daea3da5d21a0ee612276753d6a7b0e0860d53d7434e4016c6a4ba9ee5adc",
+      "bytes": 862
+    },
+    {
+      "path": "apps/api/src/routes/researchRouteValidation.ts",
+      "sha256": "7a3891b588d20e91863597bcecc93bc58ebe2e7bb34b8e8d8cadbb000cd4aaa2",
+      "bytes": 1772
+    },
+    {
+      "path": "apps/api/src/routes/researchSecondOpinionRoute.ts",
+      "sha256": "296600fa2a0fc3d7842555cb22a03ddfad4263958c4efcc23787aa88c8c7a494",
+      "bytes": 7072
+    },
+    {
+      "path": "apps/api/src/routes/researchSourceIntakeRoutes.ts",
+      "sha256": "22aca45d133fc56f83fe3b5ab8afbcd104d1dfa312ed0c57ae3c3d977582dbde",
+      "bytes": 8103
+    },
+    {
+      "path": "apps/api/src/routes/researchSourceSnapshotRoutes.ts",
+      "sha256": "7b13f7289f32898fefe21a12e1e5aa0b3a691c69ccbb16fb61b75ad264d0c0df",
+      "bytes": 7773
+    },
+    {
+      "path": "apps/api/src/routes/researchValuationProviderRoutes.ts",
+      "sha256": "f57fea653d7b009f92ede2d1bdaef353a85745d2d1980bea8b62a4ca9343790d",
+      "bytes": 3958
+    },
+    {
+      "path": "apps/api/src/routes/researchValuationScenarioRoutes.ts",
+      "sha256": "e3314b00a3bf3ba646dc57be18216ac181a786b7a693cd91ef99a6651288b0e2",
+      "bytes": 13361
+    },
+    {
+      "path": "apps/api/src/routes/todayActionInboxRoutes.ts",
+      "sha256": "0a13cf99491e8737a769f0d55238c3fa00293f788217b33378fd0c8c876145b0",
+      "bytes": 2223
+    },
+    {
+      "path": "apps/api/src/routes/todayMaterialChangeDispositionRoutes.ts",
+      "sha256": "484b60137398252efb7f541b0c449936918fa7b096d2b4db7bfb054161d5f534",
+      "bytes": 6087
+    },
+    {
+      "path": "apps/api/src/routes/todayReviewDueRoutes.ts",
+      "sha256": "e950ea61f06a23adaad2b2262969b548afed5cf6b4e054e3c47753e26341c85f",
+      "bytes": 3099
+    },
+    {
+      "path": "apps/api/src/server.ts",
+      "sha256": "8daaec1c0deedbde7ef6257fdf4f103b468fb39ad395ac728744d4d884602ec6",
+      "bytes": 15384
+    },
+    {
+      "path": "apps/api/src/stagingReadOnly.ts",
+      "sha256": "137568f9cbe9868487ffbb50cab90ae6b762ba796bd23c34dc25c73e08b19db3",
+      "bytes": 914
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/ANTIGRAVITY_SOURCE_MAP.md",
+      "sha256": "40ad7417ebf9f540c129e121e5a240b881cbcafb4b4bd623ea188d6516ce4052",
+      "bytes": 2842
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Config/Info.plist",
+      "sha256": "784dc3638be7ba5d7318111758ffdc16ff35b6bd725ce4d1e1db6caa19b97405",
+      "bytes": 1546
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Config/Simulator.entitlements",
+      "sha256": "9c648e45319de2cfebd0153038191cc98d3572234b408ee985603ed6b0858c39",
+      "bytes": 374
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/DELIVERY.md",
+      "sha256": "be1c5429265945fe21b60e6af437102b5692787b8b88e060555211f7efe0512b",
+      "bytes": 17165
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/FUNCTIONAL_AUDIT.md",
+      "sha256": "1807c2f05ff31300dfc8e10159cc945ef7b7d1a78e719ce05f72ce40a3cde0ca",
+      "bytes": 15051
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/README.md",
+      "sha256": "5f4aa4dfcbb23f875a5b642fa6f637460fdf91eb758a2a5e6685536e2366e54e",
+      "bytes": 2739
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/APIService.swift",
+      "sha256": "7b1c626ed19f0fc3592d1af1de1d794d4a6a2fbd4a8f6a769169c7d563630151",
+      "bytes": 74033
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Antigravity/AntigravityAssetsView.swift",
+      "sha256": "df5df361780692e01c2c4e188a7a70fdaf184edb585a9d8f8d06408940180e54",
+      "bytes": 36668
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Antigravity/AntigravityAssistantPresentation.swift",
+      "sha256": "84a1550e5511871765fde1fb39fcac219063df5fe5fb42191c9d189cdca4135b",
+      "bytes": 8653
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Antigravity/AntigravityEvidenceDetailSheet.swift",
+      "sha256": "f166979b7b5b93ebda4d22888838d72ddbbcc2c973897889b3086a18aed6ccf8",
+      "bytes": 8936
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Antigravity/AntigravityFiveQuestionCard.swift",
+      "sha256": "6702d7ff42b65c395caae67ccf4e2359d0b45d4a94900f0e1c20311bd39b1d29",
+      "bytes": 6436
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Antigravity/AntigravityMarketView.swift",
+      "sha256": "324e17ec205c5de1e67eef3868aeae0ea9f3ac408509ffb4302917929edd35a7",
+      "bytes": 44938
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Antigravity/AntigravityResearchView.swift",
+      "sha256": "ac687dd49d3fc5aef9a5c158c1f023ef45dfd6703a5004dfcdc9c82084339bdb",
+      "bytes": 74292
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Antigravity/AntigravitySearchPresentation.swift",
+      "sha256": "de0f59c330bd25fc624b92ad155dd9a9b621a7e53efce089db5919872bc13121",
+      "bytes": 3056
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Antigravity/AntigravityStockDetailView.swift",
+      "sha256": "c9522767bd4de13c0daacbfeca936f9e10961c2e48cf40d3ba31444eed79e908",
+      "bytes": 29699
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Antigravity/AntigravityTodayView.swift",
+      "sha256": "f4f7f37844048f5bc0c5e02c53fca9f950a211af11bbe55db743273eae0e503a",
+      "bytes": 41141
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Antigravity/BackendBindings.swift",
+      "sha256": "14465ae3c0aa1d79995fc3cdb89e5116b3a3d2c8baabc6e848ac028de9ee4cc2",
+      "bytes": 2508
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Antigravity/CompanyResearchComparisonView.swift",
+      "sha256": "e6721902416fe35182f588f557f632fed8bfe91c3f0e2468f8c3e6f7da797e5b",
+      "bytes": 65132
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Antigravity/CompanyResearchPeersView.swift",
+      "sha256": "bb98594cb3dfc0a0190bb1799c9768fb8838c55d41bf6d5ab95c271f33e8a5b3",
+      "bytes": 72041
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Antigravity/OwnerCurrentHoldingsView.swift",
+      "sha256": "4d0beabae72b34b75a3d16da41061f6065a3675a74a865086b30c0a20b5f6cc3",
+      "bytes": 27080
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Antigravity/ProviderOperatingReferenceView.swift",
+      "sha256": "af9d82813769c118ad2d6d1a38329ba45272962218543950be536753f5b2a952",
+      "bytes": 33789
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/CompanyResearchAssistantView.swift",
+      "sha256": "7bb39ca0c764baa342816a29b9bd72f131f5ee551f83f440be5cba08fa2a45a6",
+      "bytes": 11573
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/CompanyTechnicalView.swift",
+      "sha256": "640ed6ee4ca4ddffcc81552bf062702d0a183d4d8699efd11fdbef6c663c0d12",
+      "bytes": 11018
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Components/AuditLogSection.swift",
+      "sha256": "d18da8a072fad1547686b76680a7d3ced1e080759746840497cf301115c54461",
+      "bytes": 3050
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Components/ClientPresentation.swift",
+      "sha256": "e556def2f8b95550b1c32f947da7f6109a7141c5eb2dc0ff81ccbd5484ca7384",
+      "bytes": 11584
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Components/CompanyWorkspace.swift",
+      "sha256": "d783adbb3ab5aa95aa75ed8f3b13c0afa612e0ffdc58ee9dcd882607b7d43861",
+      "bytes": 17459
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Components/ExistingWorkflowDestination.swift",
+      "sha256": "25fa3d923631515227309171fab0c18588b0c773f28d72830747dc154e69f14f",
+      "bytes": 913
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Components/FiveQuestionCard.swift",
+      "sha256": "a033bd6f45c6774f4c4de4a203b3039028be1a59eb76908ef0d8a78c2f293222",
+      "bytes": 1621
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Components/PriceGaugeView.swift",
+      "sha256": "390e44fd6e46e590b87f5777b2cafd6929cc012002882a4368a57dfe565d34f5",
+      "bytes": 4740
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/CurrentBaseFormationView.swift",
+      "sha256": "c50613ab5b883b74f96e8fe35e6b6b2649f50c6553b36114e27ce66de25a7d98",
+      "bytes": 24694
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/DesignSystem.swift",
+      "sha256": "f8f13ff8fee5b4a40e83dc44e12ec24bf3b8c2f4b577776d095216b9dbd1c798",
+      "bytes": 11310
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/InvestigationReportReader.swift",
+      "sha256": "e43cb6d6e570bc610a1d02ae92c7fa0723198c030be69328847050b5501d0147",
+      "bytes": 45528
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Models.swift",
+      "sha256": "499e8566feefc5705eb2b2f3207dbe7ae8a7f186403bbabb7a3fe88b8f0ddf90",
+      "bytes": 12190
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/OperatingValuationView.swift",
+      "sha256": "910c44ebbcf0908722a1995579ecf0d1d6e9393ffcce922ecb3fb6bc5291d795",
+      "bytes": 44656
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/OwnerManualJudgmentSummary.swift",
+      "sha256": "e940ea6d1604d98879984113df4261b2cff5c2ca816a52cbc6fff991a18cf08c",
+      "bytes": 7465
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/OwnerResearchProgressOverview.swift",
+      "sha256": "ed98d90f58d0a1b066a57f98ead463385bd7c99ffef9d697179b92e22fbe0dc0",
+      "bytes": 21318
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/PersonalInvestigationView.swift",
+      "sha256": "3049cfb620250636ade883e6586fa2520ad96e6c90a4db278d7832fffc538c1e",
+      "bytes": 112925
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/PersonalMarketAnomalyView.swift",
+      "sha256": "d2039ef1bfbbf0ad427620de8c267b742477b0ccca4fc9111707a880fd3d3c86",
+      "bytes": 21653
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/PersonalResearchBriefView.swift",
+      "sha256": "b41dc63d94650711e1846035aa655d4125d4d3cad64b3e0dfee7d15195769bcc",
+      "bytes": 32160
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/PortfolioResearchContextView.swift",
+      "sha256": "a08ff7f17ea8634084beb26197e75a32c914b3c5af2323182bb98e59e2d5c2a5",
+      "bytes": 8779
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/ResearchBaselineActivationView.swift",
+      "sha256": "8d018432fb5079aa57fcea085aee356fc31df12f759f125ae9d37938905eeb40",
+      "bytes": 24157
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/ResearchLoopReadinessView.swift",
+      "sha256": "0ef1a39c4a8636ca4121d2ac171c4291da44e7039bd1566964e83e35ef284f44",
+      "bytes": 11996
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/ResearchOperatingReasoningView.swift",
+      "sha256": "5534ee3e1d6cac84842ff9632ff085062b0c5ec901c61a44a3fc25c0d5077dbc",
+      "bytes": 61844
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/ResearchReviewView.swift",
+      "sha256": "d7b644a239c95d31e205307cc6adb927440be2d44045cdcd244a65f244cfaaa4",
+      "bytes": 20576
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/ResearchSourceIntakeView.swift",
+      "sha256": "80e4d7121a58b1df90e249317b6ff30a364cd080102bca7f4818fc78beca987c",
+      "bytes": 28229
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/ResearchUnderwritingView.swift",
+      "sha256": "bede6efbebdca788f577481a2725048c3a7ef948997366d2fce9500c5793eef6",
+      "bytes": 35355
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/ThesisFormationView.swift",
+      "sha256": "6d84cfde7219a3bf415ab9edbbfa62a3c8091807b1684857129c884e11e73a70",
+      "bytes": 17303
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Views/AssetsView.swift",
+      "sha256": "4e9757a1adc29937e40977505c7851eac4572056b972c2b986eaa8251d7dfed4",
+      "bytes": 2436
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Views/ClientReportLibrary.swift",
+      "sha256": "fc598e6bfa8894a358e79a37bf192c289ce483780c3a15cda80b4904be551b80",
+      "bytes": 9889
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Views/MainTabView.swift",
+      "sha256": "d9e35763f0b7b05499997009d7ff54c180befb05eb7b3a70d95aded6fbff541e",
+      "bytes": 12013
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Views/MarketView.swift",
+      "sha256": "b32bf68dd132a4d79699bd1a2a676ad0024f3504ff5554a9c63688624c40eb35",
+      "bytes": 4233
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Views/ResearchView.swift",
+      "sha256": "658ef2cabf48aca8d4b6abe2160149a3f2b219304be28a66a3eb51a5e42afaa2",
+      "bytes": 3293
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Views/ResearchWorkflowPresentation.swift",
+      "sha256": "0c25b24a6ed40f86ac73ad25e754bc239cb7201b9130228a191920584e282064",
+      "bytes": 5684
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Views/StockDetailView.swift",
+      "sha256": "87b2825ce69bced9cc3b7166f5eaaafce87544570d9b0c8e858a619255b12177",
+      "bytes": 3275
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/Sources/Views/TodayView.swift",
+      "sha256": "303dc6e5fbf318b10b83ad32909fb6524799105c5f458435d534eac83c0b2a87",
+      "bytes": 3520
+    },
+    {
+      "path": "apps/ios/AnnualRingsClient/run-simulator.sh",
+      "sha256": "9f46d0103be464275c244167af7b8da3091270a489951ace0131252698f3333b",
+      "bytes": 2490
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/AnnualDecisionRingsView.swift",
+      "sha256": "367d747fd67902440f5b6d2c9a6f9e95f8e55e97f8980d47465cbb4044672f39",
+      "bytes": 9979
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/AnnualRingsGateAApp.swift",
+      "sha256": "aee13a824a2afb4684dc8315872e4573807b191d4317e288dad4ce98bbdad26f",
+      "bytes": 35204
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/AppConnectionStore.swift",
+      "sha256": "c7cc73744c2b0f690e684f3a2c7bffa2c4463872a8f7707ff6aa96d7ea314c59",
+      "bytes": 1551
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/AppCredentialStore.swift",
+      "sha256": "e07a537471276cff8b168c8b3d2ac8caf3034c302a909e6138cd12c9e7d13384",
+      "bytes": 3000
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/AppEnvironment.swift",
+      "sha256": "cd91bd873706883062ff0a79d5b76c4fbceb7a27ab47feaf2e2fa0166568962e",
+      "bytes": 14197
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/AssetsFreshnessSection.swift",
+      "sha256": "2e6f24841535d45cd2b9da8ebe926180f3995b2c7d3da8e041bc77a6bc9c4e6c",
+      "bytes": 3495
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/AssetsLocalTradeJournalSection.swift",
+      "sha256": "ae9e1becf06696f386217ab6deb7cd60e6c819c228ef2050caced48a47ab1419",
+      "bytes": 7233
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/AssetsManualSnapshotSection.swift",
+      "sha256": "15d3bde5752be60b3dfbb105277df3eed315a1f9e315d08ff9f0b7f74ebfa018",
+      "bytes": 23776
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/AssetsPortfolioImpactCard.swift",
+      "sha256": "a878a70c19078c27c83b60013f26e0136a79843d388d1ff0fd5d0f2d880bda1e",
+      "bytes": 17618
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/AssetsPortfolioResearchScopeCard.swift",
+      "sha256": "9ac8915a86327cb183ad4f18f05f83eb3cb4ea8792bd84c0761f21272b8fe5f9",
+      "bytes": 7916
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/AssetsRootView.swift",
+      "sha256": "7b1bcdae6009601ec9e359757b1b7db665c43b09fc5e49cad704e60eafeec1ba",
+      "bytes": 43421
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/AssetsRootViewSupport.swift",
+      "sha256": "25731be02708336e8e23b2de400c1364c87f0c00010e5fdedd0c09062df86bd6",
+      "bytes": 11740
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/FormalResearchBackupView.swift",
+      "sha256": "019e644eaa667660bf77c04b9d2f203f33542d50b1b47b4bf83704cf5cf53c54",
+      "bytes": 85298
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateAMarketCandidateSections.swift",
+      "sha256": "798a0497f43a4794eeda068af72a47c307b38efac9e490212f7a7d899cef7079",
+      "bytes": 18613
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateAMarketDiscoverySection.swift",
+      "sha256": "479f149656cb5c8ad3e0ee8ba62c8e034299b98f64fbad29b02cb0acc0cd7f68",
+      "bytes": 13330
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateAMarketEnvironmentSection.swift",
+      "sha256": "d7a9c9fe2ef254396794988429dfdf3b06faefdf801d73f1202c610a2a382acb",
+      "bytes": 17012
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateAMarketFactLoading.swift",
+      "sha256": "22771a10796c81593e3982d436dcdaf2a2add62dd4ca36c877acad913e336f91",
+      "bytes": 4466
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateAMarketPortfolioTrendComparison.swift",
+      "sha256": "1b85fca9cb8d4d5805db237d2cb6f164ff36d996a6c2db82d0a09484d8a17c8e",
+      "bytes": 39447
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateAMarketScreen.swift",
+      "sha256": "f1b5a4d4f5c1f512ddecae9fd1553cc341d76383a6ddc7bcfe733e1be48f40d0",
+      "bytes": 54319
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateAMarketWeinsteinSections.swift",
+      "sha256": "f94ab059893e6bbb3b493a3f4cb60ee1fca2362516eff335707ee5f995c9c7af",
+      "bytes": 3848
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBLocalRecordStorage.swift",
+      "sha256": "3f0213368b7a5f0226f94b2a4d0011b28a3080845edfbe76e968c8a7e46fcd73",
+      "bytes": 799
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchActions.swift",
+      "sha256": "bbd40435c4f3e7e6fa206e41215e8dde852bdc799ad922a678be2c8ca456bc22",
+      "bytes": 27654
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchArchiveMemoryRestore.swift",
+      "sha256": "6f935cb7dfaf59dbc3e9354fbb75849fa2328af41ed45d8a453cd1e1ed91a3b0",
+      "bytes": 3540
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchAssistSections.swift",
+      "sha256": "a55d6c06b2040d35cf842a563aeb9cccd8b3cfe8d2c78c14726becacd8a5a70b",
+      "bytes": 17965
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchAssistWorkflow.swift",
+      "sha256": "065a7c313629c8575fc6291dfa454d2511c0f69c619087c317f96b47ffc94bfc",
+      "bytes": 28591
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchAuthorizationWorkflow.swift",
+      "sha256": "39143c6a6dabf5d86640ab8f49d659d30efe940cdf9627d896c12e84fb92f709",
+      "bytes": 1529
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchAutomaticBackup.swift",
+      "sha256": "45a20b9b591f2700914066c3d10ef13ace31b13f197dae4f2a6bfefbbd649fd4",
+      "bytes": 1895
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchCandidateSections.swift",
+      "sha256": "3f2a1f2313016bfe0d77ff6f6b1db9e24a2776d68ce9d9d165d931786c6e8e1e",
+      "bytes": 19673
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchCompletenessSections.swift",
+      "sha256": "a12899b4bdea4d507c01220567b3e678b7220f3b45efedad7a881faa5848d111",
+      "bytes": 9068
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchComponents.swift",
+      "sha256": "f9529467875c4d60f4dec2cf1b0a043c518e2ec5bdeee421037ee9a1bde5da50",
+      "bytes": 15928
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchConditionalDecisionSections.swift",
+      "sha256": "521bc2479b20c68d2760827d38b0b537fab0f2f185d1460e12169d28ba7f61ff",
+      "bytes": 16324
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchConditionalDecisionWorkflow.swift",
+      "sha256": "fb5fe134bd5163d470a7c362012e2119cd17a6509a1304ffd4fae46dbfb03dea",
+      "bytes": 15640
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchConfirmedReportNextStep.swift",
+      "sha256": "a947a4b771d0e794c66be5c42ca288b6494577aed49020345a1248c0a6b88828",
+      "bytes": 783
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchContextEditorSection.swift",
+      "sha256": "8dad196bee92f5a4e5d246a782b3cd23ce96353351ee710bacc30e17ea28dfca",
+      "bytes": 25097
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchContextWorkflow.swift",
+      "sha256": "3518467e92c2c89b110669ea8f1f4cc99ada759adc98a2ff188b770194791855",
+      "bytes": 19006
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchDailyContinuityWorkflow.swift",
+      "sha256": "24d78fab016565151e7941e91770bfd7d8d5ad8a3988c12aa56468ba3702b8dd",
+      "bytes": 19476
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchDailyDecisionWorkspaceSections.swift",
+      "sha256": "e94b63d8002413deed123ebf8abbecf54479c1c9cf071571cc8a5fdb5d2854eb",
+      "bytes": 16760
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchDailyTrackingReviewSections.swift",
+      "sha256": "48bd754cf7aca92adde05cf8ed397eba6adc23d5b2130b75f07e61febdf20f2b",
+      "bytes": 20682
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchDailyTrackingWorkflow.swift",
+      "sha256": "3b970bdca9f2e44712a78c07aff96abc77c8fb96860639978d1074702df60110",
+      "bytes": 8972
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchDailyWorkspaceSections.swift",
+      "sha256": "7221eccbb7f98f79fd57416941021ff143d2b19c153dc3710f35978b714d70c3",
+      "bytes": 95894
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchDecisionBriefCandidateActions.swift",
+      "sha256": "4893fe806f65ee5844637748498c94e6b09fe4f317bf92e9c6fe810562d62ee7",
+      "bytes": 1839
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchDecisionBriefSections.swift",
+      "sha256": "bce2183ee01540903a091ea003355a06695eefc844f386ba2e2e83ccf1486c6c",
+      "bytes": 29619
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchDecisionBriefWorkflow.swift",
+      "sha256": "c0fe8698e9a99ddff975f21987a4a096dea8a33d5ed6be1012ab412a4ab6464c",
+      "bytes": 20990
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchDecisionSections.swift",
+      "sha256": "0136a69febcd351a573601f5d5bbb27ff680e62da4ec194013e5bd0c34fab335",
+      "bytes": 30652
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchDeepResearchJourneySection.swift",
+      "sha256": "91b0922cc16d7b6da8748287cde3efcd9f85cfd6c3c24f3f2d690e70a409df28",
+      "bytes": 29185
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchDocumentActions.swift",
+      "sha256": "c3589eb1c4a79050ce43398197282af6c72c630fb32d5c6641f1b2282f81cc46",
+      "bytes": 57342
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchDocumentPDFView.swift",
+      "sha256": "5e068e86886143125e0310c335515b4c31204ef903fe694237fb8a2f7b73463e",
+      "bytes": 7461
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchDocumentsSections.swift",
+      "sha256": "a76e4ac31fb41602eadd3759f56c2a2f76b84111e607503ee29d712ab765afd4",
+      "bytes": 61974
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchEvidenceConflictSections.swift",
+      "sha256": "8bfb17358870dbee3ebbf34069152cb12b4a7d8701eef542ecbc9ff6e4604a74",
+      "bytes": 16451
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchEvidenceQuestionSections.swift",
+      "sha256": "125a11ab027d701a134c7bb69cdb17cf8ad7debe35428895ce6dc14de7cbcbc6",
+      "bytes": 63851
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchEvidenceWorkbenchSections.swift",
+      "sha256": "94643061280df017f21e8f6e5fa0e27c810d49777315f8c82194d1fe1f67743c",
+      "bytes": 12162
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchFormatting.swift",
+      "sha256": "e40b451a16e368e34f1f0e0215e7dc741ecccc9395847142ebae80ff879aeaba",
+      "bytes": 10978
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchFrozenTechnicalEvidenceActions.swift",
+      "sha256": "1b48c197e2e7b51a8310ddc95fba2ae8ca7524f71b0465e70ac9da1c27d5f4e0",
+      "bytes": 37994
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchFrozenTechnicalEvidenceSections.swift",
+      "sha256": "d0b4ccb2cb0f36ac26ad8c2806c203ad571a97a54ba2f6ec89c6720132a6f9ae",
+      "bytes": 53517
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchFundamentalActions.swift",
+      "sha256": "dde4a567b0da59594a4bb2a9c806bec538f5c8fca029f99ddf91d93cf73f2399",
+      "bytes": 53362
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchFundamentalSections.swift",
+      "sha256": "03e8a3a3e200084b16502219459e1a803efed02ddacb6a9832cd64bd67649443",
+      "bytes": 38007
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchFutuFinancialSections.swift",
+      "sha256": "09d06d4ceab3c601076bd0bbfdd6ea15fa5977225f8f7816d201e9e50bce9eda",
+      "bytes": 46884
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchGclPvPriceMonitorSections.swift",
+      "sha256": "d2666902e41397f2650961b07336e16e73f020513c64c6da9baa752e25302e34",
+      "bytes": 23365
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchGeelySalesMonitorSections.swift",
+      "sha256": "5003d37b84fda0f37438ed4cbe087f3f19ffccfcce7db89d2b4aaf3cdb20b152",
+      "bytes": 19181
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchHoldingLogicWorkflow.swift",
+      "sha256": "0e518739000d3f09c67bc6f25628a6b2b537fe2b5a1f50dd210f971634df5b75",
+      "bytes": 17093
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchLearningSummarySections.swift",
+      "sha256": "861ab3670db17c46f6e80fe7b4fc9754f83d5549aad25c6a2df130c276c43e48",
+      "bytes": 13804
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchLoadingState.swift",
+      "sha256": "e1aac257a36a0d04badad2615c511e95db412ba0c99681fbd38735e87afb236c",
+      "bytes": 1381
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchLocalStateWorkflow.swift",
+      "sha256": "31ad0cb0cfe7837394821310911b45a4e620688f40ebddcb2efc8736ceb20d31",
+      "bytes": 25292
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchManualResearchWorkflow.swift",
+      "sha256": "753e22c444094d58e68a76b1e934b7d9473de8eb99452f975b4a221a0c1e9327",
+      "bytes": 83852
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchMembershipWorkflow.swift",
+      "sha256": "b575790b1e1d7edcb2fdda12a2aeeb34e4f25f9dd737d079e0fa09bb69833fae",
+      "bytes": 4540
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchOnboardingNextStep.swift",
+      "sha256": "ffff92152ed0b886f0fcd7efbc53e8370d9842b2b6786a9d29f75360947d9e36",
+      "bytes": 1348
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchPersonalInvestmentMemory.swift",
+      "sha256": "607a17780824954319b2cd2f07b5bf0593a3998fd030c09fb72ca01c47935afb",
+      "bytes": 20165
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchPersonalMemoryTools.swift",
+      "sha256": "155e616ee731ccd0c67b088aaac9843bd45c81cb71dc7905e4ca8892abfed5c3",
+      "bytes": 9330
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchPortfolioLabCandidateAction.swift",
+      "sha256": "4ae695cd87b9bfe670ed30a95a3899e836f3b62bb3a0948a49c5a6fc3ac94c8c",
+      "bytes": 649
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchPortfolioLabSections.swift",
+      "sha256": "7c5e44d535b85f869257f604520e41bb1dbcaa4bcfc6bf5eade733bc5ab56edf",
+      "bytes": 29827
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchPortfolioLabWorkflow.swift",
+      "sha256": "2e77a3e97673f8e7b0d4b523b71a6ce6be166d5c23a832fcdedc6a0e134292a9",
+      "bytes": 22340
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchPortfolioPairSummary.swift",
+      "sha256": "f6a85c08bfc3301e549b20b29c1ac878c6ddd99755855b30120ed669360553e8",
+      "bytes": 7196
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchPortfolioReviewSections.swift",
+      "sha256": "4e18b694cc07563425f06d34558ff3398990fc865d1e3b14e62d2b58d98d39de",
+      "bytes": 17515
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchPortfolioReviewWorkflow.swift",
+      "sha256": "85815d890d068f983221c8794889c3a541b67bf86161ddcee52fc06d01448766",
+      "bytes": 18279
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchPortfolioSections.swift",
+      "sha256": "cb7c9f4f0122a0d10e72225ff7bb63d0b354d5e1c22357a3bf6c761e9e30516b",
+      "bytes": 16463
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchPortfolioWorkflow.swift",
+      "sha256": "f6f3671ad367e6276b9007cbe5f9408366cf44cef358eefd7133b3f1acf266b6",
+      "bytes": 8952
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchPortfolioWorkspace.swift",
+      "sha256": "a9022b12198e1e8a34224b35707b2c062fb53e6828098ae115138cd35c773166",
+      "bytes": 19533
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchQuantEvidenceFormatting.swift",
+      "sha256": "72bdc967f7110fe18c2d77f3505bfebc7ce1bad810ec17a1c0ae763406221a42",
+      "bytes": 4849
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchReportComparisonSections.swift",
+      "sha256": "197604838c6185dbacffe56b2f557d956b284e95bdf6879e84f1f49324dc1568",
+      "bytes": 20944
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchReportFormalDecision.swift",
+      "sha256": "e6ae19a687c0ee20661054111393d27ea8041a87e0cff350a306eae8f8252a9f",
+      "bytes": 33817
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchReportReviewSummary.swift",
+      "sha256": "977b08eba9160038dda5999f33d4f491121f5b416fb1766c571cbd8f6f6c8061",
+      "bytes": 2067
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchReportSourceActions.swift",
+      "sha256": "f2caba4b313b2b0976cf71fa55acec1f0459c6805acd63057067c42ee538a350",
+      "bytes": 17118
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchResponsiveSections.swift",
+      "sha256": "a49cfef783de82ab60cb82caa3755a4fd0b9a6f76502b93f5b064983cae31af5",
+      "bytes": 53701
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchReviewFeedbackSections.swift",
+      "sha256": "a617b7482ddecf79c8edf3c280c90741496484798467ed91ad91517d08ea3a83",
+      "bytes": 3902
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchReviewHistoryComparisonWorkflow.swift",
+      "sha256": "04e1695e4210b10e3c8781187287550c87d142e1ef755fdf18c1d155fc762110",
+      "bytes": 2846
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchReviewHistorySections.swift",
+      "sha256": "39699b4f96965e6b762af924390bfca10569f6d2c541b877d0a725062b52b9be",
+      "bytes": 78063
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchScreen.swift",
+      "sha256": "d9432e213753e5f349f0fc2af03cfd7e7e482785cd5f7c5f1fc9f18fc0bfc243",
+      "bytes": 75709
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchSecondOpinionSections.swift",
+      "sha256": "7bd8f8fe6b52d6cd788d1b47840979049952b883d563630ea01f0dc5e00844a6",
+      "bytes": 7791
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchSessionDraftFormalDecision.swift",
+      "sha256": "f34fd6d754504928812015ab4716e7930db37807a82b0e7f85fdf0d5682cde32",
+      "bytes": 11333
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchToday.swift",
+      "sha256": "e1d748eea4969e4fe82dafeca6e5db066f10b5f41daf509ffe65f36b1cbbb858",
+      "bytes": 26113
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchTodayProfileReview.swift",
+      "sha256": "b12dec5d429b46cb62a30f41c09b5562dc2b0c9a3578585de0bcc4fd50110643",
+      "bytes": 495
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchTodayReportNavigation.swift",
+      "sha256": "679882aa6230fef08560950fc5d0e9162e1284bbbaf07ce4a2bf8d60d538d91d",
+      "bytes": 1772
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchTwoLayerReportActions.swift",
+      "sha256": "7fa3c77e91a5b951c4b19208d171af47493bd5df7caf5f72137348026ec1f3af",
+      "bytes": 75247
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchTwoLayerReportAnchor.swift",
+      "sha256": "c585fdabecebef49cf5eb836f05600692b0b0058ef5dd1efce2a94bc41291690",
+      "bytes": 171
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchTwoLayerReportExternalSource.swift",
+      "sha256": "bf9f2d71cc7ffb99c1eb89fe48834c6bb79c19666bc957c95c59a5ae25261ea1",
+      "bytes": 4702
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchTwoLayerReportRevision.swift",
+      "sha256": "02beb0e55dc422e70a052f02b02dcd04964241a1a40d88fefcdd04c144021da3",
+      "bytes": 7832
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchTwoLayerReportRevisionSections.swift",
+      "sha256": "c3e179ac64bcdc70e08e4894c5cd09e9616bc3a1dcbf8af677f783c2db795dbb",
+      "bytes": 616
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchTwoLayerReportSections.swift",
+      "sha256": "7d0e6f9b598b5578b9bdd9559e7c8a96dae1d243024773fc76b5b0f851670187",
+      "bytes": 90807
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchValuationQuantSections.swift",
+      "sha256": "64d6327eacd072941e2456b503b26959fdebbc6d8c7b512e3b0e6851f3f48325",
+      "bytes": 29717
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchValuationQuantWorkflow.swift",
+      "sha256": "791dd5b0751c2a7b825dbc7b083ab27c9971c1a73f3265b63de5a516cd556a0d",
+      "bytes": 12219
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchValuationScenarioActions.swift",
+      "sha256": "7e1242f41f567ebebf15016bd5c9ec7cc0bacb7ba56c171286b5ca1c2bda85c8",
+      "bytes": 99463
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchValuationScenarioSections.swift",
+      "sha256": "908e973094c2b0c94480f47de32a6bd08148ae9dd727256f1e09f539ac43c0c4",
+      "bytes": 92470
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchViewModel.swift",
+      "sha256": "bfa9ec796cf591df55b282b9978803cafccaac302616962717aeac6fccd41e98",
+      "bytes": 4686
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchWeinsteinSections.swift",
+      "sha256": "4425c1b3328923c75a2fa3cb2de70e829f93052ba0be0b62abba179f81956bb6",
+      "bytes": 21192
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GateBResearchWorkspaceSections.swift",
+      "sha256": "0b8ab4132de3ecd863d249ec28d79c6c9f99f41b922bf817205ea897cf1a8830",
+      "bytes": 44479
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GlobalAssistantInsights.swift",
+      "sha256": "0ff7b95b2c27e60feb4d592d623a6500e827f5e308bb9aa530bef0681d79b61a",
+      "bytes": 663
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GlobalResearchNavigation.swift",
+      "sha256": "cba08fc21881a5701b827f4956682c6e0a5e54025e78b733943d3c5a249a2859",
+      "bytes": 31821
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/GlobalTools.swift",
+      "sha256": "536cafcf97edd0cd3eb4cf1202f2779413a7a08b78f2409cfd2c51e3866cd765",
+      "bytes": 35593
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/MarketDiscoveryCard.swift",
+      "sha256": "e6af20915e29ecfc059505096d10585ab9b295749ed04497dd538aebfdd1c2b4",
+      "bytes": 25590
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/MarketDiscoveryEligibilityView.swift",
+      "sha256": "c80edf692f92297f8fd769d2af6de0474d182902804c5fb8a1e158a22fc66f31",
+      "bytes": 1360
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/MarketDiscoveryLabels.swift",
+      "sha256": "8d93ba81638b4788456af4c9f7dc300d5207ecec335c34ef69f5a9e4c2e3d2da",
+      "bytes": 548
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/OwnerReadingFont.swift",
+      "sha256": "3a52d4d81440d8fb131940524f791d954ee67168267f214b1466a4693a0de0ef",
+      "bytes": 1870
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/ResearchReportRevisionSummaryView.swift",
+      "sha256": "995c51b648dc79b6861ad462ed4ca122ef11c8ede444345cc2657926afbe816d",
+      "bytes": 4051
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/ResearchSecondOpinionView.swift",
+      "sha256": "ec798c9b8a51f1038c68b5d41253c5a90cfbf332dc4a7410a601dff3ae423326",
+      "bytes": 22286
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/ResearchSourceImportSheet.swift",
+      "sha256": "0917de764200cf89feb7ce4df3505a480124723a6ba516eb4dfe6b08dfafb2cd",
+      "bytes": 3911
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/TodayActionContinuityView.swift",
+      "sha256": "936ddfffe217a8b9cb41e05f787c1399b26510f94b3099d5575f1ce1cd9f7687",
+      "bytes": 2029
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/TodayActionInboxCard.swift",
+      "sha256": "51610b720798b42f2e1213c094475265920620417f40b7d4a92f4cc1be7b30bd",
+      "bytes": 35689
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/TodayActionInboxCardLifecycle.swift",
+      "sha256": "73cdf2a0800eef9aa8314f01c2a34e6f3670001e7efca3909418c4263224e5f8",
+      "bytes": 2187
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/TodayConnectionCard.swift",
+      "sha256": "d9d7d73f0bfee3a0e72bda73d172733761de1dbb31af44ca11f939f2a56c464c",
+      "bytes": 19180
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/TodayHighImpactNotificationControls.swift",
+      "sha256": "c1b3eb64d7978694da020b89e39787af9f7cd0e57c65b13bdeac58d27a4dad06",
+      "bytes": 10299
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/TodayMaterialChangeDispositionControls.swift",
+      "sha256": "9ce3e1e7853122b81dfee464e2401d0f0d773814515f6682a8dc76b4818b8faf",
+      "bytes": 10288
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/TodayMaterialChangePresentation.swift",
+      "sha256": "21dd290bf775f3e21678bdd9f6907ebdfbef49c6597e51189c5870a2dfa63e1a",
+      "bytes": 2107
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/TodayReportRevisionNoticeView.swift",
+      "sha256": "c5afd344c03d56b5053cfe2f061dc825731c733f2ce5609d2c6d5c0b28b591ac",
+      "bytes": 2509
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/TodayResearchFeedCard.swift",
+      "sha256": "4fa65d89080ed39be44fdfb975498edfd08b81e1de3aec2124581c74d727d3f5",
+      "bytes": 21858
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/TodayReviewDueContent.swift",
+      "sha256": "a4a69a9fda28c71c0c5be8e01ddb38d9849fabbea39f30dad966cbd95b9f5764",
+      "bytes": 8651
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/TodayRootView.swift",
+      "sha256": "a086e744a75b4baea7d39ccf46df4b82a9aa8ed94eb1ef59e9936559aa28f954",
+      "bytes": 46872
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/App/UITestViewportContainer.swift",
+      "sha256": "f1390fbde11241d9360d76672bf73c53c12dba54eaec1ec00d6e89bcef2f705d",
+      "bytes": 640
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "sha256": "9cf2928dad89427abd581b6852db081352417f400afb65e60c479228cdc4f4da",
+      "bytes": 216
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Assets.xcassets/Contents.json",
+      "sha256": "0fd49ba3c3585c709678e0046a821c3c60685ec7063720d30d3a3448be3a208b",
+      "bytes": 63
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Config/Info.plist",
+      "sha256": "f05410ca0972724b77aa9397ed5cb0428cf07ab8d4a1693ccc7cd3a935d421c6",
+      "bytes": 1735
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Config/Tests-Info.plist",
+      "sha256": "63314210e32813ced0b215bd767cd68b337cfb370a7cb7ad8ddeb575b4c552e9",
+      "bytes": 347
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Package.swift",
+      "sha256": "561bac280cd9d1b77f911dcd63502cb4732b9c4b51b887095877ce9acf13a0fa",
+      "bytes": 690
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualConditionalDecision.swift",
+      "sha256": "21d6de4e56dbde738d7204bee25a7d6525828d382fe90f12c88e2f2a09e1d2f6",
+      "bytes": 41963
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualConditionalDecisionClient.swift",
+      "sha256": "ccbafa93f1ed9ddb29fe6d504bbdaf8c38de97fe66c47f6599a26aa740c4e93c",
+      "bytes": 8497
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualConditionalDecisionIngress.swift",
+      "sha256": "1b322afcbad71e15284a002e67744c6b7d7a2ac403a40d383dc30049076e5d97",
+      "bytes": 16709
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualDecisionBrief.swift",
+      "sha256": "b9d02f9f0d3aeab213d31ed5a97cb3c0476011ee03b8c1aa2c4bb985c008c428",
+      "bytes": 30356
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualDecisionBriefDrafts.swift",
+      "sha256": "8917787cd1ff54eaf98ec77e600c04b7c383d6854e081a8a0b5685baef76f32e",
+      "bytes": 14424
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualDecisionBriefResearchModels.swift",
+      "sha256": "c0dbf06b561fbc0d4e1450db547b07b3945a548db2dd9d0b9d72ffc6bd544047",
+      "bytes": 8941
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualPortfolioLabClient.swift",
+      "sha256": "731247792f5372c4d0189c16040366756616668ac84a1b098328c97fd2c84170",
+      "bytes": 6385
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualPortfolioLabModels.swift",
+      "sha256": "fc3c5cd00367fe0c2b77440eac9a6a26eb7fdd3e8c238b65c4d9fd9e758840d9",
+      "bytes": 17858
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualPortfolioLabPairSummary.swift",
+      "sha256": "da75545aa34cf285fd9ca42ab53b3f24cd98c145eb5cb92a2f9abba60de95af5",
+      "bytes": 8433
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualPortfolioLabRawShape.swift",
+      "sha256": "b2eef6ea1d937a73406a2760dffed6d897711fc97cd6ea06b746df4b28d44d7d",
+      "bytes": 20816
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualPortfolioLabRequestGate.swift",
+      "sha256": "d1be92560d36ece312da2066aab12fa58a4f8e01f231f7d2b10088284bbc1a64",
+      "bytes": 855
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualPortfolioLabValidation.swift",
+      "sha256": "de7455bc4b1061b7b65dca44132555b503eaa151d6fdd123f8278805bfef642d",
+      "bytes": 37276
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualReviewLearning.swift",
+      "sha256": "6a5799633661f28bedfbb818c9be04f7d1e8e6507498243bcb995c7e7e459564",
+      "bytes": 13013
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualReviewLearningIngress.swift",
+      "sha256": "da24f70d027b074ee26d016b0413cde890f1791fc44fa53e69b59d2e8a0240f8",
+      "bytes": 2619
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualReviewLearningSummary.swift",
+      "sha256": "4914d3ba77f22623ead11c672f9d42e2268b2b32777793e8aecefcb3ea3b7745",
+      "bytes": 10594
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualReviewLearningSummaryIngress.swift",
+      "sha256": "773249e047ef1e9a8f52d6b430da5ef6e3c6735f835123a170cac2aa3ba99410",
+      "bytes": 3307
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualValuationQuantClient.swift",
+      "sha256": "54d021283bd16b5bfdad715b4d5d3f8e8d5ce39c3156646dd3843909431a0b11",
+      "bytes": 24989
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualValuationQuantWorkbench.swift",
+      "sha256": "4dcabe5c2bc4777983589e5b4ef5bf5c671d22185d9f9975914d7ed01c887b0d",
+      "bytes": 41360
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AnnualValuationScenarioGrid.swift",
+      "sha256": "c9ce2061d9d190feb415f039bb139adbb86823eff5b5fc35ed670befe5483ad2",
+      "bytes": 3354
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AssetsAlphaClient.swift",
+      "sha256": "e1d5c21e671d4db6defbafc6ef23bc1f856b525523e0c2ff0dab9de94302f076",
+      "bytes": 21945
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AssetsAlphaWriteResponse.swift",
+      "sha256": "f4619388608fe91c618df5c21ada76eb7d41ef66c53df3c556321b202a647955",
+      "bytes": 8209
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AssistAdvisoryScope.swift",
+      "sha256": "1f3022ff7ddd1455ad43e6014fe5922d49eae13aa498c56f6e62e479cc197986",
+      "bytes": 19699
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AssistDecisionNoteWorkflow.swift",
+      "sha256": "322d64613f7b39d1fd5e0abbfeec3c0030bc4d139150123d65ce70e46f12f659",
+      "bytes": 23839
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AssistHumanReviewWorkspace.swift",
+      "sha256": "267320398c53ab8ab273460531ddb375f4a38fb6dbec60734793222bd3eaa778",
+      "bytes": 33804
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AssistMobileWorkspaceState.swift",
+      "sha256": "f2a1889d6d37bd3ebf29612cf6d5eca2c3d6ee086889c5be7c57c786b6f8f5b6",
+      "bytes": 216211
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AssistReviewFollowUpWorkflow.swift",
+      "sha256": "cd34729fb8df05b4f5e10e8883cec26f30be663bdcd75bd5e5481dc1a89d98ab",
+      "bytes": 23101
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/AssistReviewKnowledgeAccountScope.swift",
+      "sha256": "2b3c6d5eac4362663b2c8bd3e357cf181401149706a0c5acd36dbfd14f9c2b68",
+      "bytes": 3239
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/CandidateDecisionIntake.swift",
+      "sha256": "52026922e6ce464f179c0154ac6c0640d7a829e4419eefa318fa41e9c19bd98f",
+      "bytes": 23762
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/CandidateDecisionIntakeChronology.swift",
+      "sha256": "d394ef5815f6edee2e1192eaa475f96e30bb2c2aa2a7b99276b0c7006c5677db",
+      "bytes": 1058
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/CandidateMembership.swift",
+      "sha256": "c831a7996a0ae7ba3cdb5b1f61348af515508838c7cc97a04049e70945e0e37c",
+      "bytes": 31048
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/CandidateOverview.swift",
+      "sha256": "7e73b4bfa1e26fc9fdb6875e0119af629630fec72a8cd8f610b4efb377ae92a9",
+      "bytes": 13202
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/CandidateResearchNavigation.swift",
+      "sha256": "f0dcf43a9ba32651b320d366bfd115d0b84b53e80f3f22a3c4fc81d386712913",
+      "bytes": 1625
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/CloudAiPolicy.swift",
+      "sha256": "4f8d21ae152bf2e1a92ac31f54489f592b2cd25fd8f58aa4ba8c32f746ba1b0a",
+      "bytes": 11087
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/CoreJourneyNextAction.swift",
+      "sha256": "2328b7986ab099be4d881fadae1430bc0ead9736e5d953c75d0a6f2a3cb364b6",
+      "bytes": 4436
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/CoreJourneyState.swift",
+      "sha256": "e6ecf61cffeb316722a2eb3a2bbf0da0433510e78e99a4daca14e7bad2bb1ee1",
+      "bytes": 14912
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/DailyClientContinuity.swift",
+      "sha256": "c655839cbd4a5c5cd5871b056b21fd8ec16f0bc15d2840168ba0c41d2b95838e",
+      "bytes": 7644
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/DailyWorkbenchLayout.swift",
+      "sha256": "93308569cd4ff8e7e5073ed6871b8de100237028c73ac5086ca1bbeec87678d4",
+      "bytes": 3006
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/DecisionCheckSubmission.swift",
+      "sha256": "accae80d329ae9c3cc425956adca97482ad0b000f1bce667471f7e214ded7208",
+      "bytes": 18464
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/DecisionSelectionOptions.swift",
+      "sha256": "94ecaec74fd6d7af434f6ea0c9ce08703017ffb304504583f52537c7a4a66c6f",
+      "bytes": 1267
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/DecisionSnapshot.swift",
+      "sha256": "3fb9be53af7bf844c31a0ef5b46087c8148cf91d8262f45ee680e53c8e2f4002",
+      "bytes": 23186
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/DeepResearchTaskClient.swift",
+      "sha256": "2eb1e8bf86a5777d90bef5fa25409fbc25e73450134deaeece264cf0a62d703a",
+      "bytes": 50925
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/FactMetadata.swift",
+      "sha256": "795d03747aa7bbeb62bdb32e6f141062d1f4536817348c3328dd0e6f30e37719",
+      "bytes": 3432
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/FactMetadataValues.generated.swift",
+      "sha256": "c1555b15d8372cd701fa2cbed6ba8c5dec7db3d54910530e2c503c5edeb196f3",
+      "bytes": 7773
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/FormalDecision.swift",
+      "sha256": "b1d50d4f32452767628ab513eb4207a82a1a772f30b341bbe290d8a4cd819835",
+      "bytes": 25088
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/GateBResearchRequestState.swift",
+      "sha256": "ae992d90a94f6ad51a73d1f52db8d8c6a9364fa0db10a354a6f0256d82dc24c7",
+      "bytes": 12182
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/GclPvPriceMonitor.swift",
+      "sha256": "66f0c4fc73295ed45e67bb34555a3be0c0ae86ae1c408aac01ecda176d819e76",
+      "bytes": 24556
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/GeelySalesMonitor.swift",
+      "sha256": "dbf4a0a3755bf1d3426c58668bcf557ad5901c68539f302dea0d9d69f3346a2c",
+      "bytes": 17984
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/LocalDecisionDraft.swift",
+      "sha256": "6315c9db7e001f9d8e2331414c45c1c8f18972d08a2c28531d8df639b0feb574",
+      "bytes": 1773
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/LocalTradeJournal.swift",
+      "sha256": "d70258816b15ba096175ae52a8a59585ced5ab2fcd60194fad4eb017f14fac71",
+      "bytes": 9611
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ManualAssetSnapshot.swift",
+      "sha256": "2249305cf853e334a49c3816fd092845669745fd5d7428037548b73ad2df3c26",
+      "bytes": 12263
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ManualAssetSnapshotCSV.swift",
+      "sha256": "eda29ac7b59f6bca60dc1a3b3b44e5791db6b780d7de06db2f6985adb13ec209",
+      "bytes": 3635
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ManualResearchHandoffSession.swift",
+      "sha256": "5b7c6f65bcf7cbb35e621b9e48955bbe8237e178b4b9cb5932fd4db57356e861",
+      "bytes": 1056
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/MarketDailyTechnical.swift",
+      "sha256": "867742ea83b103ecb3551305195dd90e67c08d5624e3d9d57a26344bab39e932",
+      "bytes": 7850
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/MarketDailyTechnicalClient.swift",
+      "sha256": "ccb0e770a0c3cfbc7c7f9a2b629e95af65faf37395b2253d859928216f280512",
+      "bytes": 20596
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/MarketDailyTechnicalView.swift",
+      "sha256": "7e9d004c9257dc9328f2167aa7a9956251250bdbd12ed5f53d9fe37dfd00fbb4",
+      "bytes": 19513
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/MarketDiscovery.swift",
+      "sha256": "f75a7a47aa60c84ca41546f04460144381a920568eacb3f46d68cc4f58ed2e68",
+      "bytes": 24809
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/MarketEnvironment.swift",
+      "sha256": "c50c1c61f928127e466e3aa919f1d8ffee3a3f509926dd3df59efb77f6a2260a",
+      "bytes": 14527
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/MarketEnvironmentClient.swift",
+      "sha256": "bef6e838b67df36c5360156346d9550c567156525bd32188b009c74fa83d869c",
+      "bytes": 1824
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/MarketQuoteClient.swift",
+      "sha256": "6ee28b3775ac9e8dee84b2c294d70c9985d3884684af812755d24e8272249e4c",
+      "bytes": 5378
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/MarketQuoteModels.swift",
+      "sha256": "85860de36f1e193e77db358c63ceaa41664fa5124c11ba0c0fb25da68fddce62",
+      "bytes": 10938
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/MarketQuoteView.swift",
+      "sha256": "87fc75c2f5da47ad3688ae947c6d7d8e1ff296ba48aff1d56547e69b6fef486e",
+      "bytes": 7306
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/PortfolioDecisionCanonical.swift",
+      "sha256": "86d94734c583555c3069a51bb264a7507fe9e9c734275ad4084739c7444b5c25",
+      "bytes": 4968
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/PortfolioDecisionClient.swift",
+      "sha256": "58d3d87f817039b9dfa66e6aff670cec0bc2903d507bc3984e42660c95c8955b",
+      "bytes": 7419
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/PortfolioDecisionContext.swift",
+      "sha256": "304e1acef6613b7ce7671a875a13be13cfbe6ce5a4c56ae824a5a1c93cb927c8",
+      "bytes": 19198
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/PortfolioDecisionContextStatusValidation.swift",
+      "sha256": "72a7005ef24428ebc43e659dee4b0bec390f87c71df965a6a56b2431f1c592e3",
+      "bytes": 9355
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/PortfolioDecisionFreshness.swift",
+      "sha256": "3215659bdc8783eebb0647417900d758ddbf6d5a4b96eb371fbb369d735db139",
+      "bytes": 4671
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/PortfolioDecisionSummary.swift",
+      "sha256": "3284c3a2c3e8b956da07d613b602c5450e49b36d47c350a35bba63c5865ecbc4",
+      "bytes": 5655
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/PortfolioReportExplanation.swift",
+      "sha256": "6b3e7f0f2389dec87c525f1b121fb7bcc7d8db8087c4b3aa21c8d5e9383f0dc1",
+      "bytes": 19860
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/PortfolioReportExplanationClient.swift",
+      "sha256": "0cce01161aeef2f42abfb726ef05edc7d7ba3d267acbe0008d6c4909e2218644",
+      "bytes": 3412
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/PortfolioRiskImpact.swift",
+      "sha256": "4171bd768b0879429659399d094b0cc2240375ed54622e2173d4dc0bd4dd3fac",
+      "bytes": 14889
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/PostDecisionPortfolioReview.swift",
+      "sha256": "8ecfb1f19604c6ed7530e1aabd108db2469c1b993a79555534ee886fe1923148",
+      "bytes": 55849
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/PostDecisionReviewResponseValidation.swift",
+      "sha256": "ef33dbdb8d5a7a91bd79ee5fd1a258197893a1acdf6f07a06f10e4bf450b7615",
+      "bytes": 1645
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/QuantDecisionEvidenceRefinement.swift",
+      "sha256": "1640cded341597ff7cfaf59dd67891afd67459a2d341790ff53b5505d4d74a90",
+      "bytes": 25980
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchArchiveExport.swift",
+      "sha256": "0f73d5d547113fa94d03dbe7df3df63aaf3cdf5eed5f0483e4327c03698ec4fa",
+      "bytes": 112740
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchArchiveLocalMemoryRestore.swift",
+      "sha256": "cbe9cbb7ab67f273e160de7a8b3da2bcb9524002387de7e2b90230b0c5fe9cc2",
+      "bytes": 24219
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchChronology.swift",
+      "sha256": "70cf97dbf7a773a9fda5dd0e3efd7aa7ccdde3147cf1c6bd1232b20e9ec80678",
+      "bytes": 4903
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchClient.swift",
+      "sha256": "ce452eb186744f008a5179948650c6ae06a76f4aa64e8f072fcc97d01ceba51c",
+      "bytes": 37359
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchClientAuthorization.swift",
+      "sha256": "0a4a383d7237647144565e34fb392076c881535313eb4f90f4a4e91ff576a0f2",
+      "bytes": 1341
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchClientResponseValidation.swift",
+      "sha256": "ceca99258ab32b24951d02f4bf57fa674bbd1a40979b6dc5bffb8b0fe050a27c",
+      "bytes": 4834
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchClientToday.swift",
+      "sha256": "7c974f0165364dec714e41434e400e2b060bdb632c79df194b64b6dff118b828",
+      "bytes": 3073
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchClientTodayActionInbox.swift",
+      "sha256": "ce903fcb29b8bb987aee312c55067b306adc64230966b89790ee6d139c8b2377",
+      "bytes": 9969
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchCompleteness.swift",
+      "sha256": "15e97b0b527bc4e41b27a2ea3b7bb30aa8a45229971f2bfdf568c58f0b1e7f6c",
+      "bytes": 26893
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchContext.swift",
+      "sha256": "e571b569018250f5fc3ba5ee86846b8ba2c974f2c425c38a9dac117f7f24a7a7",
+      "bytes": 46051
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchContextHistory.swift",
+      "sha256": "a60e1193a5436d17c2fb38a7be0e9414ef90223db6fbd687302ef7700944a240",
+      "bytes": 6541
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchContextPeerClient.swift",
+      "sha256": "363e7bda35b5f6efe65d91a01568251e95035b1c8bf6cf6f226b842fbf295de1",
+      "bytes": 20412
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchContextWrite.swift",
+      "sha256": "516238c47b6e4544d2169b19e0e810926f35c0ab697c1b97deb68437f54d6d51",
+      "bytes": 31980
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchDecisionSnapshotIngress.swift",
+      "sha256": "024fe639aadfa1dec1942df0c31f3faaa2a231c49fd657807596d59b97f26aab",
+      "bytes": 14845
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchDocumentClient.swift",
+      "sha256": "b7529822ff68cf2fde444b0de984023191cb3ec86a995bce1640208c4ca0da99",
+      "bytes": 26986
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchDocuments.swift",
+      "sha256": "e91c5233d5eaa813e8b40d297c0ce9c7c626b90aed51d1ad10682b42803f9316",
+      "bytes": 39776
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchEventCapture.swift",
+      "sha256": "0a62482b0f3a4783df8755b558f8c00c2c62b4088700dd41847c969d038f7f38",
+      "bytes": 11900
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchEvidenceQuestion.swift",
+      "sha256": "1e5427c0602dda905e620a160bd61d72ff10b4e95414b1a65ec52ceddc9a04a5",
+      "bytes": 29789
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchEvidenceQuestionClient.swift",
+      "sha256": "5f4c6f145b09c6dddb094c022fa48b3a2eb26de46d9d8c03213cb768ab034bf2",
+      "bytes": 1348
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchFrozenSourceGap.swift",
+      "sha256": "25e936be804504be92a15aa3e8dac44811ef7184440b961967d507da975cb7c8",
+      "bytes": 2145
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchFrozenTechnicalEvidence.swift",
+      "sha256": "420d1eaa8a5e7463cb7e415e3a5f0550b9faa4837c0ce854553bc02eedc33f15",
+      "bytes": 47964
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchFrozenTechnicalEvidenceClient.swift",
+      "sha256": "fcbfc67deaed200cec685c8d7b98ff9393895a6d553075e04ad7453cbf33746c",
+      "bytes": 60359
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchFundamentalClient.swift",
+      "sha256": "c6c48ccfddc0b17d8e0d62c7975feb2d4a9bddc79d3910e1507999b5363f9975",
+      "bytes": 2825
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchFundamentals.swift",
+      "sha256": "fbe8397cc6f47f533153bf42204f4c09f1ae07c13433dd4401b7f75c78ea870b",
+      "bytes": 38153
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchFutuFinancialStatement.swift",
+      "sha256": "9ba05901528765a2479847544f71e8a98e0d1b0d28348cd6c2ef2a2d9ef755b6",
+      "bytes": 27803
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchModels.swift",
+      "sha256": "9309683891e89028d675a842b311c295880abee12301dd806a152bf1b2f79241",
+      "bytes": 94097
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchMonitorRule.swift",
+      "sha256": "3dd803679620ded2b4526a19947606c041a1dd75606a37ebdd0a5db875a34383",
+      "bytes": 12944
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchOperatingReasoning.swift",
+      "sha256": "a3ff39fad5fc5e68ed4a0dfc28ad10f5a71a65d8f943c0986bb3aca690d0ca57",
+      "bytes": 48602
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchProviderOperatingReference.swift",
+      "sha256": "2edaa98089cbbb7c29a5110009e92f4f0d82ff93329caadf5318a6c2aa996a5e",
+      "bytes": 5642
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchReportDecision.swift",
+      "sha256": "2779d0a2e236aad9e46be1bdd1e7f3783520bbd418247fcf21fdba625f3088d0",
+      "bytes": 14284
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchReportRevisionSummary.swift",
+      "sha256": "d00ac32a5e2c51f396cc026c7bd09d4cef7416534951ea95a340fb66f62734b1",
+      "bytes": 29153
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchSecondOpinion.swift",
+      "sha256": "5457e289aaffd8a4edcc33f54cbb2ab0c730b5cd95c45d16ec0337f48bdc349d",
+      "bytes": 8606
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchSecondOpinionClient.swift",
+      "sha256": "d2df05c966563fb3363282371ecda78b45992caaac0283cd32a72f5157ed79ca",
+      "bytes": 2425
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchTemporaryConversationStore.swift",
+      "sha256": "4f130ebb5f1116e5d1f2777a423b4cd5e9f357455e7f9e3c1775bba0d3298339",
+      "bytes": 22875
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchTwoLayerReport.swift",
+      "sha256": "1e88c51ce7809707e71de16ce02c6a5de4276bb8698c2a0d242b733e7821a786",
+      "bytes": 53501
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchTwoLayerReportClient.swift",
+      "sha256": "7db620b88f64caea004c258860c32f3ee74585753c3da74fffe2c11e94dd1b69",
+      "bytes": 44476
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchTwoLayerReportEvent.swift",
+      "sha256": "40a94c08fb64648eb1688f1dd9fd51c5be98cf5ad1a537b26902b95ff5166da8",
+      "bytes": 985
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchTwoLayerReportExternalSource.swift",
+      "sha256": "8c566408988e0688a8babe16589f9e3051e70e8686400305f3d7e5973df9f40b",
+      "bytes": 4126
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchTwoLayerReportRevision.swift",
+      "sha256": "cee459b5bb72381d803f69f5112816798d1a30764093d6b2b7d124e6c9bdad86",
+      "bytes": 12760
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchTwoLayerReportWorkspaceState.swift",
+      "sha256": "8ac6f7ce90c93c0907e8ee04eb5d34e28d22f1746cf5fe21e2da21d6b1e278d7",
+      "bytes": 4302
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchValidationPrimitives.swift",
+      "sha256": "0f31eddd98946a5526d7a8b26dff16e3627979085aad2ebcbf4af37d3d8a34d2",
+      "bytes": 1047
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchValuationIssuerBasis.swift",
+      "sha256": "d646e5e8f4187c484a50b72c7fa401543db54746ad430d6c10c2d179ec5f6be3",
+      "bytes": 7145
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchValuationProvider.swift",
+      "sha256": "78fd2b29b99bfd1c1e4f2ce648164bfda8563dc05f0ad49f948a31ee04a2eb97",
+      "bytes": 20295
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchValuationScenarioClient.swift",
+      "sha256": "7906472aa608981c4b1650299de14575a15feb85ee1e60b75ff4e9b0d5e2aac1",
+      "bytes": 26771
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchValuationScenarios.swift",
+      "sha256": "697c55ef44c12ec78b4795f8861555b89b9283c2e4eee079656a208fd30c92c4",
+      "bytes": 71590
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchWeinsteinBinding.swift",
+      "sha256": "a9fcff79370dd99fb0dac2fb25d53dbf0904dddb56b419c5c46a79d88d7a39b6",
+      "bytes": 4770
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ResearchWeinsteinTechnicalAnalysisView.swift",
+      "sha256": "0d0472476cc1aef32e8af4282223653d3b3aac02edd5779446c39acdb2ab824a",
+      "bytes": 40117
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ReviewFeedback.swift",
+      "sha256": "835e8e7c3a1e38f618c3ad9a4e916a636df22e2750f172d0722673e61b79e8d9",
+      "bytes": 9648
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/SecuritySymbol.swift",
+      "sha256": "8611510c282cbd5eee7ec7480edf8170345694e86b582989d3e625108375b47c",
+      "bytes": 1193
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/SessionDraftFormalDecision.swift",
+      "sha256": "7604a0f7834ec4a831fdb2e261379583006f21aea3d55d8e04da7d03712b1ed6",
+      "bytes": 2965
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/ThesisActionReceipt.swift",
+      "sha256": "8a82b0f3cb12b01e1009ecf53bdea1fe7e7012ce864c4ba2181e48e398182116",
+      "bytes": 3695
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/TodayActionInbox.swift",
+      "sha256": "117c878ff8b3e20571ed17f9333b39b30a94ec997ca3466f5bcb56e4214a7d25",
+      "bytes": 23129
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/TodayActionInboxResearchTask.swift",
+      "sha256": "9be833cff415b54ae4fcf57fc34be4530df97a7742e3ca3bab5b7dbadaf83525",
+      "bytes": 909
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/TodayCandidateNavigationTarget.swift",
+      "sha256": "d4f3c10ff19f987c048467d832ff45da808b22b72915fd41ad0ba9cc1eb305ed",
+      "bytes": 879
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/TodayMaterialChangeDisposition.swift",
+      "sha256": "ced0326b410069cc3bd607683af8468ecba56b6b441d724c5c6be21d62ab200f",
+      "bytes": 18631
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/TodayReportRevisionNotice.swift",
+      "sha256": "c2e9fb34cf81dacfbd6c941c36c6c5c9a57ff63e1bb4a1b5bccb455d41384b81",
+      "bytes": 4614
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/TodayResearch.swift",
+      "sha256": "ff09c1c0c77a435d66184e0dce513729751a2625678356e0dc481f857a0d0afe",
+      "bytes": 20480
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/TodayResearchFeedClient.swift",
+      "sha256": "a0f1faf6620673765466719ff76cfe6f63ff9d87344eabdca360154fa9817a29",
+      "bytes": 1102
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/TodayResearchIngress.swift",
+      "sha256": "d5bc43502d1107f8691f8db9b80711085588a41f429e3f17d95410fa55717dff",
+      "bytes": 8757
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/TodayResearchQuality.swift",
+      "sha256": "a6a762e5932988b20b6c1ad211bac5c9ee7dfa390d5adb3689f0e55cb37ecc9e",
+      "bytes": 7743
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/TodayReviewDue.swift",
+      "sha256": "5449836870f80e40b2da864c31363095edc0f194dd56b9b6300e743ade50e647",
+      "bytes": 15925
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/TodayReviewDueClient.swift",
+      "sha256": "eff7184f5b509c1707f3cb13aa2d382c13471a21691823a0328d3a73aa39dbae",
+      "bytes": 9420
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/TodayReviewNavigation.swift",
+      "sha256": "095aaadd867fcceffbbd48d4b375504e65918779fa7441e0032a5fafb842a8c4",
+      "bytes": 16601
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/WeinsteinTechnicalAnalysis.swift",
+      "sha256": "4a847b5b61ec0d0d0f571817e502709cc160551f957edb2f6059561142192006",
+      "bytes": 28735
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/WeinsteinTechnicalAnalysisError.swift",
+      "sha256": "49dcaee6f3771455e239b39a3d6aba51d2e0e02f4ea620bbd029ecb288d153c1",
+      "bytes": 152
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/Sources/AnnualRingsGateA/WeinsteinTechnicalAnalysisView.swift",
+      "sha256": "282c16dd39a5aa02f221cfb328b04c33fda932baad5264f94898ba2cd7896bbb",
+      "bytes": 8453
+    },
+    {
+      "path": "apps/ios/AnnualRingsGateA/UITests/GateBResearchUITests.swift",
+      "sha256": "4410736a33f0931a14b3f4f630db38eaf51241f8beebc1cf40e0f6b232374aeb",
+      "bytes": 243160
+    },
+    {
+      "path": "apps/web/README.md",
+      "sha256": "b48812a14877b3b86729062e9bd4d89f539bcba725aa4b3b2b1a2cad1f3fd19a",
+      "bytes": 555
+    },
+    {
+      "path": "apps/web/dev-server.mjs",
+      "sha256": "1e62e89c1c739b5ad2d136b66ebeb3838ed3704884fbbb56652ec2fad91c554c",
+      "bytes": 21561
+    },
+    {
+      "path": "apps/web/index.html",
+      "sha256": "caacfb68b57b1d69f15433e1b9f2041bd0275a1df367deef2abfea0a6b90c7c1",
+      "bytes": 93587
+    },
+    {
+      "path": "apps/web/src/annualConditionalDecisionBrowser.ts",
+      "sha256": "4f289c5cfe039ae736b3504496f773b224947398a1844d7b05258c1f45c4a137",
+      "bytes": 4762
+    },
+    {
+      "path": "apps/web/src/annualPortfolioLabApiClient.ts",
+      "sha256": "1e8dfa7f86f042bed02bf095bef16ccdc17127db503c35c0533658be81d5aa9c",
+      "bytes": 4026
+    },
+    {
+      "path": "apps/web/src/apiClient.ts",
+      "sha256": "55f91e3a7accacaa2de485381a78101ab26beb9a7d275d62d50c7b8b53d311c1",
+      "bytes": 45760
+    },
+    {
+      "path": "apps/web/src/app.ts",
+      "sha256": "1e049c9a9963465cdcbb4776f60d08ccb0d9be2477667d05ad27b47178d1ea32",
+      "bytes": 53332
+    },
+    {
+      "path": "apps/web/src/appEventBindings.ts",
+      "sha256": "d6135354e1ed4e3068533d8fb9e2a38076821b513c9f85b89cf59bd010df1001",
+      "bytes": 10385
+    },
+    {
+      "path": "apps/web/src/appPublicApi.ts",
+      "sha256": "634e8d2c254668a6378c927deef9d148233cf047e393686687ac591279c132e3",
+      "bytes": 3611
+    },
+    {
+      "path": "apps/web/src/assetsAlphaConsole.ts",
+      "sha256": "b5079c804300a911686e2ebc2bff88728cf46cabb4fa2fe6c7634e78ce3dd641",
+      "bytes": 22767
+    },
+    {
+      "path": "apps/web/src/assetsAlphaRenderer.ts",
+      "sha256": "15c04a382a7ebaea28f6d7861982cf0e49bdadcbd723bec1f594c8e8df89edb3",
+      "bytes": 6565
+    },
+    {
+      "path": "apps/web/src/assistAdvisoryScopeState.ts",
+      "sha256": "328eca57cc0b2b0b36c8719449a66897622013cf32b3b3109015b85084825552",
+      "bytes": 4101
+    },
+    {
+      "path": "apps/web/src/assistDecisionNoteWorkflowState.ts",
+      "sha256": "1975b1efd04bad6e1f2cfc57d8879138c5d60d8451d2f3a1d9bad3fa674cd0dd",
+      "bytes": 6048
+    },
+    {
+      "path": "apps/web/src/assistHumanReviewWorkspaceState.ts",
+      "sha256": "a0a4f3a27b01dbe40198b03b235fb314d69ec7cfaba2493aa84acd92f23c0fd9",
+      "bytes": 5991
+    },
+    {
+      "path": "apps/web/src/assistLocalArchive.ts",
+      "sha256": "b9612ffb6842c0ddc5102722ec0d6feb780e4ec9033650f17e31d945b6e557d7",
+      "bytes": 17477
+    },
+    {
+      "path": "apps/web/src/assistLocalRecordController.ts",
+      "sha256": "f090c2cdd5404e554b2dd4ac79a48a22a7c92eea3a35fd304c4d1ad883c909e7",
+      "bytes": 11228
+    },
+    {
+      "path": "apps/web/src/assistLocalRecordState.ts",
+      "sha256": "83a4c8d29ec45b2963b6c17b7b450f849be031482d8cc9b4dc7a08c88512324a",
+      "bytes": 14267
+    },
+    {
+      "path": "apps/web/src/assistReviewFollowUpWorkflowState.ts",
+      "sha256": "7dbc419f442057e606c545d05aceeebd6c398e0aef65039ef91ab7cd3f683741",
+      "bytes": 6266
+    },
+    {
+      "path": "apps/web/src/assistReviewKnowledgeController.ts",
+      "sha256": "20406bce25ca11c6a5fb726fa6bd397c16f86a32ab1472f46e4898cfca98ff29",
+      "bytes": 12421
+    },
+    {
+      "path": "apps/web/src/assistReviewKnowledgeIdentity.ts",
+      "sha256": "77a3d802f381c62926c08daeb53b8d061b3207676eb30d2a05fa50411ebbb905",
+      "bytes": 3952
+    },
+    {
+      "path": "apps/web/src/assistReviewKnowledgeState.ts",
+      "sha256": "4998c8a24f8274310c4c4093f26902bd4f52c787f2a265d654ce39b777cb7b1f",
+      "bytes": 27518
+    },
+    {
+      "path": "apps/web/src/assistWorkflowController.ts",
+      "sha256": "bd6077d2abf8839fe80def76a17f747e6af03e1e16a68f313afa21c41938c24b",
+      "bytes": 13081
+    },
+    {
+      "path": "apps/web/src/assistWorkflowPanelsRenderer.ts",
+      "sha256": "7c3a6999a956a0d113283c4c27a29ea838b61f48d076e3edefc1d6030e2212fe",
+      "bytes": 29251
+    },
+    {
+      "path": "apps/web/src/browserStorage.ts",
+      "sha256": "9becf6c6da0f31a842fff891b27b1090a37e6e61803c0af766981c38be5cc193",
+      "bytes": 181
+    },
+    {
+      "path": "apps/web/src/candidateDecisionIntakeState.ts",
+      "sha256": "9568a26b6151e0a51b857be1d9176fd6175b068bd9bd696e17398829184e1e94",
+      "bytes": 4123
+    },
+    {
+      "path": "apps/web/src/candidateMembershipState.ts",
+      "sha256": "fe3ff33effaa843f840b2ad7ee85ad99961b5939758401e4a202c674138bb156",
+      "bytes": 3595
+    },
+    {
+      "path": "apps/web/src/candidateOverviewState.ts",
+      "sha256": "22aae4d616aabd04761634c0c6ad8190969eeb531c1e5485cdd677674b56be7c",
+      "bytes": 1603
+    },
+    {
+      "path": "apps/web/src/candidateWorkflowController.ts",
+      "sha256": "91da02a04a3926216da21b78690a9c86f32d0fa1589d2822402e31d6aacfe17f",
+      "bytes": 12761
+    },
+    {
+      "path": "apps/web/src/config.ts",
+      "sha256": "f08087e8f6165aa3dce27beb94fc192512ddf641231c3448cc4df5eff8fe0d7f",
+      "bytes": 777
+    },
+    {
+      "path": "apps/web/src/contractValidation.ts",
+      "sha256": "6e740326d2f9a933ced7f26a54fd6d808d8e103c68292eee6ec486014b620e20",
+      "bytes": 30831
+    },
+    {
+      "path": "apps/web/src/coreAssistCapabilityConsoleRenderer.ts",
+      "sha256": "0861dec332dd65ef91cbead334e88f61fe45964e4871e231b3f807e2f0228ebb",
+      "bytes": 67452
+    },
+    {
+      "path": "apps/web/src/coreAssistStatusPanelsRenderer.ts",
+      "sha256": "b17c502dd98cf7e073044744aa80e8f23af98f510dab62941c4375cd70760945",
+      "bytes": 69005
+    },
+    {
+      "path": "apps/web/src/coreAssistUnifiedFailureState.ts",
+      "sha256": "56dfd42ea5f69c85d10a7d74d0e02cec8478868e792c34a3cf2034eea0e17640",
+      "bytes": 4172
+    },
+    {
+      "path": "apps/web/src/coreJourneyNextAction.ts",
+      "sha256": "c5046d184b9e7bec90e65003fbdcc1363e527f83077418c92418b0b10bc444db",
+      "bytes": 199
+    },
+    {
+      "path": "apps/web/src/coreJourneyState.ts",
+      "sha256": "d32d65cac7a83a4a064186d130797525837c105828151d7effd0c9f7a04452f7",
+      "bytes": 13739
+    },
+    {
+      "path": "apps/web/src/dailyResearchCockpit.ts",
+      "sha256": "b779a3c2d2a2b2c75780279299f728e20509f40298c65bbdb065fab037be779c",
+      "bytes": 23584
+    },
+    {
+      "path": "apps/web/src/dailyResearchCockpitBridge.ts",
+      "sha256": "bc397c8636dcf0d58bb56814f8d2cacd6f5f6a7cb4a67c126eb461b2604807dd",
+      "bytes": 36902
+    },
+    {
+      "path": "apps/web/src/dailyResearchCockpitData.ts",
+      "sha256": "5ed60efe4ae7dc7b0cfa7e30927b0db49d12e1ca465b85ab92252bc09b321f5d",
+      "bytes": 18165
+    },
+    {
+      "path": "apps/web/src/decisionBriefConsole.ts",
+      "sha256": "4451c011d700b01b74ef4f800cac2c906864d9d9c636f8252bf859ce2b6f728f",
+      "bytes": 15809
+    },
+    {
+      "path": "apps/web/src/decisionJourneyIngress.ts",
+      "sha256": "53e92f0921cf7307d2d4939ebcf4675cf5c8b5f25b491870f1fd4d2cecfcef2a",
+      "bytes": 5535
+    },
+    {
+      "path": "apps/web/src/decisionReviewCaseFileConsole.ts",
+      "sha256": "5db3c0ae0b8effa5156a42a7db15934505d5571c97905b42f6e0651bb8f44898",
+      "bytes": 18564
+    },
+    {
+      "path": "apps/web/src/decisionSubmission.ts",
+      "sha256": "0a63a1a23f6702bc99f1297669f3b200f7b5ae59e30dd889bdbcdfa48f6a98f5",
+      "bytes": 5002
+    },
+    {
+      "path": "apps/web/src/deepResearchComparisonConsole.ts",
+      "sha256": "24fd557f4f61630584a665ae1939eac43812597907e5ba9c05c4afb494fa9c6f",
+      "bytes": 43473
+    },
+    {
+      "path": "apps/web/src/deepResearchConsole.ts",
+      "sha256": "92a773dc4ba8c33cb93401c60aa0459dde8550f7266315a8ea9aa6f31cc9a3c7",
+      "bytes": 116781
+    },
+    {
+      "path": "apps/web/src/deepResearchConsoleSupport.ts",
+      "sha256": "3b8ba398b48ee89009bad77a0be7bdaab80c80e280ef67d621618ba575bc9b9b",
+      "bytes": 26222
+    },
+    {
+      "path": "apps/web/src/deepResearchFreezeBinding.ts",
+      "sha256": "0908d9db93815d02243ebaa4aa2cf3f245c9d199f678fd7c6b1725cdc95eca14",
+      "bytes": 6658
+    },
+    {
+      "path": "apps/web/src/deepResearchReportSummary.ts",
+      "sha256": "5fba643e284521312f15d0c8f4f4c3714bc95750558000bbb80b68721a0d689f",
+      "bytes": 29440
+    },
+    {
+      "path": "apps/web/src/displayFormatting.ts",
+      "sha256": "53f32b394f601da0801059270ec3d2b1c911a8d5b0d0d08681697bc9f93efe79",
+      "bytes": 1555
+    },
+    {
+      "path": "apps/web/src/domRender.ts",
+      "sha256": "bd6dd689c12fd9bb9de6628955e85f8479f0798fe4c9c487835980cd2645e634",
+      "bytes": 1291
+    },
+    {
+      "path": "apps/web/src/evidenceConflictConsole.ts",
+      "sha256": "ed53ed374c42cf566961daf0dbc2da16eb7f442d85fafe2e0f23711588be9dd1",
+      "bytes": 23849
+    },
+    {
+      "path": "apps/web/src/evidenceConflictData.ts",
+      "sha256": "7634761aa91934604861c10aa29d18c2cdaf843b56f883a23148511fc3753b06",
+      "bytes": 14478
+    },
+    {
+      "path": "apps/web/src/investmentControlConsoleApiClient.ts",
+      "sha256": "6465837167f866f15b674fe53fea7dec0efbd3771f35a3905139fb80af21430e",
+      "bytes": 19762
+    },
+    {
+      "path": "apps/web/src/investmentControlConsoleController.ts",
+      "sha256": "0d04ea142c28bcb25e4413fd881717ecbdadd23414a4f9d669dd60d5467852c3",
+      "bytes": 19964
+    },
+    {
+      "path": "apps/web/src/investmentControlConsoleCoordinator.ts",
+      "sha256": "33604f0abdd103f44335f9bd18f165600b73c0cbbbd58afbd6a35216621498b9",
+      "bytes": 9808
+    },
+    {
+      "path": "apps/web/src/investmentControlConsoleForms.ts",
+      "sha256": "15635bac4a81a4cdc5f51058b6d93f68f07047216891cb0649b7564be9c5b70d",
+      "bytes": 7171
+    },
+    {
+      "path": "apps/web/src/investmentControlConsoleKeyboard.ts",
+      "sha256": "4a960852766f146956c999cc836bb2131c4aa2a473fb82ff8e76b8914f629664",
+      "bytes": 1470
+    },
+    {
+      "path": "apps/web/src/investmentControlConsoleReadValidation.ts",
+      "sha256": "ae9deba695421f42ae0cb707cfee9ade09115891afa5da068212d38fe5432bba",
+      "bytes": 854
+    },
+    {
+      "path": "apps/web/src/investmentControlConsoleRenderer.ts",
+      "sha256": "ffdaa10a5c1d59156a866f9e926d2e14b37e5bd95d4c9716e15555e281fb859f",
+      "bytes": 31438
+    },
+    {
+      "path": "apps/web/src/investmentControlConsoleResponseValidation.ts",
+      "sha256": "a96ca27111a66771056fe83cfcce1f16fca5fcff175212d1ff56e988072087bf",
+      "bytes": 5744
+    },
+    {
+      "path": "apps/web/src/journeyDetails.ts",
+      "sha256": "ecf2fdc98677115ce6b4d64cc5d7b16b461db959f02e2d70b92cb1e476ef708c",
+      "bytes": 4406
+    },
+    {
+      "path": "apps/web/src/localStoragePanelsRenderer.ts",
+      "sha256": "eb3a5f876d6a2044903eb3c691f1f7073906aaaf03409023ee2635e82f72ec2b",
+      "bytes": 29365
+    },
+    {
+      "path": "apps/web/src/manualFormValues.ts",
+      "sha256": "81d0d8bdc584c5ba0ec8a7acc59f49e1ca17019cee8e9469bc94f3fc918e80c8",
+      "bytes": 763
+    },
+    {
+      "path": "apps/web/src/marketContextConsole.ts",
+      "sha256": "a5c40c1a7cb3b4a59a31aab572481b5553a03c52d62ad037d83aedd912c34a0e",
+      "bytes": 34950
+    },
+    {
+      "path": "apps/web/src/marketContextRefresh.ts",
+      "sha256": "7c59b31a6a19a6d67039c011a2868e62336c6068afdd944512bbe88e9c8be930",
+      "bytes": 5353
+    },
+    {
+      "path": "apps/web/src/pinganManualSnapshotController.ts",
+      "sha256": "33c636ef6e311b682c3904e3d14f3cb3c65363fcb3648139f5f7bcab5b314614",
+      "bytes": 9897
+    },
+    {
+      "path": "apps/web/src/pinganManualSnapshotState.ts",
+      "sha256": "b1142e344e4babac6faa491b469637a9c09149948795b59c17b091aca2721ca0",
+      "bytes": 18614
+    },
+    {
+      "path": "apps/web/src/portfolioReportExplanationCard.ts",
+      "sha256": "0e2de5ff742cab81e370ddf7e7a6f63f888bba91227415a95b7ab7ac730e1020",
+      "bytes": 18100
+    },
+    {
+      "path": "apps/web/src/portfolioWorkspaceController.ts",
+      "sha256": "e2ef9e505f088829dc204151e1d9854d6f1c4d79eee6b2c02e4a674a0b19cf50",
+      "bytes": 23246
+    },
+    {
+      "path": "apps/web/src/portfolioWorkspaceRenderer.ts",
+      "sha256": "67d3c03b2848f6ae5824bb58860b27064fb25e9c2f53bd0c060822179161f09b",
+      "bytes": 17568
+    },
+    {
+      "path": "apps/web/src/postDecisionPortfolioReviewSubmission.ts",
+      "sha256": "b460773f97fa7ea3d3af4e1a3960cae1220ee5adfcd19f923138b4bbcd525028",
+      "bytes": 12125
+    },
+    {
+      "path": "apps/web/src/quantDecisionEvidencePresentation.ts",
+      "sha256": "ad976044525f2528c3cb1c3568993b29eed580a9191402cc1421257e3348412e",
+      "bytes": 3415
+    },
+    {
+      "path": "apps/web/src/reportAssistantConsole.ts",
+      "sha256": "14d43072e3727a2b8c7400caeadcfb5fc2de0aa47737e9ea2c64d34465aba164",
+      "bytes": 56414
+    },
+    {
+      "path": "apps/web/src/reportAssistantData.ts",
+      "sha256": "6085b3be1965a7143c36764b477e671a19203f6baf020d06ea57bc3701e8ecb1",
+      "bytes": 29963
+    },
+    {
+      "path": "apps/web/src/reportReviewQuestionHandoff.ts",
+      "sha256": "21417c654362dcad0ab0787ad9d5f1ae875e8dfc126c1ea6523796c5652f01ab",
+      "bytes": 5791
+    },
+    {
+      "path": "apps/web/src/researchDocumentConsole.ts",
+      "sha256": "f51c5aa3a68da2ddc17bd8b4f7f1058720b55b60e68569026a614f01087938df",
+      "bytes": 47038
+    },
+    {
+      "path": "apps/web/src/researchDocumentConsoleView.ts",
+      "sha256": "2c82c3d03b2d92d3dd87f1db93ab072c96dd1088bf1744ce81db24bf51da4666",
+      "bytes": 6681
+    },
+    {
+      "path": "apps/web/src/researchDocumentTransport.ts",
+      "sha256": "8d767a4c5b6461d187d386c1d192c582f5cac814b7f7b043868762b0fed55d15",
+      "bytes": 6724
+    },
+    {
+      "path": "apps/web/src/researchDocumentValidation.ts",
+      "sha256": "23de3979dd5ea7e0402c11f3ec011f020f70a3c65f72828478d268d685558fd6",
+      "bytes": 15487
+    },
+    {
+      "path": "apps/web/src/researchDossierConsole.ts",
+      "sha256": "0a856f98632c63890579b9c9aee84ea5f6d6032fc5af49ca146f44c442aba974",
+      "bytes": 24754
+    },
+    {
+      "path": "apps/web/src/researchDossierData.ts",
+      "sha256": "0346e8bce835b41e2bf4887c6f15d6140fda7d89dc76f444babea1f046f845aa",
+      "bytes": 26881
+    },
+    {
+      "path": "apps/web/src/researchDossierView.ts",
+      "sha256": "44f2cf74a6d62c922366c72bea6c7d80e7a56db781b67b0e3e7325e6678bdc2c",
+      "bytes": 42460
+    },
+    {
+      "path": "apps/web/src/researchFutuFinancialConsole.ts",
+      "sha256": "29f352fc693fd3b11739115e49da7e91f7545639cb27ad2abb8b27a93b5d65fa",
+      "bytes": 19718
+    },
+    {
+      "path": "apps/web/src/researchSourceSnapshotWeb.ts",
+      "sha256": "807a8b7dfe1c61d5902901233e03ecb6fbb6f96f9dff97b9de84ab452fa321b6",
+      "bytes": 9028
+    },
+    {
+      "path": "apps/web/src/reviewFeedback.ts",
+      "sha256": "26ec07ae300206bc360dee7d2082e83317296bcc6bbfb9098eacba8eee6de587",
+      "bytes": 10495
+    },
+    {
+      "path": "apps/web/src/securitySymbol.ts",
+      "sha256": "ac9063668a67e37ebade414f31b496d35de0a473e65fe471433088f2c1c6d132",
+      "bytes": 998
+    },
+    {
+      "path": "apps/web/src/selectedCandidateDecisionBridge.ts",
+      "sha256": "c1389843728c9b9b2a84657d36313539f7a51ab0f23edcb7992f77b389fdeaeb",
+      "bytes": 5814
+    },
+    {
+      "path": "apps/web/src/selectedCandidateMembershipGate.ts",
+      "sha256": "9a7056b187937f558a6c2e77d849bc4cc241a089c392584bd5d7eaba0a1bf37f",
+      "bytes": 3396
+    },
+    {
+      "path": "apps/web/src/selectedCandidatePanelsRenderer.ts",
+      "sha256": "27455e207e05fe7115a6f43edae86bc9578bdfcbaf0b92d8da137acdd72452d4",
+      "bytes": 24226
+    },
+    {
+      "path": "apps/web/src/selectedCandidateWorkflowBridges.ts",
+      "sha256": "47775b6cca464f2e64033dcf4d166229ef2526479a85f3fbbb4ea7a81f9b249b",
+      "bytes": 40124
+    },
+    {
+      "path": "apps/web/src/todayActionReviewWorkflow.ts",
+      "sha256": "a742add29e0557b9dd63816d9f0e97922412a39750a89679a6e6747f424b3213",
+      "bytes": 25428
+    },
+    {
+      "path": "apps/web/src/view.ts",
+      "sha256": "9e6b8d681de2d907804225f6f5510aab172cd8913e0d028b0939b46efd88dbf4",
+      "bytes": 16242
+    },
+    {
+      "path": "apps/web/src/webAuth.ts",
+      "sha256": "784bccbc5b35bff1ede6b8409d12b14b49e1f5597bead52d0ecd81edfb1d0a25",
+      "bytes": 4644
+    },
+    {
+      "path": "apps/web/src/webFeaturePanels.ts",
+      "sha256": "331c6636dcafe2f69edafac5f611f3ad372f91e2597a80c5c9c9914e3cb82439",
+      "bytes": 4757
+    },
+    {
+      "path": "apps/web/styles.css",
+      "sha256": "f1e3d95aaf41527aa8e3d6170441de63beef66ec843aeda5eeeeacd9d04f9afe",
+      "bytes": 30169
+    },
+    {
+      "path": "db/migrations/001_gate_a_market_quotes.sql",
+      "sha256": "f356ac49d2dddfede17f4495a29e019ae9922c221ff12cf71d6422b95c430e76",
+      "bytes": 1738
+    },
+    {
+      "path": "db/migrations/002_gate_b_research_loop.sql",
+      "sha256": "791b0df09e29ebb817c967feda6f0413b1ea66637c4f1a44aff23945daf297b9",
+      "bytes": 2351
+    },
+    {
+      "path": "db/migrations/003_data_gate_sample_facts.sql",
+      "sha256": "1ffa3408d844c0f7dc1b3e1ffbddce6c5e497c6b8e3de938e03803f006532e1c",
+      "bytes": 3586
+    },
+    {
+      "path": "db/migrations/004_research_write_audit.sql",
+      "sha256": "3167c2ed1716ebb9c93d838e8dc6ac7dd2ef68f805dacbdbcdc6bb9e16029e03",
+      "bytes": 929
+    },
+    {
+      "path": "db/migrations/005_pingan_snapshot_boundary.sql",
+      "sha256": "85f2dafb40beb5fb2c02a6c47f71190310fb494cd6b3b4eae93b336c09c5c842",
+      "bytes": 14028
+    },
+    {
+      "path": "db/migrations/006_post_decision_reviews.sql",
+      "sha256": "eb5bfbdde8fc9b75ea0b916c01f9a5a34836931dc75390e8b30e3d3a6ed8e8c2",
+      "bytes": 1393
+    },
+    {
+      "path": "db/migrations/007_candidate_memberships.sql",
+      "sha256": "2e03a7e3aca71dba6aaa2960fc21875b711a5593fd4e5ae16210c7152ad6e8bd",
+      "bytes": 2488
+    },
+    {
+      "path": "db/migrations/008_internal_research_write_boundaries.sql",
+      "sha256": "14ae097e6d0a0fa935d5db56a9104fcccd378ec2d896d3cf4435bd60f86b9522",
+      "bytes": 2822
+    },
+    {
+      "path": "db/migrations/009_decision_snapshot_binding.sql",
+      "sha256": "a2fad7448b44786b01d0267dda4879198834b3759d1e253733c42ce2d5a07c68",
+      "bytes": 90
+    },
+    {
+      "path": "db/migrations/010_post_decision_portfolio_review.sql",
+      "sha256": "34c519b6ed0120f67de58825436eaa938e362823e9a8e9edb6d35921fd1eadde",
+      "bytes": 94
+    },
+    {
+      "path": "db/migrations/011_research_decision_brief.sql",
+      "sha256": "0a2d8c073ecea344a926a81394747b8d4a4e00e978c0ae5cfc167326da32a38d",
+      "bytes": 378
+    },
+    {
+      "path": "db/migrations/012_research_write_candidate_binding.sql",
+      "sha256": "cea623ff7ed45b86f1c407d82151c492a8eccaf6a03ca939f6743ff0bfad806a",
+      "bytes": 766
+    },
+    {
+      "path": "db/migrations/013_pingan_full_snapshot_manifest.sql",
+      "sha256": "52a898a1c0f8a080113e0147ee56911266f100acab8a09994db37aad2ef89982",
+      "bytes": 37426
+    },
+    {
+      "path": "db/migrations/014_deep_research_evidence_loop.sql",
+      "sha256": "f94873171ff10e3969edf4d7c7f82935b6ce608aaa71a0303fb13bd1f1d1a8d2",
+      "bytes": 4649
+    },
+    {
+      "path": "db/migrations/015_research_announcement_events.sql",
+      "sha256": "461b3dd7a93fcdcd627f393393be1f42799a3f36941f3a0a6c2d19c9559955dd",
+      "bytes": 2716
+    },
+    {
+      "path": "db/migrations/016_geely_sales_monitor.sql",
+      "sha256": "31cb7c95e12915c512aa8e3eaa3bfff72b6e9901c076fb8a4fd58ae434545825",
+      "bytes": 2442
+    },
+    {
+      "path": "db/migrations/017_gcl_pv_price_monitor.sql",
+      "sha256": "fbffc6a92750938b5265d11667c36534d8f7908421869f7148ab3b94ef9c8261",
+      "bytes": 2661
+    },
+    {
+      "path": "db/migrations/018_market_daily_technical_facts.sql",
+      "sha256": "6aa13f0003dcc2bf35dcbe31712b57bdf080e99c8fce6cffaa16fadff289fbe8",
+      "bytes": 5879
+    },
+    {
+      "path": "db/migrations/019_research_pdf_documents.sql",
+      "sha256": "1dd8c18968b96e919b08709caec6718665a3bff10c3caa4502c69fae30c685c4",
+      "bytes": 7318
+    },
+    {
+      "path": "db/migrations/020_research_structured_fundamentals.sql",
+      "sha256": "5f12a974e1b6a530f5d2ef5d143f5a667bf8a81fa241072f245b9d35ad4f7402",
+      "bytes": 7070
+    },
+    {
+      "path": "db/migrations/021_research_valuation_scenarios.sql",
+      "sha256": "b133b215fa9d6ad7f27affb62ece1752c689ea5e49cf170a62ee45a82dc9baa2",
+      "bytes": 5382
+    },
+    {
+      "path": "db/migrations/022_research_frozen_technical_evidence.sql",
+      "sha256": "8ecc32bbab18dce132eb9dee6660cd6a9e4d6e64683d8f140e36956a88737da0",
+      "bytes": 753
+    },
+    {
+      "path": "db/migrations/023_deep_research_report_contract.sql",
+      "sha256": "ae016cd8ba278e6c4bb101ef91ed97a32ff36ac687b6cdf12bc2b7d220ef3145",
+      "bytes": 1379
+    },
+    {
+      "path": "db/migrations/024_deep_research_tasks.sql",
+      "sha256": "3871ad6795ca5a5be38ab31f9970b63860e726fff0d5b49e44450bbb8708d213",
+      "bytes": 4248
+    },
+    {
+      "path": "db/migrations/025_today_material_change_dispositions.sql",
+      "sha256": "75d2316bebe2f365d4f3ab62105d440361cf2a62ef3f8ba85a475131e717f939",
+      "bytes": 1776
+    },
+    {
+      "path": "db/migrations/026_assets_alpha.sql",
+      "sha256": "0d017bcfbf08f0059290a27f6514b39cde8cac6e566546ce6db414ed846ac819",
+      "bytes": 2321
+    },
+    {
+      "path": "db/migrations/028_research_context.sql",
+      "sha256": "55eae4727b110046cd5411f561e309354c5cb575b681de0cd3ffc150272fa61d",
+      "bytes": 1703
+    },
+    {
+      "path": "db/migrations/029_deep_research_synthesis.sql",
+      "sha256": "c379fbd3ad6e0dfe95fc394186897a45a7ad817175a949b5155582ea099f4df7",
+      "bytes": 1694
+    },
+    {
+      "path": "db/migrations/030_deep_research_explicit_absorption.sql",
+      "sha256": "1ed8b165c95b9ac30b0e9aa29125a68137c5ad19332a6061418f9f4c7aff0e50",
+      "bytes": 1213
+    },
+    {
+      "path": "db/migrations/031_assets_alpha_zero_positions.sql",
+      "sha256": "9c31d4558202b5dbad9383b4352c01dec8a560dbf0770eb94ed467b8c67c6ef1",
+      "bytes": 292
+    },
+    {
+      "path": "db/migrations/032_private_research_materials.sql",
+      "sha256": "3b643303387bc8d7effaedeb5bfa1777f7c40c7fb8356fb99141ac6aa4adf298",
+      "bytes": 583
+    },
+    {
+      "path": "db/migrations/033_research_full_text_search.sql",
+      "sha256": "d95636753bf3f094e3d22be4f087bac4b7a5a54a15e7737be61fa66034b2af73",
+      "bytes": 561
+    },
+    {
+      "path": "db/migrations/034_research_completeness.sql",
+      "sha256": "d680e8d27a871ea8ecf4caba89ec88284434c22eead455eedeea5575f2b774a8",
+      "bytes": 1332
+    },
+    {
+      "path": "db/migrations/035_deep_research_task_cancel.sql",
+      "sha256": "f90faa66f644ee82af2ac5aa3937cbf50ce4d8633ef5310a7700096495796a51",
+      "bytes": 4916
+    },
+    {
+      "path": "db/migrations/036_research_monitor_rules.sql",
+      "sha256": "bf6927fb9e6935eedb8d373120a9a6033710103c0b89d12799faf9acd9dff443",
+      "bytes": 333
+    },
+    {
+      "path": "db/migrations/037_research_valuation_methods.sql",
+      "sha256": "3e359d0f71ebb430bac442283b8235eb9dd546226784439f5b9b6d4da5fb0316",
+      "bytes": 386
+    },
+    {
+      "path": "db/migrations/038_cloud_ai_provider_policy.sql",
+      "sha256": "c6fbd43da64407ca50e4dd0f475aa3143656e5d582e6e30e563b55681c12c784",
+      "bytes": 1468
+    },
+    {
+      "path": "db/migrations/039_research_material_deletion_tombstones.sql",
+      "sha256": "f9a7565c6a8301c05f9af979fd52aea26859f125056a71d9b60847857245c3a8",
+      "bytes": 3272
+    },
+    {
+      "path": "db/migrations/040_deep_research_task_history.sql",
+      "sha256": "8374d122b5806468733efcbb85b09975f9338a9b360cbf874e88ac29bccf7feb",
+      "bytes": 656
+    },
+    {
+      "path": "db/migrations/041_research_evidence_question_idempotency.sql",
+      "sha256": "85111dc78c41d3a5e7126ec71b825930d26ba11d28107d6695aef4cfa216abd5",
+      "bytes": 2004
+    },
+    {
+      "path": "db/migrations/042_research_write_audit_idempotency_scope.sql",
+      "sha256": "88b9659fd5c500a26c004857391da62432d063ffa9770a19de711a4f21862189",
+      "bytes": 269
+    },
+    {
+      "path": "db/migrations/043_cloud_ai_backup_provider_choice.sql",
+      "sha256": "2531a2bab17b0dce0c00f0a1c341be9040abd20177e84504bd59bfe8613ade84",
+      "bytes": 400
+    },
+    {
+      "path": "db/migrations/044_research_event_kinds.sql",
+      "sha256": "780b796a78f54032735a26626e8266de2bc37c84eaa5402ef7ad989664eed446",
+      "bytes": 297
+    },
+    {
+      "path": "db/migrations/045_research_evidence_question_attempts.sql",
+      "sha256": "4991264ee55422d49051f8273f7e2d2c74027c3a2b6e16e0080815c7b7d959d1",
+      "bytes": 2094
+    },
+    {
+      "path": "db/migrations/046_research_event_monitor_rule_binding.sql",
+      "sha256": "148b258bf42303fa48e0af8a9b7c00592d5a853b8e3de831a20ab625a19a8f5d",
+      "bytes": 362
+    },
+    {
+      "path": "db/migrations/047_deep_research_report_deletion_tombstones.sql",
+      "sha256": "2f7bba2fc7af61241d523d8312b7c1ea5c368ed05a9fabc7cbf05971ebcecf6d",
+      "bytes": 5007
+    },
+    {
+      "path": "db/migrations/048_decision_review_deletion_tombstones.sql",
+      "sha256": "c2ca1e8f1c180fbb2e37db74671b0ea46fbef9ca28c69403df2af294be9fd9ae",
+      "bytes": 5867
+    },
+    {
+      "path": "db/migrations/049_weinstein_technical_snapshots.sql",
+      "sha256": "18ab1e1aafaf9ef85445543960fea997bfb5f23a337efe6ebf6fd688a31070ca",
+      "bytes": 1038
+    },
+    {
+      "path": "db/migrations/050_research_material_persisted_copy_redaction.sql",
+      "sha256": "b0163b3f63d9fe389c73eb593a4f139fd82abedc10487008eaafe22e1db8350c",
+      "bytes": 10865
+    },
+    {
+      "path": "db/migrations/051_research_evidence_pack_redaction_receipt.sql",
+      "sha256": "f34d1095932dc603cc6d7c672544ca0329ca6350918ee4a59b44de6b0de4725f",
+      "bytes": 2212
+    },
+    {
+      "path": "db/migrations/052_limited_research_packs.sql",
+      "sha256": "294cf0a29aedf408f290bd68750cd5a77ab31af171a6df9e5be4598577b8800c",
+      "bytes": 276
+    },
+    {
+      "path": "db/migrations/053_deepseek_flash_policy.sql",
+      "sha256": "1f0fffb570762198955654c6b1bb0bc7639c2a4246c7f7f3077e000a53adfeba",
+      "bytes": 350
+    },
+    {
+      "path": "db/migrations/054_research_document_ocr_provenance.sql",
+      "sha256": "a4ffe30cdb5de59149efab43687782c67593b29bcdf65bccca6201491843345c",
+      "bytes": 1174
+    },
+    {
+      "path": "db/migrations/055_owner_current_holdings.sql",
+      "sha256": "bac235e2dd54414cac5ffa1b5d26e033507cbbb261c0d2b5bd447352f54f06bb",
+      "bytes": 479
+    },
+    {
+      "path": "db/migrations/056_research_operating_assertions.sql",
+      "sha256": "337ec7848545901b37552e64457b7d104ab67562ba1486657e6847236ec4c57d",
+      "bytes": 1778
+    },
+    {
+      "path": "db/migrations/057_research_operating_profit_inputs.sql",
+      "sha256": "d1df116f8665f77d4464fd6534673e9fe70959c85b127415c4c8e141dc4fc60f",
+      "bytes": 976
+    },
+    {
+      "path": "db/migrations/058_research_assertion_text_verification.sql",
+      "sha256": "374514d06d86a615d57769bf482ea9a2ef7780597de97a0ff2e92dd7a262bce1",
+      "bytes": 1961
+    },
+    {
+      "path": "db/migrations/059_research_accounting_scope.sql",
+      "sha256": "ff345e47d2169ee05c93cecc621f2d3eacdab3d24520256dc8ed96933fefe939",
+      "bytes": 527
+    },
+    {
+      "path": "db/migrations/060_research_document_provenance.sql",
+      "sha256": "e001fe597d8b98810e852b0b74069f4f7243144b640fdc5a77e159ac18172769",
+      "bytes": 1026
+    },
+    {
+      "path": "db/migrations/061_research_fact_identity_dimensions.sql",
+      "sha256": "aa25e7bee49904ed2222b9ab0529c47b247410bafe6a9afbae2ce58aa1fa326b",
+      "bytes": 1180
+    },
+    {
+      "path": "db/migrations/062_research_cross_source_revisions.sql",
+      "sha256": "11c0126e4d3fa69ac911af5084c391b0e3bbf536782de709e470c95d694567cb",
+      "bytes": 663
+    },
+    {
+      "path": "db/migrations/063_research_source_intake.sql",
+      "sha256": "5c6c7006128727e0d330586146d5207439d3fdedd241eae258f7fdc312850cd9",
+      "bytes": 3352
+    },
+    {
+      "path": "db/migrations/064_research_assertion_lifecycle.sql",
+      "sha256": "fc16be9daffa1946c7945c251d655a9bf07dbcbad6a9398d8eb35ffde53ca62a",
+      "bytes": 1424
+    },
+    {
+      "path": "db/migrations/065_research_source_intake_reliability.sql",
+      "sha256": "1c572c4485ce6c84da015231ac794431c639eecb8f66963b4ec23f394cb29738",
+      "bytes": 5148
+    },
+    {
+      "path": "db/migrations/066_research_source_intake_state_consistency.sql",
+      "sha256": "b1219ef30a51bc5c66cd50c8c78c7f95f4585d4ec6d3e139153dcdfc8fee93d2",
+      "bytes": 3211
+    },
+    {
+      "path": "db/migrations/067_research_underwriting_baselines.sql",
+      "sha256": "897f8e7ea682db93f868d7c2ca19781fc116930bb71ea515da11498020175434",
+      "bytes": 3116
+    },
+    {
+      "path": "db/migrations/068_research_review_milestones.sql",
+      "sha256": "bdd0ae9aa76d226b6e47ecde6d447f05f0e8ea6efd72428d54d8be9c4130e933",
+      "bytes": 3542
+    },
+    {
+      "path": "db/migrations/069_research_review_scenario_period.sql",
+      "sha256": "d578ce0c03df241f23a15fc316086ec38a0f0211c999db38ee90d9fe68070a61",
+      "bytes": 530
+    },
+    {
+      "path": "db/migrations/070_research_source_snapshots.sql",
+      "sha256": "d2c90315d8eb7537af5c2e31544b6a76dcfe343c43e306ef8971f91fd5e951b0",
+      "bytes": 6216
+    },
+    {
+      "path": "db/migrations/071_research_futu_financial_statement_captures.sql",
+      "sha256": "49d05b4d012a0c90348c305daaf254657a0d3defd2b8376f325e3c2986d66e24",
+      "bytes": 3129
+    },
+    {
+      "path": "db/migrations/072_research_financial_requirements.sql",
+      "sha256": "bbcccb448be268cfb9a5434ba290401f5b4f77c6d0d0b8367c288976acca2622",
+      "bytes": 2330
+    },
+    {
+      "path": "db/migrations/073_research_futu_financial_period_selection.sql",
+      "sha256": "264353f310d62817c3e5153a72520d7ee7733a44170aae376d81fd73c92cdda7",
+      "bytes": 225
+    },
+    {
+      "path": "db/migrations/074_research_valuation_provider_basis.sql",
+      "sha256": "e7a632d8490e83ed2b7e144031512f48dabddedd9cbe0113f5eb669ba42224ee",
+      "bytes": 5573
+    },
+    {
+      "path": "db/migrations/075_limited_research_material_selection.sql",
+      "sha256": "5e5392cf66c8f6396af6df47615d61540006bd90d86904bf1b6559e16cf9128a",
+      "bytes": 647
+    },
+    {
+      "path": "db/migrations/076_research_fcff_metrics_and_version.sql",
+      "sha256": "2babaf318632b6b14999d264abe33e0fd12ab6fffef1233dba86ae6a42f4175f",
+      "bytes": 2344
+    },
+    {
+      "path": "db/migrations/077_research_provider_fcff_basis.sql",
+      "sha256": "e67c5b20189490fae75fca912dda2dba90ed84744984804027c720cebe5cd153",
+      "bytes": 3731
+    },
+    {
+      "path": "docs/governance/GOAL_PURSUIT.md",
+      "sha256": "df98ed30b9b510b811d3de4bce4c69a41ddd29a601a20d7aa8ca16024e46c6c4",
+      "bytes": 5493
+    },
+    {
+      "path": "docs/handoffs/project-controller-20261009/FORMAL-DEVELOPMENT-PLAN-20261011.md",
+      "sha256": "09a04e5bde8b598750de6a21ddb3796b9ab74443921d59e3a7eb8d167c62c2b2",
+      "bytes": 55858
+    },
+    {
+      "path": "eslint.config.mjs",
+      "sha256": "686475ed548e495d73cc9bd7bb5f077a0b1d09c5eb2a071ff3c45060418cdbd2",
+      "bytes": 1035
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "1564e0b34b5548a18908c698b3d9236bd724313e543a42ea0b1ba7d76246b70c",
+      "bytes": 98849
+    },
+    {
+      "path": "package.json",
+      "sha256": "eb70832443f19d143bad343cef209590bc39e5b19dc0b131e11e3a0da51f8efe",
+      "bytes": 12999
+    },
+    {
+      "path": "packages/contracts/schema/fact-metadata.conformance.json",
+      "sha256": "18f01a9863921390345f8a43a5930c2d1309d68deb147ef26b5357f4f50e4832",
+      "bytes": 2860
+    },
+    {
+      "path": "packages/contracts/schema/fact-metadata.schema.json",
+      "sha256": "c584e379ed3370dc86f20e53fec71ebfb96fdec82ed773eacaa2e90527455a05",
+      "bytes": 2017
+    },
+    {
+      "path": "packages/contracts/src/annualConditionalDecision.ts",
+      "sha256": "c51115105e1091df27de04f557709740d94a6c2428e84cd0363e7e9601aff734",
+      "bytes": 4368
+    },
+    {
+      "path": "packages/contracts/src/annualConditionalDecisionContract.ts",
+      "sha256": "22b01a97921056625b02adc4f9ad0727941f5cec8b1038397a9fa671fd501d68",
+      "bytes": 43011
+    },
+    {
+      "path": "packages/contracts/src/annualDecisionBrief.ts",
+      "sha256": "1dbeaad7b4e89761493bc33d3f848d3dfe7145beca13d02b38d0d0ba6a2dc1c8",
+      "bytes": 27916
+    },
+    {
+      "path": "packages/contracts/src/annualPortfolioLab.ts",
+      "sha256": "528f6870bb0c9da19dbb80f1e6f305fd281e8ad4e51707a56f59b4961b92b07a",
+      "bytes": 67080
+    },
+    {
+      "path": "packages/contracts/src/annualPortfolioLabBrowser.ts",
+      "sha256": "39f0316af1ad27b89ea2d5c903f58b3486d909d97052908615c560f68a0cd1fa",
+      "bytes": 43624
+    },
+    {
+      "path": "packages/contracts/src/annualPortfolioLabPairSummary.ts",
+      "sha256": "ed9bc65f93321867e45d06b7833c62eb88a5970d66097cdf6a1b5c5d8b2c0feb",
+      "bytes": 8383
+    },
+    {
+      "path": "packages/contracts/src/annualReviewLearning.ts",
+      "sha256": "f3bfba8d5162e4173adf1c3f3fc42698a76f52ac06c17c58dfcb24568faa8426",
+      "bytes": 15554
+    },
+    {
+      "path": "packages/contracts/src/annualReviewLearningSummary.ts",
+      "sha256": "8b7d7a902d49260bcf1cb3446930014536106b8f794d69817a0bbad63e0b74ff",
+      "bytes": 18253
+    },
+    {
+      "path": "packages/contracts/src/annualValuationQuantWorkbench.ts",
+      "sha256": "eff1dd900c8849c0f0391bd39ea1540da742d9d2668de421acc62ffc2395ece7",
+      "bytes": 44735
+    },
+    {
+      "path": "packages/contracts/src/annualValuationScenarioGrid.ts",
+      "sha256": "32cc832cf8589af38016c8843eca82d046b8fcb7bc4e46303fcb3b299a25af97",
+      "bytes": 2625
+    },
+    {
+      "path": "packages/contracts/src/annualValuationScenarioMargin.ts",
+      "sha256": "2ee01aaf66eed8dd9b3dfd9ef02010c694a1c14648d044e732ec3b1ee7fa3333",
+      "bytes": 2115
+    },
+    {
+      "path": "packages/contracts/src/assetsAlpha.ts",
+      "sha256": "69c62680220758b81d44ca0740d8cb2d910c525a7ca9e9b469699d1e509a22c4",
+      "bytes": 14197
+    },
+    {
+      "path": "packages/contracts/src/assistAdvisoryScope.ts",
+      "sha256": "d02f58f8a9dcd86880dd96ba4337e9032fc5de4b1c9faf53a50e505db655826d",
+      "bytes": 17961
+    },
+    {
+      "path": "packages/contracts/src/assistAdvisoryScopeBrowser.ts",
+      "sha256": "ca5237a717de00ed655663fbd52cf7f11582d893424dc1a22ff46a20e995db22",
+      "bytes": 908
+    },
+    {
+      "path": "packages/contracts/src/assistDecisionNoteWorkflow.ts",
+      "sha256": "fd7ce3417967e2360070022774b53af3d551076a0f95062afb8920dc266a59d0",
+      "bytes": 17317
+    },
+    {
+      "path": "packages/contracts/src/assistDecisionNoteWorkflowBrowser.ts",
+      "sha256": "3f9e464eca35ce7fa25d449d57ba670d610a2709c70c875bd2de0e7a4b68566c",
+      "bytes": 696
+    },
+    {
+      "path": "packages/contracts/src/assistHumanReviewWorkspace.ts",
+      "sha256": "6359812eb3745cce7e8859ecbe73d2645f6c146f116e60e2b99336fd5609c655",
+      "bytes": 25788
+    },
+    {
+      "path": "packages/contracts/src/assistHumanReviewWorkspaceBrowser.ts",
+      "sha256": "bee44cd45f3085da754094612856bde88d79f54f1f462f9b37b007d459d4329e",
+      "bytes": 1421
+    },
+    {
+      "path": "packages/contracts/src/assistLocalRecord.ts",
+      "sha256": "52eb95e04537862426eb7a0fe56e1696c5ed927527376abd67e14d748e6d6b9c",
+      "bytes": 9102
+    },
+    {
+      "path": "packages/contracts/src/assistLocalRecordBrowser.ts",
+      "sha256": "c5174e487d2abfb834330d2fabc6ba5ff93535f0e0f5d62e7990f2fc0addaf26",
+      "bytes": 357
+    },
+    {
+      "path": "packages/contracts/src/assistReviewFollowUpWorkflow.ts",
+      "sha256": "da8e979588d268fd47affb36517b5d2d3d43fc6d9cc533f7a2f6198a627017d2",
+      "bytes": 17324
+    },
+    {
+      "path": "packages/contracts/src/assistReviewFollowUpWorkflowBrowser.ts",
+      "sha256": "e1dd3bec5b9337cd6bcf8e53638e94315b469e6698f3559cf7e78939071e66c9",
+      "bytes": 777
+    },
+    {
+      "path": "packages/contracts/src/assistReviewKnowledge.ts",
+      "sha256": "b99ba4419d3fa2d02b402ad63e4f05ed6c43b01fb842d627c1aff5f80ff46072",
+      "bytes": 23048
+    },
+    {
+      "path": "packages/contracts/src/assistReviewKnowledgeBrowser.ts",
+      "sha256": "3d6220922275c9850418c2ae5ae15fd8a246b07dedc7c6598e8c5a22a44e6928",
+      "bytes": 748
+    },
+    {
+      "path": "packages/contracts/src/candidateDecisionIntake.ts",
+      "sha256": "80edc2c20e6743cc2e7191d7b5126abb81442b646d133fe1e589f18851bd41c8",
+      "bytes": 13123
+    },
+    {
+      "path": "packages/contracts/src/candidateMembership.ts",
+      "sha256": "ddd04b2509ba5c456376d043e53072f21e2cda9e3cc265ba55d567feed9787d9",
+      "bytes": 16893
+    },
+    {
+      "path": "packages/contracts/src/candidateOverview.ts",
+      "sha256": "fb97d53793d6819e6a221d70ea0f6b297aab9e65b84b117403a56b9db18cbeac",
+      "bytes": 8539
+    },
+    {
+      "path": "packages/contracts/src/chronology.ts",
+      "sha256": "b6a57c8bb6cdc4ff36f2cd96c25798dc9a85c817a0215038a6bef4a6b4a6863b",
+      "bytes": 591
+    },
+    {
+      "path": "packages/contracts/src/cloudAiPolicy.ts",
+      "sha256": "1425e17364e61d22e397309d9e2511c13efaf47e82141bf9c9e8ad058e9689bf",
+      "bytes": 12543
+    },
+    {
+      "path": "packages/contracts/src/currentBaseFormation.ts",
+      "sha256": "b0248c748d56461dd54eebeeb72e837fc4c4c3b7f975cdbad38be72d544f4615",
+      "bytes": 12890
+    },
+    {
+      "path": "packages/contracts/src/decisionContext.ts",
+      "sha256": "023216e12da7b3147ade05d8b79bebac6895febd28cd61209406b4995c38a8d7",
+      "bytes": 341
+    },
+    {
+      "path": "packages/contracts/src/decisionContextBrowser.ts",
+      "sha256": "1b4b9cc1280c0f4afc96bfbd09be3cd0dd43a7faefc7ac9a988646ae660cfa11",
+      "bytes": 38226
+    },
+    {
+      "path": "packages/contracts/src/decisionQuantEvidenceChronology.ts",
+      "sha256": "0918319d29c4de094381808e78ca4a890eaf93291cb39cfe1ffb7ac45bfcee09",
+      "bytes": 1275
+    },
+    {
+      "path": "packages/contracts/src/decisionQuantEvidenceContract.ts",
+      "sha256": "a0df68665b54b690715a59203f146327eb108b2380bae0f547c0d2d5390f7e9f",
+      "bytes": 23014
+    },
+    {
+      "path": "packages/contracts/src/decisionReview.ts",
+      "sha256": "6bc5c7be5901342f245908b50b6b208e3d566bd149adf6c5dcc93d8947494271",
+      "bytes": 34840
+    },
+    {
+      "path": "packages/contracts/src/decisionSnapshot.ts",
+      "sha256": "9c437841c2c48372ff5f20efe6944b36307d693178a4ee64a7ce2e3d8ee092aa",
+      "bytes": 3966
+    },
+    {
+      "path": "packages/contracts/src/decisionSnapshotBrowser.ts",
+      "sha256": "b0b62d151eb0df07e5fe333ad1fd144d90b3eb1224f1cb22cec38f23b8fea9cf",
+      "bytes": 4077
+    },
+    {
+      "path": "packages/contracts/src/decisionSnapshotContract.ts",
+      "sha256": "ce2421277973084864e35bd614d26841931930c25e3b5678b9460574bc0105e0",
+      "bytes": 17762
+    },
+    {
+      "path": "packages/contracts/src/deepResearch.ts",
+      "sha256": "da79458609aa54aa2fe429ebabff2b740e037eff780e4e36deeff4e41dcbf923",
+      "bytes": 86983
+    },
+    {
+      "path": "packages/contracts/src/deepResearchSnapshot.ts",
+      "sha256": "fa69db3d6e59e362093a9ca6fc1bcf41d43abaf5de07e7aedb30466bdca4f59e",
+      "bytes": 49083
+    },
+    {
+      "path": "packages/contracts/src/deepResearchSourceGap.ts",
+      "sha256": "5cbd8a9ff8acea78722cea50a33ae16c4d11acd7b6667c8d0f493297d0cd13f5",
+      "bytes": 1786
+    },
+    {
+      "path": "packages/contracts/src/deepResearchSynthesisReport.ts",
+      "sha256": "00ef6fe1c1881f0e98005d9fe8203fb8254deaebbaa8bb8d729a502ea3cc0a19",
+      "bytes": 26756
+    },
+    {
+      "path": "packages/contracts/src/deepResearchTask.ts",
+      "sha256": "4bf611ea4dddddee7299e132345a9742bf3f00fa6729350ab50cc2775703c735",
+      "bytes": 25350
+    },
+    {
+      "path": "packages/contracts/src/factMetadata.ts",
+      "sha256": "c61b288562c5cf46deaa9ae245077c9c9b124a3de71febd257a05c867d2ea886",
+      "bytes": 5423
+    },
+    {
+      "path": "packages/contracts/src/factMetadataValues.generated.ts",
+      "sha256": "be51020dd9a1af105f1c89c647ff7ec2789c96db8f147aacee7ae435d900d9c1",
+      "bytes": 3945
+    },
+    {
+      "path": "packages/contracts/src/formalDecision.ts",
+      "sha256": "4d0a27583397e615172eb0c6ce15d05338ae21299dfa8e57ad610bc3fecdc3a5",
+      "bytes": 16783
+    },
+    {
+      "path": "packages/contracts/src/gclPvPriceMonitor.ts",
+      "sha256": "d3fdbd3129a99bb45d3d4e35f5ffb459b375cd829a1fce4cac6df9ff4298c1d6",
+      "bytes": 29553
+    },
+    {
+      "path": "packages/contracts/src/geelySalesMonitor.ts",
+      "sha256": "7a87c061233c38702224891b9bb801fb3cd7c423b052be90a65a13791bc3b46e",
+      "bytes": 29867
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "sha256": "2294a7a28faf11a44551045278c8b4074e30d2e6ef004cbc72635545c6c916e7",
+      "bytes": 1599
+    },
+    {
+      "path": "packages/contracts/src/limitedResearch.ts",
+      "sha256": "c1b06c3c7d0ff59f9d673c34d3aa8532bc4cb7405edcc9371c9b8e0e377373ea",
+      "bytes": 4960
+    },
+    {
+      "path": "packages/contracts/src/market.ts",
+      "sha256": "632a1fcf917f44ce704c7ca9f30de7c71c67beef6c2dd39397a25bd5b51df745",
+      "bytes": 11804
+    },
+    {
+      "path": "packages/contracts/src/marketDaily.ts",
+      "sha256": "fc17c91f7af12f91d277ce4e6f0dd215b51021a5b0d1ffc41c4c8673b163b408",
+      "bytes": 23393
+    },
+    {
+      "path": "packages/contracts/src/marketDailyCalendarEvidence.ts",
+      "sha256": "ce0e1562aad5cf5c3cdeea1f4d398c8f765eced8a58a0c8d2f2c30c04fcd5808",
+      "bytes": 3708
+    },
+    {
+      "path": "packages/contracts/src/marketDailyHashes.ts",
+      "sha256": "b23be4f6154d2468006d652bc44e3f0a32b8b23ff7cf0f95b44f9bba4727f7e6",
+      "bytes": 1945
+    },
+    {
+      "path": "packages/contracts/src/marketDiscovery.ts",
+      "sha256": "d6ded3d0d12680b0bea77605f9c8589a5f6b7f2820a8771742093dda070dcccf",
+      "bytes": 30623
+    },
+    {
+      "path": "packages/contracts/src/marketEnvironment.ts",
+      "sha256": "7533ca6c8b6bbbe06810d00c85ea04dbcae912ff40613f31a230f51dd68db863",
+      "bytes": 13547
+    },
+    {
+      "path": "packages/contracts/src/pinganCurrentPortfolio.ts",
+      "sha256": "e1c3d27acb9ba43073864183c0e61f31a4b595a43ed032d0dc023d99105de22f",
+      "bytes": 18625
+    },
+    {
+      "path": "packages/contracts/src/portfolioDecisionContext.ts",
+      "sha256": "0cb031effe06b92c0f363d3ae293772d38b406a6410e95186efea7f66aee1962",
+      "bytes": 25261
+    },
+    {
+      "path": "packages/contracts/src/portfolioDecisionContextBrowser.ts",
+      "sha256": "8041d93f189763751e0c4c6b85831e112703f02fa08548dab4d97d357675c8aa",
+      "bytes": 24998
+    },
+    {
+      "path": "packages/contracts/src/portfolioDecisionContextStatus.ts",
+      "sha256": "33a07784fd4bd7ac76a734786d0e64677aeeafed5194975359b0df22a8d00157",
+      "bytes": 7479
+    },
+    {
+      "path": "packages/contracts/src/portfolioDecisionFreshnessBrowser.ts",
+      "sha256": "75e3cdf12c8c8e93e1bb57498ce7001b13d3d8a8ecd48ad57bc8380cec06fa8c",
+      "bytes": 4173
+    },
+    {
+      "path": "packages/contracts/src/portfolioReportExplanation.ts",
+      "sha256": "05d2ca1065533f425431b072a06e0a1636f6be76f3a8247cb63cb178c81fee0e",
+      "bytes": 23816
+    },
+    {
+      "path": "packages/contracts/src/portfolioResearchContext.ts",
+      "sha256": "6b8718710a606ee80c3e92049185dc914b6dda8990acb21cabc8cb68b876f2bf",
+      "bytes": 11200
+    },
+    {
+      "path": "packages/contracts/src/portfolioSnapshot.ts",
+      "sha256": "f16f88550a5fbc634febb09c6a880539a591cb1c2dbce4d25b931bf9e12cb300",
+      "bytes": 12466
+    },
+    {
+      "path": "packages/contracts/src/postDecisionPortfolioComparison.ts",
+      "sha256": "f22162500eaa6c7831455d4e3aef9e7fb15621f1bdd71e559f3ff758b1a41254",
+      "bytes": 10312
+    },
+    {
+      "path": "packages/contracts/src/postDecisionPortfolioReview.ts",
+      "sha256": "7348eb012e84113a2393001b04fc532fad990b5b821683bde3da3ee10f4606ac",
+      "bytes": 9714
+    },
+    {
+      "path": "packages/contracts/src/postDecisionPortfolioReviewBrowser.ts",
+      "sha256": "2bea3a4fead2b1a2bfd5de9c7f185524e0f6b40c0e2e0563c34133acb7664def",
+      "bytes": 6885
+    },
+    {
+      "path": "packages/contracts/src/postDecisionPortfolioReviewContract.ts",
+      "sha256": "f5bb34dd0df499520beba1a237aa5028bf1e53623c28e86bf36bfdee088627a8",
+      "bytes": 22002
+    },
+    {
+      "path": "packages/contracts/src/quantDecisionEvidence.ts",
+      "sha256": "af4d35a929ba0f7d5f6c97bba39f773680e9c7b3d13db46a4d732ab2ebd3024c",
+      "bytes": 572
+    },
+    {
+      "path": "packages/contracts/src/quantDecisionEvidenceBrowser.ts",
+      "sha256": "58ec3eb2d68944b076da8165946df63cddcb2d7af8fa8f501fca2b4e9d27dce3",
+      "bytes": 1471
+    },
+    {
+      "path": "packages/contracts/src/quantDecisionEvidenceContract.ts",
+      "sha256": "25995870b7cebf402cb1be279fda15edbf08990014a5253523cf62dd64513f5e",
+      "bytes": 25067
+    },
+    {
+      "path": "packages/contracts/src/quantRegisteredResearchRun.ts",
+      "sha256": "8573d715a170f71dab45bcd2bed4ba1fdfaf53a9833da137da235b8508e0a72b",
+      "bytes": 10942
+    },
+    {
+      "path": "packages/contracts/src/research.ts",
+      "sha256": "167df9211a6642ac57768d2aca10bb2996e8901ce03eb3089ab95d6669c16689",
+      "bytes": 20089
+    },
+    {
+      "path": "packages/contracts/src/researchBaselineConfirmation.ts",
+      "sha256": "2f4f975dfff44c0c47ee0aedf03c26ac3d4727ba66c629b69bf29c72a9667918",
+      "bytes": 11320
+    },
+    {
+      "path": "packages/contracts/src/researchCompleteness.ts",
+      "sha256": "16872190e27ad95f6a95b81ec613181b99192592c776396b75969d377ea1fb74",
+      "bytes": 15442
+    },
+    {
+      "path": "packages/contracts/src/researchContext.ts",
+      "sha256": "f06646629120f9423ea3d7d6464952b46beb8266f5aa635d4eb9d04070140e25",
+      "bytes": 46077
+    },
+    {
+      "path": "packages/contracts/src/researchDecisionUpdate.ts",
+      "sha256": "41575b75061eec117f041b3eb05e1b9b51b25ac2ec25f24e872f528fa06bfdd7",
+      "bytes": 12150
+    },
+    {
+      "path": "packages/contracts/src/researchDerivedEvidence.ts",
+      "sha256": "0e9e2ac20bdbe165bd9f993d08e3ab0b7493a915ea9ddedc51db2e3cee17e779",
+      "bytes": 5581
+    },
+    {
+      "path": "packages/contracts/src/researchDocument.ts",
+      "sha256": "8da077ce38404893da919779d51e3056a28c0dd93c82c274c72285434a63302a",
+      "bytes": 14928
+    },
+    {
+      "path": "packages/contracts/src/researchEvent.ts",
+      "sha256": "924f3f29b655ad19bef83f150dc42959a521202502ad1c174dd8e88d65424909",
+      "bytes": 18493
+    },
+    {
+      "path": "packages/contracts/src/researchEvidenceQuestion.ts",
+      "sha256": "651ad1dde66643f91e1e7af8bb6a9e7700ca071d1acb7b3e04ea5c0e4c5ff0c6",
+      "bytes": 30921
+    },
+    {
+      "path": "packages/contracts/src/researchEvidenceRequirement.ts",
+      "sha256": "c7cb13bb026b0d799b7f170737449a28a48702711a030af63dae5ea5150f1c91",
+      "bytes": 5261
+    },
+    {
+      "path": "packages/contracts/src/researchEvidenceSeries.ts",
+      "sha256": "f651fe32a8a80156acf98915b4f6adc2a3a239ecbb4d62c29ccc77e7b54b990c",
+      "bytes": 6994
+    },
+    {
+      "path": "packages/contracts/src/researchFactCandidates.ts",
+      "sha256": "aad3c215ec7abc07832c30c0edc644d4bcbc9dbe6164a91e7c271dec457952f8",
+      "bytes": 10783
+    },
+    {
+      "path": "packages/contracts/src/researchFactIdentity.ts",
+      "sha256": "3412a96d1f144026c51046f2edebdae30e44ba4152c413d7342207b911b09e0d",
+      "bytes": 8865
+    },
+    {
+      "path": "packages/contracts/src/researchFinancialCoverage.ts",
+      "sha256": "38d3c8d85dd59052da89dafc0f489c271defa27772cef118ad051edacc7be035",
+      "bytes": 11724
+    },
+    {
+      "path": "packages/contracts/src/researchFinancialRequirement.ts",
+      "sha256": "117103b40ada0f27a9a507c8825f88e303d3a6d0fae555130d81b935771426ed",
+      "bytes": 10284
+    },
+    {
+      "path": "packages/contracts/src/researchFundamentals.ts",
+      "sha256": "aecc850a58044cf6cf7951190d85f61995090b11f0cd38a83f805ab5533be4d6",
+      "bytes": 49269
+    },
+    {
+      "path": "packages/contracts/src/researchFutuFinancialComparisonEvidence.ts",
+      "sha256": "ee78e08fac9773f639aa26640b9f03f2b2fd098d81c04b1cdedd6c56f6bf60fe",
+      "bytes": 2559
+    },
+    {
+      "path": "packages/contracts/src/researchFutuFinancialHistory.ts",
+      "sha256": "b30569f675153a24c2428266ee014a6f2783cfc98b2556d2d662aa46e10e65e1",
+      "bytes": 4017
+    },
+    {
+      "path": "packages/contracts/src/researchFutuFinancialStatement.ts",
+      "sha256": "6d6551fa97a5a300096de3357c2c56765b5ffd0052ab8e3180bbf6954ff6a7bc",
+      "bytes": 9272
+    },
+    {
+      "path": "packages/contracts/src/researchGuidance.ts",
+      "sha256": "6851b25dfef59cf8c08afe303fcb43d6703bd3329f96e5d2485ff583f7ec8c72",
+      "bytes": 2560
+    },
+    {
+      "path": "packages/contracts/src/researchInbox.ts",
+      "sha256": "7767f7aa793722b7f0450e8995f234ed969fcf2bd313443d817f3fb274e77b1d",
+      "bytes": 1614
+    },
+    {
+      "path": "packages/contracts/src/researchLoopReadiness.ts",
+      "sha256": "c51e04ed82adc33ed6eb4aef95ae1333c6c70fbd0ec8db01a694da86db7a3b75",
+      "bytes": 4792
+    },
+    {
+      "path": "packages/contracts/src/researchMaterial.ts",
+      "sha256": "e1da5fd87f126894e2f8a830683fd1363333ac90cd2ad19a7370522a486cce63",
+      "bytes": 25788
+    },
+    {
+      "path": "packages/contracts/src/researchMonitorRule.ts",
+      "sha256": "61d4391fc73ef81ac4df0081a6fc905036d7ce1c88374a7751687837c4b030a1",
+      "bytes": 6076
+    },
+    {
+      "path": "packages/contracts/src/researchOperatingAnchor.ts",
+      "sha256": "88d6dc3f69d3fc9c3bbcea78988a739dfdfd49aebda4033c516ae8aa233c73d7",
+      "bytes": 3315
+    },
+    {
+      "path": "packages/contracts/src/researchOperatingCalculations.ts",
+      "sha256": "82494311588aa647ccc14a9b75f25963b5967987ba1b940c8323afcd911bd6db",
+      "bytes": 20968
+    },
+    {
+      "path": "packages/contracts/src/researchOperatingModel.ts",
+      "sha256": "c47feeae3dfaa1f789d773734ca4d3590116f9d6198c2031118615f1b5371aeb",
+      "bytes": 30427
+    },
+    {
+      "path": "packages/contracts/src/researchOperatingReasoning.ts",
+      "sha256": "dbc2b66bfbab21996f7f388ec71f6cb537b9595e64f13c3f68f7f2c80ca08176",
+      "bytes": 16933
+    },
+    {
+      "path": "packages/contracts/src/researchProductMix.ts",
+      "sha256": "2a25ec710c9fa2725cb08479a44587e0f0c63148493745a6ffc16177f2dbc7df",
+      "bytes": 3583
+    },
+    {
+      "path": "packages/contracts/src/researchProviderOperatingReference.ts",
+      "sha256": "9a1fdce92e0d27d54782750dbe233ffd3326ef444846904c9d3917405d73ecb9",
+      "bytes": 9789
+    },
+    {
+      "path": "packages/contracts/src/researchQuestions.ts",
+      "sha256": "337f0cf2b465f9cf761305ae1b552f0d09ec5f679e4dd2c1196b62ab728ecc67",
+      "bytes": 14145
+    },
+    {
+      "path": "packages/contracts/src/researchReportDecision.ts",
+      "sha256": "45ac5a279ab2dd5bd317b71e8e1e25b34c89d4397ca298dc5d974d445a042d95",
+      "bytes": 6646
+    },
+    {
+      "path": "packages/contracts/src/researchReview.ts",
+      "sha256": "ea784daddbd7dc686bf451d858c52c93c936db5f4ee2b6301836da595e6b5cde",
+      "bytes": 16861
+    },
+    {
+      "path": "packages/contracts/src/researchSecondOpinion.ts",
+      "sha256": "d6fefa19583dc08b00b50d5ee057f49c9d861e606d1453be7e087ee8eeb92386",
+      "bytes": 6563
+    },
+    {
+      "path": "packages/contracts/src/researchSourceCitation.ts",
+      "sha256": "7e0b1faa40362ec34e172c405d13b7156745d3c2370b6c44925e1a4008049a21",
+      "bytes": 901
+    },
+    {
+      "path": "packages/contracts/src/researchSourceIntake.ts",
+      "sha256": "5e696632beebc663aee542c406a56c960de32ea278b5293dbdb64b6e4ea0085e",
+      "bytes": 4789
+    },
+    {
+      "path": "packages/contracts/src/researchSourceSnapshot.ts",
+      "sha256": "166e3c4c3c70e7fe21f711adfaf039c6c8df580af2cf5eb73d9b1786311509db",
+      "bytes": 3014
+    },
+    {
+      "path": "packages/contracts/src/researchTableRegions.ts",
+      "sha256": "d79c033861abb87368aa324948af7977cbff4ef36c85ae60e2e0a95e5385948b",
+      "bytes": 721
+    },
+    {
+      "path": "packages/contracts/src/researchThesisEvaluator.ts",
+      "sha256": "5b46e9ec8d832592f8c0b38ce6e6a7430007ab3ca00280f916639446770f59b7",
+      "bytes": 1954
+    },
+    {
+      "path": "packages/contracts/src/researchThesisTests.ts",
+      "sha256": "7edfe5d25ccc8e2b638b3136948a39842106a076f083cf8a59534775de5d89b1",
+      "bytes": 12730
+    },
+    {
+      "path": "packages/contracts/src/researchUnderwriting.ts",
+      "sha256": "50bcf38b30126950fc17056c4e4851f9a88c44578a1161855c7f9e38d81ccfc4",
+      "bytes": 26738
+    },
+    {
+      "path": "packages/contracts/src/researchValuationFcff.ts",
+      "sha256": "30e432c6c8910b150156ec3aab675c9cc516ac5d06b772dc64dfd57219fdacb8",
+      "bytes": 34046
+    },
+    {
+      "path": "packages/contracts/src/researchValuationIssuerBasis.ts",
+      "sha256": "7426554e6ce5d4845b15fcb5c29a170690615ee5d080bf9de98256dd744d91c3",
+      "bytes": 3181
+    },
+    {
+      "path": "packages/contracts/src/researchValuationProvider.ts",
+      "sha256": "57c76788c490ec5c70b99899f90e9e264fb826139e6b2fe5f4cec747683c677f",
+      "bytes": 7190
+    },
+    {
+      "path": "packages/contracts/src/researchValuationScenarios.ts",
+      "sha256": "93a9c35a13ac52c5d3aedddbc01977a3227320d36a735aa3dae7f09cbb2c01c6",
+      "bytes": 66575
+    },
+    {
+      "path": "packages/contracts/src/sha256.ts",
+      "sha256": "c9b17afa2f3cfe9e097bbc5decc7f3196a6be1a97c5ca3307f1178004ec577db",
+      "bytes": 2768
+    },
+    {
+      "path": "packages/contracts/src/thesisFormation.ts",
+      "sha256": "40c932b5ad92b22db788150d833131b60323bae961171eb4c474ec419a6b707c",
+      "bytes": 6338
+    },
+    {
+      "path": "packages/contracts/src/todayActionInbox.ts",
+      "sha256": "35d2dc15bb4140748b6d01240163a00bafd64ee54fc5e9e34547b7f58a0e309e",
+      "bytes": 27815
+    },
+    {
+      "path": "packages/contracts/src/todayActionInboxProfileReviewValidation.ts",
+      "sha256": "a70008c88c3e279216064dc5e9ce5cb08450ee87e95d0598115ae04e9a3e7e67",
+      "bytes": 783
+    },
+    {
+      "path": "packages/contracts/src/todayActionInboxTask.ts",
+      "sha256": "6c93c42f28820808241a2ae492e6fc34279195ab2ce68597188b89378a678cd5",
+      "bytes": 3504
+    },
+    {
+      "path": "packages/contracts/src/todayMaterialChangeDisposition.ts",
+      "sha256": "b90ea95a3556fcfbedb6b633c7ee90766d10048b6201a21ac18581c06b6fbba4",
+      "bytes": 5866
+    },
+    {
+      "path": "packages/contracts/src/todayResearch.ts",
+      "sha256": "1653cd37f72006085956fa20ea471a1e7422f8f7dde3168d168795b021871eba",
+      "bytes": 40417
+    },
+    {
+      "path": "packages/contracts/src/todayResearchQualityValidation.ts",
+      "sha256": "5477c39602bf78dcdb2ab4a2c0a4d0f943cb89cb94753080d2e4d009dddf8b8e",
+      "bytes": 9147
+    },
+    {
+      "path": "packages/contracts/src/todayReviewDue.ts",
+      "sha256": "16f8b069ffb60456aba7eda3080c8cd055fe7c3203f1fab43dda0b0d600d92a3",
+      "bytes": 18298
+    },
+    {
+      "path": "packages/contracts/src/todayReviewDueIdentity.ts",
+      "sha256": "304c113ae07abf5bd9f862283a33cb2c3dece731a89fd1a987f9783f1ea8d14a",
+      "bytes": 587
+    },
+    {
+      "path": "packages/contracts/src/todayReviewDueReportValidation.ts",
+      "sha256": "347bada0ffd2b7f8cd8a6cd4cb0646cacfd6fb39a8c4bfaf35412569c6126be2",
+      "bytes": 3530
+    },
+    {
+      "path": "packages/contracts/src/weinsteinTechnicalAnalysis.ts",
+      "sha256": "e2c88a102c55861881e8d8e0cc8d3ca9534fc33a6ae13c4e9843387a879981e4",
+      "bytes": 31923
+    },
+    {
+      "path": "requirements-futu-bridge.txt",
+      "sha256": "27bd710961daae4553b52aba4c7ecd8f43d5b7c16c1afe1cfee7be4ec6f41b50",
+      "bytes": 21
+    },
+    {
+      "path": "scripts/architecture-baseline-verify.mjs",
+      "sha256": "53913bfe6515cf9cf4d337081d3ef26eeec47534402fe72ef7499cc763c781ce",
+      "bytes": 18080
+    },
+    {
+      "path": "scripts/architecture-boundary-check.mjs",
+      "sha256": "32ea0a9c7a31798eaf8e7fac04ebebe6e9848b6f9b41f49ba31064976ffbc251",
+      "bytes": 50616
+    },
+    {
+      "path": "scripts/async-capacity-evidence.mjs",
+      "sha256": "e2830a2bacb0825676e53884bf7c8ad17d3dc4abdaa61af24654ada7d5b031ab",
+      "bytes": 10757
+    },
+    {
+      "path": "scripts/audit-db-snapshot.mjs",
+      "sha256": "09346d2e4e87cc4a9cf1e292ba779a00162921e4802f1c00a5b9441bc982febf",
+      "bytes": 6053
+    },
+    {
+      "path": "scripts/candidate-production-post-recovery-verify.mjs",
+      "sha256": "cab7ef3829ca9052dd10b635a4f755bdbebfc1d138ad6337ea7c5f0bb850021f",
+      "bytes": 6949
+    },
+    {
+      "path": "scripts/candidate-production-quote-recovery.mjs",
+      "sha256": "d7e64fb62c2541c1077593495ae1da97df55f0da1ffcee51bb7cff98b4e6e85e",
+      "bytes": 8180
+    },
+    {
+      "path": "scripts/candidate-production-url-smoke.mjs",
+      "sha256": "b4b58b1572c4a83747229015083fdbe82bcc7fa1a65fa4b4292607588b3f435a",
+      "bytes": 3980
+    },
+    {
+      "path": "scripts/ci-risk-scan.mjs",
+      "sha256": "a32b83b81d2fb5ae217854d8e0c6cedcc037100271ebd70acf6635a42bc0e258",
+      "bytes": 4080
+    },
+    {
+      "path": "scripts/clean-checkout-verify.mjs",
+      "sha256": "cec29312a9ccac70de3c6a9eb3d7a8ca7ba793404da5440beb1b923e3e238e77",
+      "bytes": 1336
+    },
+    {
+      "path": "scripts/client-candidate-api-switch-verify.mjs",
+      "sha256": "364204ced78e2c25fbb2b3a936e33f5e14cc28528968040ed01b22b71b61576a",
+      "bytes": 6929
+    },
+    {
+      "path": "scripts/codex-stage-report.mjs",
+      "sha256": "ebfad78fc37882f271773150b88a687fad0a31a17d03125451dc2e209e69a79d",
+      "bytes": 22375
+    },
+    {
+      "path": "scripts/codex-stage-run-lock.mjs",
+      "sha256": "2a5a55f03af50c953e7ee03d0c05373ac35f44d724428f0b74f4b343d47a17d0",
+      "bytes": 9531
+    },
+    {
+      "path": "scripts/codex-stage-task-validate.mjs",
+      "sha256": "86beb72e2a2d74701bd03ce92b703991ad5d3fe693f92b59814cc6a4319bce10",
+      "bytes": 3793
+    },
+    {
+      "path": "scripts/data-gate-export-legacy-sample.mjs",
+      "sha256": "4c58aca863ce72f80ae2e0269410c4687f0afda22c297dda754d2caea410b26b",
+      "bytes": 11655
+    },
+    {
+      "path": "scripts/data-gate-full-sample-verify.mjs",
+      "sha256": "f2ff2eb6a32ecacbc4e3eaa1c4c0bad4ee922be7c3b0e1487d7fa4b278fcb5dd",
+      "bytes": 2576
+    },
+    {
+      "path": "scripts/data-gate-legacy-export-verify.mjs",
+      "sha256": "7d5de25dac79fb2b050f52c59b6188170c75b3cf05519d2226740578894a8183",
+      "bytes": 8312
+    },
+    {
+      "path": "scripts/data-gate-negative-verify.mjs",
+      "sha256": "fb01cf8b6696f8d17c7f4e32d35a682a543be5a23c97640e15aecc28710d65da",
+      "bytes": 5012
+    },
+    {
+      "path": "scripts/data-gate-sample-reconcile.mjs",
+      "sha256": "5b97dac98f835df2755bb3dc43435b9324dc4ffce9ce99c8f4f9368b5599feb6",
+      "bytes": 17159
+    },
+    {
+      "path": "scripts/data-gate-staging-rehearsal.mjs",
+      "sha256": "3dd7937fc2d5242781c2d79fe60d7694d80786bc8689b04859da08c69316e9a2",
+      "bytes": 5417
+    },
+    {
+      "path": "scripts/data-gate-verify.mjs",
+      "sha256": "55af27d5e8775122424391dc3a21d8c5235bf54ba214311fd6809b4be7d74865",
+      "bytes": 2876
+    },
+    {
+      "path": "scripts/deep-research-beta-verify.mjs",
+      "sha256": "f5afaebc1d192a7a9193a13b126d3296da0255ca1d62dea45007f56cbc968826",
+      "bytes": 80009
+    },
+    {
+      "path": "scripts/deep-research-blind-evaluation.mjs",
+      "sha256": "b054f26228aad0ba40177c37a8352de0796212215dc29aa70207d77ee7666780",
+      "bytes": 16655
+    },
+    {
+      "path": "scripts/fact-source-switch-readiness.mjs",
+      "sha256": "1b23e4b27b4eb0395c14600b6d9aad4b6e802d64adb3f258e7760b132648e165",
+      "bytes": 7437
+    },
+    {
+      "path": "scripts/final-cutover-blockers.mjs",
+      "sha256": "86f9a740ac601aa52cb7fb51f95c1b596ce9f02a4e14bb67594d908c668f0c44",
+      "bytes": 6223
+    },
+    {
+      "path": "scripts/final-cutover-readiness-verify.mjs",
+      "sha256": "9ec2fdf94104982caf608eb3b7ba20df90d09ba35471b1fc1f1f6ab72d17f153",
+      "bytes": 3145
+    },
+    {
+      "path": "scripts/final-cutover-readiness.mjs",
+      "sha256": "176529226614318375ae18265634bde42d78b8fbeffdb1d75f9b1e39f7450488",
+      "bytes": 10567
+    },
+    {
+      "path": "scripts/fla35-readonly-acceptance.mjs",
+      "sha256": "0c05a83290c51fa54c69b669d4338ac2f5a9c42d58f5bd77c6459fd2c86df837",
+      "bytes": 45594
+    },
+    {
+      "path": "scripts/formal-research-backup-host.mjs",
+      "sha256": "8c80b5c6eaf5c9d71ee1d7acbeaf442c1230588394d46b6fc7dcb19972cc4a0d",
+      "bytes": 13858
+    },
+    {
+      "path": "scripts/formal-research-backup-selection.mjs",
+      "sha256": "44bb74b88b97a21485c9a8102eb915b8b59720a92885e6e42e5437fddeab1b12",
+      "bytes": 12761
+    },
+    {
+      "path": "scripts/formal-research-backup.mjs",
+      "sha256": "66095963a044de2488108dc2f77abb0ba0fa1ab6a99ead7d9d99369b2194b734",
+      "bytes": 83878
+    },
+    {
+      "path": "scripts/futu-gate-a-probe.mjs",
+      "sha256": "7b484c34539ca1f1bf8fb858fd77775a5c1b90262d2556cc191befd083fe474b",
+      "bytes": 2392
+    },
+    {
+      "path": "scripts/futu-quote-bridge.py",
+      "sha256": "9a8d08dc593a1e41e63fdf436e6d0965d181e43a249f1985efcafbc5390f565b",
+      "bytes": 91654
+    },
+    {
+      "path": "scripts/gate-a-verify.mjs",
+      "sha256": "72b2d34c71fe46766a7e9d4d956b56230b8658e32a949732932b53292978138c",
+      "bytes": 2584
+    },
+    {
+      "path": "scripts/gate-b-verify.mjs",
+      "sha256": "68c321b503a28215f21ae92c91217e4fadb9bb7d2cda8416f6d008b1c1279859",
+      "bytes": 42753
+    },
+    {
+      "path": "scripts/gcl-price-beta-verify.mjs",
+      "sha256": "c68c900618a8415b9db27581a6f261f35ba563b7a2a445f12a7d9e4ddc046720",
+      "bytes": 25576
+    },
+    {
+      "path": "scripts/gcl-price-ingest.mjs",
+      "sha256": "178c30c07235c7c558de6e459e5c984d05fe33cffcb74c73dfed38762192ddda",
+      "bytes": 5188
+    },
+    {
+      "path": "scripts/geely-sales-beta-verify.mjs",
+      "sha256": "d067eaa763ed0d625adbe3be867da0d8f0747f05bf36fd237ee4f0bfc139ceff",
+      "bytes": 19821
+    },
+    {
+      "path": "scripts/geely-sales-ingest.mjs",
+      "sha256": "45a7af25b2c70f05644539ce939dce627488fce3015dc78460ef0c833324c64a",
+      "bytes": 4937
+    },
+    {
+      "path": "scripts/generate-contract-schema-bindings.mjs",
+      "sha256": "2dbdadf74a19f25cda6442ab7a072fab3e7cf1b7e961441ec016e9423ec374a3",
+      "bytes": 14726
+    },
+    {
+      "path": "scripts/generate-quant-review-package.mjs",
+      "sha256": "d19141d2130ee4ef394088d52bdc7acd7ebbb80daf42007d6b6fc4eedc2a543d",
+      "bytes": 52582
+    },
+    {
+      "path": "scripts/hk-connect-quant-portfolio-v1.mjs",
+      "sha256": "6539b2f62100872544d658e85719e8990a61f920f048d6ad409ac63cfe5d81d3",
+      "bytes": 3835
+    },
+    {
+      "path": "scripts/hk-connect-universe-binding.mjs",
+      "sha256": "264d52a2d61d4ee1a0d9e8f799782fc0f6b4655b903fd7991035a1498b37648e",
+      "bytes": 3146
+    },
+    {
+      "path": "scripts/hk-connect-universe.mjs",
+      "sha256": "b00f925c441ec7b3af19d3b20aef9cf1aba09daf78b4044f45d93a88e2606b44",
+      "bytes": 6399
+    },
+    {
+      "path": "scripts/hk00175-quant-v0.1.mjs",
+      "sha256": "9b18665042510639772506e4265c201860942e48564674a5e0ef87fad5468921",
+      "bytes": 40910
+    },
+    {
+      "path": "scripts/holding-event-beta-verify.mjs",
+      "sha256": "8fef3b273728bbc8a028c2a7998aeb8aecc55abe9812ba7ae1f514c9630f96f7",
+      "bytes": 24291
+    },
+    {
+      "path": "scripts/holding-event-ingest.mjs",
+      "sha256": "2f7d8beb45f265cbbbec24f9f4e0ef7b59c7a728576cc16dfaa6fb58f409c904",
+      "bytes": 10295
+    },
+    {
+      "path": "scripts/investment-decision-local-beta-uat-evidence.mjs",
+      "sha256": "4dbece658ed98f980eba032b8c164bfaf699897ce8018d783633605ebc5a9b91",
+      "bytes": 10326
+    },
+    {
+      "path": "scripts/ios-gate-a-app-smoke.mjs",
+      "sha256": "fbfe5c75b7ba946502fe1f26e4e28eb40dd1368e9e8a1b957685fee120a8c4a5",
+      "bytes": 9096
+    },
+    {
+      "path": "scripts/ios-gate-a-dto-smoke.sh",
+      "sha256": "dcef835a9c18ee630745c35ab12d9ac01d13b71335c8a374c51140c20b0a4e7e",
+      "bytes": 1352
+    },
+    {
+      "path": "scripts/ios-gate-b-dto-smoke.sh",
+      "sha256": "99a6b86dd827a7c938a6a51eec5a1593d9fd9c6937b787d2e04cd52bbcb683a0",
+      "bytes": 26844
+    },
+    {
+      "path": "scripts/ios-gate-b-local-beta-uat-evidence.mjs",
+      "sha256": "efc5bd1192bfe4a4701e53b0b3c1b25b2dddd88883e81bf8c72253dfe5b63731",
+      "bytes": 14790
+    },
+    {
+      "path": "scripts/ios-gate-b-local-beta-uat-web-evidence.mjs",
+      "sha256": "bebd63982deaacda6e8b6bcaf65b70f6ec810e0c82f146792d4ef996e5fa5e1c",
+      "bytes": 9401
+    },
+    {
+      "path": "scripts/ios-gate-b-s1ab-fixtures.mjs",
+      "sha256": "e6eac18eed4ce874dbe98ea3990f6e7ce8dafe036e94c1668f5eb831f8fc9d11",
+      "bytes": 40526
+    },
+    {
+      "path": "scripts/ios-gate-b-smoke-historical-fixtures.mjs",
+      "sha256": "8f2db5d24e94a7ca8c8a266815a15aca6094d42863c8389e9dfd4012c663e999",
+      "bytes": 1089
+    },
+    {
+      "path": "scripts/ios-gate-b-test-matrix.mjs",
+      "sha256": "4760a6d406f9eeb62025b5f3a6fc51fc3cf17b732db3df8bac9611dec7037668",
+      "bytes": 7043
+    },
+    {
+      "path": "scripts/ios-gate-b-ui-smoke.mjs",
+      "sha256": "70992471d3793ad81a9b28f4c583a28b1b2f4662ea64f781cecc038e1c73f6ee",
+      "bytes": 241033
+    },
+    {
+      "path": "scripts/ios-physical-production-smoke.mjs",
+      "sha256": "cf40c6e767e50b9ad144d520b4fa7368f2ff7c6ee80857fac8da4f6c497e0463",
+      "bytes": 7949
+    },
+    {
+      "path": "scripts/ios-production-client-smoke.sh",
+      "sha256": "7e298256774d3d7635ef9586eddb49fc0c1523d501cb1533eb1c8788ce049f0d",
+      "bytes": 4724
+    },
+    {
+      "path": "scripts/ios-production-url-preflight.mjs",
+      "sha256": "1edb24de0ce4d11f348e8f99c5a706b8f0c0398ef5a7cb9121ee6692d27605e8",
+      "bytes": 5081
+    },
+    {
+      "path": "scripts/ios-staging-smoke.mjs",
+      "sha256": "fd541b81dd20809416bbc279cbad465af507c459983ebc73b97179528a30ee78",
+      "bytes": 12034
+    },
+    {
+      "path": "scripts/launch-personal-market-anomaly-experience.command",
+      "sha256": "af4b0fe21d1d2c7296def49622bfeeb1ad1fadde26f7ed1ddb96b6d488cd7e9b",
+      "bytes": 4524
+    },
+    {
+      "path": "scripts/launch-personal-research-experience.command",
+      "sha256": "1ccc55f503a63a2255cda3cee4ae240b542a353231e714ca0b56bb24dfa2219b",
+      "bytes": 8443
+    },
+    {
+      "path": "scripts/legacy-freeze-evidence-bundle.mjs",
+      "sha256": "c275561fed221f8e0d0d7ccbabff467be34c60d1aedb8ff7f285dae8ebcf37e1",
+      "bytes": 7773
+    },
+    {
+      "path": "scripts/legacy-freeze-live-smoke.mjs",
+      "sha256": "40321236a924ec3340aed95f7f7af8344bcdae4a8cd92c44714f15ed211f6bc0",
+      "bytes": 9129
+    },
+    {
+      "path": "scripts/legacy-freeze-post-apply-smoke-check.mjs",
+      "sha256": "1263d02b9125ef341bfea755020ddb6622de2580420bad3be8488f7774b82d03",
+      "bytes": 9065
+    },
+    {
+      "path": "scripts/legacy-freeze-preflight.mjs",
+      "sha256": "2c3a980593a0ded4f51d4f537ca724d424ecb6bc6ce79f484418cf4a4cd99c1e",
+      "bytes": 17596
+    },
+    {
+      "path": "scripts/legacy-freeze-readiness.mjs",
+      "sha256": "61447764e7ce209ecd43ed8b83fff9330e3cab3aa3908439b8eb96232f2c5c85",
+      "bytes": 14755
+    },
+    {
+      "path": "scripts/legacy-freeze-retry-readiness.mjs",
+      "sha256": "8ad8f40e312f56c435f630a9490859cbe159878ffd988f28f978347e1a869765",
+      "bytes": 11189
+    },
+    {
+      "path": "scripts/legacy-freeze-rules-check.mjs",
+      "sha256": "87d4d58d572b9ae7182a7710f1ae22fd659290f29a3d5ca45a5c926a01ae3005",
+      "bytes": 7009
+    },
+    {
+      "path": "scripts/legacy-freeze-strict-preflight-verify.mjs",
+      "sha256": "78dbdc1218d0cf324662d51a68d9021b76dd7b0f5973472090b3ad8f55867421",
+      "bytes": 5738
+    },
+    {
+      "path": "scripts/lib/architecture-source-inventory.mjs",
+      "sha256": "4bf7b481946e8f6d821822ac9263899b1ffee5f39fcf2209e51ce92651b4e2f9",
+      "bytes": 856
+    },
+    {
+      "path": "scripts/lib/async-capacity-evidence.mjs",
+      "sha256": "2bd95c58e86976be6159dc0329cc94aa5e16a740942c4336cb034dda13bd67ed",
+      "bytes": 11837
+    },
+    {
+      "path": "scripts/lib/candidate-quote-gate.mjs",
+      "sha256": "db0fa27a87810dd0dda428c215b59ac2152dab8ec5bc0e66da33ea2777ffb6a6",
+      "bytes": 2184
+    },
+    {
+      "path": "scripts/lib/codex-stage.mjs",
+      "sha256": "f3b4e10b3e4e95fb5cf59f99b80cebe084fea93065619b5bfef054329e27c81d",
+      "bytes": 42983
+    },
+    {
+      "path": "scripts/lib/gate-b-annual-performance.mjs",
+      "sha256": "98ff44124fb5b15c25c2796d3df29e0c66966d53917de55df86d6a2e7a8c0e02",
+      "bytes": 6040
+    },
+    {
+      "path": "scripts/lib/hk-fee-policy.mjs",
+      "sha256": "813f9948b7e8e6f969a35730dae85c662a8fa68d8725b27496f6d9f6779eef0e",
+      "bytes": 8480
+    },
+    {
+      "path": "scripts/lib/local-alpha-quant-catalog.mjs",
+      "sha256": "8d6bec63b3833059b56a1c0a8780218d2c841c54d56fb33005e293f087181063",
+      "bytes": 5118
+    },
+    {
+      "path": "scripts/lib/product-goal-check.mjs",
+      "sha256": "a96c5424c8ef7faaddb5af5005ebd862092b471a7260ba500d199d2b97480a13",
+      "bytes": 14268
+    },
+    {
+      "path": "scripts/lib/quant-dividend-payment-sources.mjs",
+      "sha256": "5325721e8b0fad1159f516081942805f89a0171caa1d72a44a97a621a63b595d",
+      "bytes": 6993
+    },
+    {
+      "path": "scripts/lib/real-data-quant-evidence.mjs",
+      "sha256": "8ee58a3db64634e33b92b6a3fbe81e3ccfaf11d660e105de2d840decfed97c06",
+      "bytes": 41491
+    },
+    {
+      "path": "scripts/lib/real-data-quant-witness.mjs",
+      "sha256": "3157e8eabb599d22e9cbe948d5022accfd84a6a8c3eb2fb733b5a0f4f5beafd3",
+      "bytes": 90838
+    },
+    {
+      "path": "scripts/lib/recovery-evidence.mjs",
+      "sha256": "40ffe746ee262affc17ee449db2621976026004e1b22b5d4f294b630bf34b2e5",
+      "bytes": 3878
+    },
+    {
+      "path": "scripts/lib/stage-13-20-evidence.mjs",
+      "sha256": "64f9e00dca3608e9cecc063581fe3754f4adde4d3dc8620a3153d14c410c611e",
+      "bytes": 63999
+    },
+    {
+      "path": "scripts/lib/stage-13-20-local-validation-registry.mjs",
+      "sha256": "ac9c46fcc0e0c9b2cf95ba5bb00e4b572448307e3de00b55be279d026cec355e",
+      "bytes": 13365
+    },
+    {
+      "path": "scripts/lib/sync-capacity-probe.mjs",
+      "sha256": "c68a6cafe9293e9f7f85fbffef8f59a83143874cc9000cb70324fad013d8ddb0",
+      "bytes": 2475
+    },
+    {
+      "path": "scripts/limited-mobile-research-routes-check.mjs",
+      "sha256": "f568188d0bcfad39196e7db6ac2f5fe395bcbad6e174e1a3ff9c5b35478655ac",
+      "bytes": 8651
+    },
+    {
+      "path": "scripts/limited-mobile-research-routes-post-install-smoke.mjs",
+      "sha256": "acf5a626b2b8bc08b6ea70d2953d1a119d03d78d75578fb0b5b1d268a9d5f11f",
+      "bytes": 11848
+    },
+    {
+      "path": "scripts/limited-mobile-research-routes-readiness.mjs",
+      "sha256": "bb7d82e07f105f8fca3e9960bc9ccddac72186b2c6afb8fc578b629c51c9d095",
+      "bytes": 13991
+    },
+    {
+      "path": "scripts/local-alpha-runtime.mjs",
+      "sha256": "6aa1cbe85f516ccf837c1c74415b78d07ac5aec4ddd9564a1ee956a8acdddf08",
+      "bytes": 36805
+    },
+    {
+      "path": "scripts/local-alpha-schema-preflight.mjs",
+      "sha256": "6e389d8d950f1edd2e4746f3ceab7d22f222db32eebcfdcf4c1990c9a67347b3",
+      "bytes": 3844
+    },
+    {
+      "path": "scripts/mainline-decision-action-readiness.mjs",
+      "sha256": "2566f5bd8e26f40f1bb3288d3c7c93e8b2717452fdd6f568333ad0152a449e37",
+      "bytes": 9535
+    },
+    {
+      "path": "scripts/mainline-decision-readiness.mjs",
+      "sha256": "4e994f8ba97fba6c8679ff48b54d7d827d1ff5f974715a141fec564280aedd43",
+      "bytes": 13676
+    },
+    {
+      "path": "scripts/mainline-health-check.mjs",
+      "sha256": "62a88ac9fd5c4285dd7f8796d280c034f2f0684bbcb4076fca5208c3cebfa829",
+      "bytes": 9764
+    },
+    {
+      "path": "scripts/mainline-health-report.mjs",
+      "sha256": "1b87f516672bf5c02b91a537aec6dbb37910fafcf9929aa8b80ee69edb8b8f67",
+      "bytes": 9138
+    },
+    {
+      "path": "scripts/migrate.mjs",
+      "sha256": "0a7a11b08338e25681225ca9f456f57b2c45da008b08ac4218e12d0ed9394e52",
+      "bytes": 342
+    },
+    {
+      "path": "scripts/migration-runner.mjs",
+      "sha256": "c597b55be394689f598348cb2220d6db5cab58aa0560b27bc459c10811f59fd6",
+      "bytes": 2173
+    },
+    {
+      "path": "scripts/personal-research-startup.mjs",
+      "sha256": "2f7116fd8091c3b4592c821d3a8f7c19bbc238d34c78c73f307c52ed8769f2a7",
+      "bytes": 1304
+    },
+    {
+      "path": "scripts/phase11-protected-hashes.mjs",
+      "sha256": "ea0640d6bdc7788e5dad456cf9e67ca865d683524d0e6a2def01dc1ecbc7d2bb",
+      "bytes": 1668
+    },
+    {
+      "path": "scripts/phase12-local-ui-runtime.mjs",
+      "sha256": "7ff578f13ae7b29981bc78ae2a9144387ccb4162eed604ebeeb70d089167b01c",
+      "bytes": 1931
+    },
+    {
+      "path": "scripts/phase12-protected-hashes.mjs",
+      "sha256": "dd53f003c281b9dd87b25749b1a9e29b85af78c2f0e32cfbd902e3db342dde8e",
+      "bytes": 2291
+    },
+    {
+      "path": "scripts/phase13-protected-hashes.mjs",
+      "sha256": "fcc2de8598c8b2f3e75e5bf4d8f6b6bdf4df75c78c8f4dbc438dd8a3c0558eba",
+      "bytes": 2433
+    },
+    {
+      "path": "scripts/phase7-local-fixture.mjs",
+      "sha256": "083aea4057a22fad0ac668c57945c1126d3f23ba84b669fcef809a9f9c7566a8",
+      "bytes": 4502
+    },
+    {
+      "path": "scripts/phase7-local-test-runtime.mjs",
+      "sha256": "21f52a98fd0dae1009b728fa80afa5fea314f6e902fe00dc87a9a26f3ac24c31",
+      "bytes": 1558
+    },
+    {
+      "path": "scripts/phase8-local-test-runtime.mjs",
+      "sha256": "a05d40632a1bbafd1358431952470edb5dfaebfd8279cd445599e9d629b0622b",
+      "bytes": 2434
+    },
+    {
+      "path": "scripts/phase9-live-source-probe.mjs",
+      "sha256": "22fe1af5aea73ff384704783f4c27a457b3e430831f329b3247df502ba7e9eeb",
+      "bytes": 2188
+    },
+    {
+      "path": "scripts/phase9-live-test-actor-intake.mjs",
+      "sha256": "87f47fb6525da3c330685856f10f386d84a46ec3d41fe54ad2e6187bc2640dbc",
+      "bytes": 2136
+    },
+    {
+      "path": "scripts/phase9-owner-copy-runtime.mjs",
+      "sha256": "530d74a4fc5d87f332354c82b101ac796710aed423ebd13ea62207245663d33b",
+      "bytes": 1582
+    },
+    {
+      "path": "scripts/phase9-protected-history-hashes.mjs",
+      "sha256": "e7f9925b0104e76136d154350d0003741be483e2ab13c1a0c29eea804b92a0de",
+      "bytes": 983
+    },
+    {
+      "path": "scripts/platform-release-evidence-register.mjs",
+      "sha256": "b22b3b5c41ddb570fbdd4b179a5b825568b6d9f00beca4cf32ac88d61a189a13",
+      "bytes": 18452
+    },
+    {
+      "path": "scripts/platform-reliability-ledger.mjs",
+      "sha256": "c681f756b251ccf1bd1c98c150ae855fd7d938f3da7d566ee4b137d978c8fe33",
+      "bytes": 10035
+    },
+    {
+      "path": "scripts/post-switch-observe.mjs",
+      "sha256": "c768aa740e828fba5d8efa36fe1bb891d660c85a3b495eab91a3fd75702edf7a",
+      "bytes": 13021
+    },
+    {
+      "path": "scripts/prepare-simulator-experience.mjs",
+      "sha256": "84c485899aefb0d10149bd5fe34d2a82b415dc5599e5b39432998cd47209dd2e",
+      "bytes": 15267
+    },
+    {
+      "path": "scripts/product-goal-check.mjs",
+      "sha256": "0c9096a606332a285bbede64348ef883bf107f6aed8a51566caae86282a8fec0",
+      "bytes": 60802
+    },
+    {
+      "path": "scripts/product-recovery-rebaseline-verify.mjs",
+      "sha256": "0e96de05c8cc901484618af2cb642bf84ddb746e44c052de03a765c299f97982",
+      "bytes": 20518
+    },
+    {
+      "path": "scripts/production-readiness-assessment-preparation.mjs",
+      "sha256": "bfec79afaf203382ca87560973835260c66ba25611b51ed2a22c32253213d914",
+      "bytes": 19296
+    },
+    {
+      "path": "scripts/production-takeover-boundary-check.mjs",
+      "sha256": "9203b7ac9f4ca02b766d20483db861b90e89d173ea0e2a99503eaf23f51e2361",
+      "bytes": 22995
+    },
+    {
+      "path": "scripts/project-state-verify.mjs",
+      "sha256": "80aaa43aea9dd01e82b74dda3894b559642d3ba81daa0495ac705f210b7250bc",
+      "bytes": 5829
+    },
+    {
+      "path": "scripts/quant-audit.mjs",
+      "sha256": "548e159049646c8b5c607ee992e806ab9078dd7e1dcc1884db3f44abb8e641e0",
+      "bytes": 7079
+    },
+    {
+      "path": "scripts/quant-freeze-snapshot-verify.mjs",
+      "sha256": "8b8c531c9d288a0d3bab74e79b5908d316172fe91437848a480c2bd3e1ec2722",
+      "bytes": 11640
+    },
+    {
+      "path": "scripts/quant-freeze-snapshot.mjs",
+      "sha256": "315159584b643c2f93529c75327619641277a5405631b0efee64c1724232b452",
+      "bytes": 19588
+    },
+    {
+      "path": "scripts/quant-loop-readiness.mjs",
+      "sha256": "467cbde961c4b22e6b35606fc06fbdd867cc485ec3a9bf0411e11a2bcc42f1d5",
+      "bytes": 2859
+    },
+    {
+      "path": "scripts/quant-pipeline.mjs",
+      "sha256": "a209f61cce4c9d53c6377c3be0a1d683164ee72431ee2f6f5b5a643a7d61a056",
+      "bytes": 4386
+    },
+    {
+      "path": "scripts/quant-portfolio-audit.mjs",
+      "sha256": "fb93c932678a118bcd91424e8c551eb57704f9e24f82ad4473f93cc6d036177a",
+      "bytes": 16207
+    },
+    {
+      "path": "scripts/quant-portfolio-lab-evidence.mjs",
+      "sha256": "873ad7abfd5bf53bc37582ebfcd816e8d3ba47e48e3ba83f28064ff7312f4ed4",
+      "bytes": 15223
+    },
+    {
+      "path": "scripts/quant-portfolio-pipeline.mjs",
+      "sha256": "b97c3058df3ba5e9aa761f1581ebddfdf5c7725446c5b6d7abaef1ff8bbcbb2f",
+      "bytes": 4666
+    },
+    {
+      "path": "scripts/quant-portfolio-smoke.mjs",
+      "sha256": "eeaaa44b47dfeef3b8ab0cb86bc8b48b012232c27b4f4e0a532bca44597b3893",
+      "bytes": 29354
+    },
+    {
+      "path": "scripts/quant-real-data-evidence-summary.mjs",
+      "sha256": "5436c482302c1b25ece364275fa5c86f4b530314fec55823ef32ebfd77bcc60e",
+      "bytes": 10510
+    },
+    {
+      "path": "scripts/quant-sample-split-baseline.mjs",
+      "sha256": "24e0abbe69640387b045233a9e4d4a7ea815c92b1c19341f533c604defbfcb70",
+      "bytes": 39283
+    },
+    {
+      "path": "scripts/quant-shadow-portfolio.mjs",
+      "sha256": "7f008266e0496b1ca84b35d5fa781b0ac6bad94ea7c71dea54e8d45ba2f7dcf2",
+      "bytes": 24112
+    },
+    {
+      "path": "scripts/quant-smoke.mjs",
+      "sha256": "503750a1cac572a29b4ccf8b93ae7444adc9eda71793349a023af6b65f69d5b8",
+      "bytes": 22631
+    },
+    {
+      "path": "scripts/r0-timebox-ledger-verify.mjs",
+      "sha256": "979e87247d5ce617b528758d985c0c4460efafc20e3a75047583d447087b75ec",
+      "bytes": 16218
+    },
+    {
+      "path": "scripts/read-market-quote.mjs",
+      "sha256": "c0efc6ab882b671ee1dfb267e6d2abffe7966a70a0445256e933a87227e86330",
+      "bytes": 681
+    },
+    {
+      "path": "scripts/real-data-quant-evidence.mjs",
+      "sha256": "809c85e4bb7b1c75804bd44ee223d8ec627f2b03b20c50aa19469a048d955df1",
+      "bytes": 31509
+    },
+    {
+      "path": "scripts/recovery-evidence-verify.mjs",
+      "sha256": "3c74c4108ebe6eb8018f020168e335b1900aec211271bf9b9dd821b48afbaed9",
+      "bytes": 885
+    },
+    {
+      "path": "scripts/research-backup-snapshot.mjs",
+      "sha256": "67032fd6ffc89b25bd4fc5c28181be9757dc67413313b216f9539342df0e1489",
+      "bytes": 36867
+    },
+    {
+      "path": "scripts/research-document-ocr.swift",
+      "sha256": "af8b3b3083a4bb88e7a37868c8e16628efd717084569190e84c58349e47bd49f",
+      "bytes": 5939
+    },
+    {
+      "path": "scripts/research-document-verify.mjs",
+      "sha256": "444fcd5cf0b9fed6dbbf3ba653a41fe17eb0e56b4864dc3c13a683055d9d986d",
+      "bytes": 97693
+    },
+    {
+      "path": "scripts/research-frozen-technical-fixture.mjs",
+      "sha256": "487c3395a0952ec9ea6f59847accb907ff2b793cccf12686bedbcb12b578bbc0",
+      "bytes": 3219
+    },
+    {
+      "path": "scripts/research-source-snapshot-verify.mjs",
+      "sha256": "8bf4a784b6b9d4848078c97a347d83f2de79d71c59f127ede117130f335ea3bf",
+      "bytes": 59304
+    },
+    {
+      "path": "scripts/research-update-live-verify.mjs",
+      "sha256": "05c6f560d9e7453f06fa7307fad10e31c60f9df0eb834b8a7bcfb857091c008f",
+      "bytes": 10831
+    },
+    {
+      "path": "scripts/runtime-alignment-verify.mjs",
+      "sha256": "e0a389eeac7b28b14f83edebcfc98717bbfb01a87c3b252a55d375a38fd205cd",
+      "bytes": 2938
+    },
+    {
+      "path": "scripts/stage-13-20-evidence-verify.mjs",
+      "sha256": "ca13cbe20ff7b5ca4eade1b97a253b1d9c7125f82ab6f4d0016ba6a2562bf265",
+      "bytes": 671
+    },
+    {
+      "path": "scripts/stage-13-20-local-validation-registry.mjs",
+      "sha256": "1d13cfcff3c5ee5162f5d6a0b21fa2a19a6cdf3222151350ee8adcc85480c74e",
+      "bytes": 14252
+    },
+    {
+      "path": "scripts/stage-evidence-section-verify.mjs",
+      "sha256": "18c4a8fa942be12b01e9393ca6c989b4d39c670fa86ab9866fb4ae841ee35c5a",
+      "bytes": 1457
+    },
+    {
+      "path": "scripts/staging-readonly-preflight.mjs",
+      "sha256": "a95e308909d050b71397810db16357f8fd679178ffa94b5e5e0260f2a324a564",
+      "bytes": 6971
+    },
+    {
+      "path": "scripts/staging-readonly-smoke.mjs",
+      "sha256": "ce757bd5477b39e6ae310ae2286461b0544d9cec7108942587229d6f58676f79",
+      "bytes": 9524
+    },
+    {
+      "path": "scripts/staging-research-write-rehearsal.mjs",
+      "sha256": "34e2434813354578260d841009fbe1b015bc362bd5a4b53a72763d0a606465a4",
+      "bytes": 11820
+    },
+    {
+      "path": "scripts/staging-write-token-readiness.mjs",
+      "sha256": "8fb6595aa2d0eeaf237012d9b1fc9c8e876392871bc5d2798bc6aed68a945f74",
+      "bytes": 5993
+    },
+    {
+      "path": "scripts/staging-write-token-revoke-verify.mjs",
+      "sha256": "3e555e9dcdeba20165998834c82843e2ce2460a28f91e8ebe59f40e8c8f3b3c9",
+      "bytes": 7265
+    },
+    {
+      "path": "scripts/sync-capacity-probe.mjs",
+      "sha256": "d88a55a20f5a013c3f712c6b20f11ff0025c2dc41a0fda8d33fdb84c496069f3",
+      "bytes": 2046
+    },
+    {
+      "path": "scripts/today-local-beta-14-day-verify.mjs",
+      "sha256": "0fb2ca2b43f2726f673d551ba61a076cb60745adf46693aab4abb272f6247a1c",
+      "bytes": 16025
+    },
+    {
+      "path": "scripts/today-local-beta-daily-ingest.mjs",
+      "sha256": "367ea0f0634d77c6e113c965698916a001578559581fd9f52fcc89aae478c92e",
+      "bytes": 25258
+    },
+    {
+      "path": "scripts/web-candidate-overview-smoke.mjs",
+      "sha256": "37f78a1ffafedcc76ca7638892911ed5bcababcea3f31f1ecfc37daf6578a384",
+      "bytes": 2117
+    },
+    {
+      "path": "scripts/web-candidate-overview-ui-smoke.mjs",
+      "sha256": "13bf0b9684bd3eedec46c1e7ba0e98cd9765bfe48ee4d61998a96b100f3bc395",
+      "bytes": 11625
+    },
+    {
+      "path": "scripts/web-core-journey-smoke.mjs",
+      "sha256": "bdddb958a206bf133d54a05990451cadb7fa1cba167abaeaa26941f2a7480797",
+      "bytes": 4022
+    },
+    {
+      "path": "scripts/web-core-journey-ui-smoke.mjs",
+      "sha256": "afcdfd7f6c1e1c97b9cf5c96934e7d9864e30135af4bb74b2b8c2cd7e1d655e6",
+      "bytes": 68406
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "80afadd968f32dc2825452968693d025385857689d2a3119eee145c162e43965",
+      "bytes": 390
+    }
+  ]
+}

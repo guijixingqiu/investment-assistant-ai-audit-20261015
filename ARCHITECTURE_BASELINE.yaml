@@ -1,0 +1,77 @@
+{
+  "schema": { "id": "investment-assistant-architecture-baseline", "version": 1 },
+  "repository": { "name": "guijixingqiu/investment-assistant-system", "baseline_main_sha": "e8cb2fcb4b0252e75d5ce22e967f9b5b8f0aef72" },
+  "modules": [
+    { "id": "contracts", "owner": "shared-contracts", "paths": ["packages/contracts"], "status": "implemented" },
+    { "id": "api", "owner": "api", "paths": ["apps/api"], "status": "implemented" },
+    { "id": "database", "owner": "persistence", "paths": ["db"], "status": "implemented" },
+    { "id": "web", "owner": "web-client", "paths": ["apps/web"], "status": "implemented" },
+    { "id": "ios", "owner": "ios-client", "paths": ["apps/ios"], "status": "implemented" },
+    { "id": "market_data", "owner": "market-adapter", "paths": ["apps/api/src/market"], "status": "implemented", "notes": "Futu is quote-data or explicitly identified simulation only; no broker writes." },
+    { "id": "quant_research", "owner": "research", "paths": ["scripts/quant-*.mjs", "config/quant-*.json"], "status": "implemented_research_only" },
+    { "id": "operations", "owner": "platform", "paths": ["deploy", "scripts"], "status": "implemented_tooling_only" },
+    { "id": "redis_worker", "owner": "platform", "paths": [], "status": "not_implemented", "notes": "No Redis-backed worker runtime is implemented or required without measured need." }
+  ],
+  "dependency_rules": {
+    "path_ownership": {
+      "resolution": "longest_matching_module_path",
+      "allowed_overlaps": [
+        { "modules": ["api", "market_data"], "winner": "market_data", "path": "apps/api/src/market" },
+        { "modules": ["operations", "quant_research"], "winner": "quant_research", "path": "scripts/quant-*.mjs" }
+      ]
+    },
+    "allowed_edges": [
+      ["api", "contracts"], ["api", "database"], ["api", "market_data"],
+      ["web", "contracts"], ["ios", "contracts"], ["quant_research", "contracts"],
+      ["operations", "api"], ["operations", "database"], ["market_data", "contracts"]
+    ],
+    "contracts_forbidden_dependencies": ["api", "database", "web", "ios", "market_data", "quant_research", "operations", "redis_worker"],
+    "route_policy": "thin_routes_delegate_authorization_validation_idempotency_audit_conflict_and_fact_access",
+    "client_policy": "validated_contract_consumers_without_database_broker_credentials_or_server_authority"
+  },
+  "fact_authorities": [
+    { "class": "official_server_facts", "authority": "postgresql_via_governed_api_writes", "exclusive": true },
+    { "class": "browser_local_records", "authority": "unofficial_local_only", "exclusive": true },
+    { "class": "ios_local_records", "authority": "unofficial_local_only", "exclusive": true },
+    { "class": "pingan_development_current_portfolio", "authority": "owner_approved_account_scoped_local_development_only", "exclusive": true },
+    { "class": "owner_entered_current_portfolio", "authority": "owner_confirmed_actor_scoped_asset_ledger_local_development_only", "exclusive": true },
+    { "class": "pingan_snapshot", "authority": "historical_last_imported_only", "exclusive": true },
+    { "class": "quant_output", "authority": "research_evidence_only", "exclusive": true }
+  ],
+  "data_classifications": [
+    { "id": "official", "may_mutate_official_facts": true, "boundary": "governed_api_and_postgresql" },
+    { "id": "local_unofficial", "may_mutate_official_facts": false, "boundary": "localStorage_or_UserDefaults" },
+    { "id": "development_current", "may_mutate_official_facts": false, "boundary": "account_scoped_Pingan_current_portfolio_local_development_and_Local_Beta_only" },
+    { "id": "owner_declared_current", "may_mutate_official_facts": false, "boundary": "Owner_explicit_20260922_manual_cost_lots_in_existing_private_assets_ledger_no_broker_or_trade_facts" },
+    { "id": "historical", "may_mutate_official_facts": false, "boundary": "Pingan_last_imported_context" },
+    { "id": "research", "may_mutate_official_facts": false, "boundary": "immutable_reproducible_evidence" }
+  ],
+  "runtime_boundaries": {
+    "api": "Fastify process with PostgreSQL, account-scoped local-development Pingan current-portfolio reads, and bounded Futu quote adapters",
+    "web": "browser client; localStorage is unofficial only",
+    "ios": "mobile client; UserDefaults is unofficial only",
+    "redis_worker": "absent",
+    "operations": "verification and deployment tooling; never a product fact authority"
+  },
+  "migration_rules": {
+    "strategy": "incremental_evidence_bound_reconstruction",
+    "preserve_existing_system": true,
+    "full_rewrite_forbidden": true,
+    "replacement_mainline_before_proven_vertical_slice": false,
+    "bulk_relocation_without_stage": false
+  },
+  "exceptions": [
+    { "id": "EX-OWNER-CURRENT-20260922", "scope": "Owner-entered real current stock quantities and cost lots in the local Simulator", "classification": "owner_declared_current_only", "justification": "Owner explicitly supplied current holdings and authorized editable manual recording on 2026-09-22 while no broker source is available.", "status": "accepted_boundary", "remediation": "Use actor-scoped append-only Assets Alpha revisions with explicit current source and conflict checks. Quotes retain independent timestamps; cash, fees and acquisition dates stay unknown. No broker reconciliation, trade execution, production or cloud disclosure authority." },
+    { "id": "EX-LOCAL-RECORDS", "scope": "browser localStorage and iOS UserDefaults", "classification": "non_authoritative", "justification": "Supports private drafts without server persistence.", "status": "accepted_boundary", "remediation": "Keep source-scoped validation and never promote to official facts." },
+    { "id": "EX-PINGAN-HISTORICAL", "scope": "preserved historical Pingan route and Stage 19 input", "classification": "historical_only", "justification": "Historical routes and quantitative input remain separate from the development current-portfolio contract.", "status": "accepted_boundary", "remediation": "Never relabel historical evidence as current holdings, broker reconciliation, account truth, or trading authority." },
+    { "id": "EX-PINGAN-DEVELOPMENT-CURRENT", "scope": "account-scoped Pingan current portfolio for local development and Local Beta", "classification": "development_current_only", "justification": "The owner approved this source behind atomic identity freshness conflict and fail-closed controls for local product use.", "status": "accepted_boundary", "remediation": "Keep production portfolio authority, broker reconciliation, accounting, execution, and official-fact mutation disabled until separately authorized and reviewed." }
+  ],
+  "safety_state": {
+    "production": "NO_GO",
+    "real_trading": "NOT_USED",
+    "broker_write": "NOT_USED",
+    "official_portfolio_mutation": "NOT_USED",
+    "ios_physical_device": "NOT_USED",
+    "auto_merge": "FORBIDDEN"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "base": {
+    "source": "contract-conformance",
+    "asOf": null,
+    "fetchedAt": null,
+    "freshness": "fresh",
+    "provenance": "real",
+    "authority": "market_data",
+    "stale": false,
+    "missing": false,
+    "conflict": false,
+    "fixture": false,
+    "correctionOf": null,
+    "replaces": null,
+    "message": "Shared fact metadata conformance case."
+  },
+  "cases": [
+    { "name": "explicit null nullable values", "valid": true },
+    {
+      "name": "UTC leap day with arbitrary fractional precision",
+      "valid": true,
+      "set": {
+        "asOf": "2024-02-29T23:59:59Z",
+        "fetchedAt": "2024-02-29T23:59:59.123456789Z"
+      }
+    },
+    {
+      "name": "lowercase separators and numeric offset",
+      "valid": true,
+      "set": {
+        "asOf": "2026-07-18t12:34:56.789+08:00",
+        "fetchedAt": "2026-07-18T04:34:56z"
+      }
+    },
+    {
+      "name": "RFC3339 leap second with offset",
+      "valid": true,
+      "set": { "asOf": "1990-12-31T15:59:60-08:00" }
+    },
+    {
+      "name": "historical minute offset",
+      "valid": true,
+      "set": { "asOf": "1937-01-01T12:00:27.87+00:20" }
+    },
+    { "name": "missing nullable asOf key", "valid": false, "remove": ["asOf"] },
+    { "name": "missing nullable correctionOf key", "valid": false, "remove": ["correctionOf"] },
+    { "name": "additional property", "valid": false, "set": { "unexpected": true } },
+    { "name": "impossible calendar day", "valid": false, "set": { "asOf": "2026-02-30T00:00:00Z" } },
+    { "name": "non-leap February 29", "valid": false, "set": { "asOf": "2023-02-29T00:00:00Z" } },
+    { "name": "space date-time separator", "valid": false, "set": { "asOf": "2026-07-18 12:34:56Z" } },
+    { "name": "missing time zone", "valid": false, "set": { "asOf": "2026-07-18T12:34:56" } },
+    { "name": "offset without colon", "valid": false, "set": { "asOf": "2026-07-18T12:34:56+0800" } },
+    { "name": "offset hour out of range", "valid": false, "set": { "asOf": "2026-07-18T12:34:56+24:00" } },
+    { "name": "hour out of range", "valid": false, "set": { "asOf": "2026-07-18T24:00:00Z" } },
+    { "name": "second out of range", "valid": false, "set": { "asOf": "2026-07-18T12:34:61Z" } },
+    { "name": "empty fractional seconds", "valid": false, "set": { "asOf": "2026-07-18T12:34:56.Z" } },
+    { "name": "trailing date-time content", "valid": false, "set": { "asOf": "2026-07-18T12:34:56Zjunk" } },
+    { "name": "empty nullable string", "valid": false, "set": { "correctionOf": "" } },
+    { "name": "whitespace source", "valid": false, "set": { "source": "   " } },
+    { "name": "wrong boolean type", "valid": false, "set": { "stale": "false" } },
+    { "name": "unknown freshness enum", "valid": false, "set": { "freshness": "recent" } },
+    { "name": "null non-nullable value", "valid": false, "set": { "message": null } }
+  ]
+}
